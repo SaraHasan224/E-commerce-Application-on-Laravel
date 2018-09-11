@@ -17,7 +17,7 @@
 
 <!--Header-part-->
 <div id="header">
-  <h1><a href="dashboard.html">Matrix Admin</a></h1>
+  <h1><a href="<?php echo e(url('/admin/dashboard')); ?>">Matrix Admin</a></h1>
  <!-- <img src="http://127.0.0.1:8000/images/backend_images/logo.png" alt="Logo">
 -->
 </div>
@@ -48,8 +48,8 @@
         <li><a class="sTrash" title="" href="#"><i class="icon-trash"></i> trash</a></li>
       </ul>
     </li>
-    <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
-    <li class=""><a title="" href="/logout"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+    <li class=""><a title="" href="<?php echo e(url('/admin/settings')); ?>"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+    <li class=""><a title="" href="<?php echo e(url('/logout')); ?>"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
   </ul>
 </div>
 <!--close-top-Header-menu-->

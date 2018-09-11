@@ -52,6 +52,56 @@ class AdminController extends Controller
         return view('Backend.login.dashboard');
     }
 
+    public function settings(Request $request)
+    {
+       return view('Backend.settings.settings'); 
+    }
+
+    public function chkPassword()
+    {
+
+            $data = $request->all();
+            $current_password = $data['current_pwd'];
+            $check_password = User::where(['admin'=>'1'])->first();
+            if(hash::check($current_password,$check_password->password))
+            {
+                echo 'true';die;
+            }
+            else
+            {
+                echo 'false';die;
+            }
+/*            if(Auth::attempt(['password'=>$data['current_pwd']]) && $data['new_pwd'] == $data['confirm_pwd'])
+            {
+                //echo "Success"; die;
+            /*
+            This is session authentication technique
+                Session::put('adminSession',$data['email']);
+            
+                return redirect('/admin/settings');
+            }
+            else if (!($data['new_pwd'] == $data['confirm_pwd']))
+            {
+                $error = "Password mismatch";
+                return redirect('/admin/settings')->with('error',$error);
+            }
+            else
+            {
+                $error = "You have typed incorrect password";
+                return redirect('/admin/settings')->with('error',$error);
+            }
+        */
+    }
+
+    public function updatePassword(Request $request){
+        if($request -> isMethod('post'))
+        {
+            $data = $request->all();
+            echo '<pre>';print_r($data);die;
+        }
+    }
+
+
     public function logout()
     {
        session::flush();

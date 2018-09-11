@@ -20,13 +20,14 @@
 <script src="{{asset('js/backend_js/matrix.interface.js')}}"></script> 
 <script src="{{asset('js/backend_js/matrix.chat.js')}}"></script> 
 <script src="{{asset('js/backend_js/jquery.validate.js')}}"></script> 
-<script src="{{asset('js/backend_js/matrix.form_validation.js')}}"></script> 
 <script src="{{asset('js/backend_js/jquery.wizard.js')}}"></script> 
 <script src="{{asset('js/backend_js/jquery.uniform.js')}}"></script> 
 <script src="{{asset('js/backend_js/select2.min.js')}}"></script> 
 <script src="{{asset('js/backend_js/matrix.popover.js')}}"></script> 
 <script src="{{asset('js/backend_js/jquery.dataTables.min.js')}}"></script> 
 <script src="{{asset('js/backend_js/matrix.tables.js')}}"></script> 
+
+<script src="{{asset('js/backend_js/matrix.form_validation.js')}}"></script> 
 
 <script type="text/javascript">
   // This function is called from the pop-up menus to transfer to
