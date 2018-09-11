@@ -20,7 +20,10 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check()) {
             return redirect('/home');
         }
-
+        else
+        {
+            return redirect()->action('AdminController@login')->with('error','Unauthorized Access is not alowed. Log in first');
+        }
         return $next($request);
     }
 }

@@ -12,9 +12,26 @@
 
     </head>
     <body>
+
+
         <div id="loginbox">            
-            <form id="loginform" class="form-vertical" method="post" action="{{url('admin_login')}}">{{csrf_field() }}
-				 <div class="control-group normal_text"> <h3><img src="{{asset('images/backend_images/logo.png')}}" alt="Logo" /></h3></div>
+        
+            <form id="loginform" class="form-vertical" method="post" action="{{url('admin')}}">{{csrf_field() }}
+			    <div class="control-group normal_text"> <h3><img src="{{asset('images/backend_images/logo.png')}}" alt="Logo" /></h3></div>
+                @if(Session::has('error'))
+                    <div class="alert alert-danger alert-block">
+                        <button type="button" class="close" data-dismiss="alert">x</button>
+                            <strong>{!!session('error')!!}</strong>
+                    </div>
+                @endif
+
+                @if(Session::has('success'))
+                    <div class="alert alert-success alert-block">
+                        <button type="button" class="close" data-dismiss="alert">x</button>
+                            <strong>{!!session('success')!!}</strong>
+                    </div>
+                @endif
+
                 <div class="control-group">
                     <div class="controls">
                         <div class="main_input_box">
