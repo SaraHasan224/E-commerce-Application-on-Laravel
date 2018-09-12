@@ -12,7 +12,7 @@
         <a href="{{url('/admin/settings')}}" title="Go to Settings" class="tip-bottom"><i class="icon-cogs"></i> Settings</a> 
     </div>
     <h1>Settings</h1>
-   @if(Session::has('error'))
+                @if(Session::has('error'))
                     <div class="alert alert-danger alert-block">
                         <button type="button" class="close" data-dismiss="alert">x</button>
                             <strong>{!!session('error')!!}</strong>
@@ -28,14 +28,14 @@
   </div>
   <div class="container-fluid"><hr>
     <div class="row-fluid">
-      <div class="row-fluid">
         <div class="span12">
           <div class="widget-box">
             <div class="widget-title"> <span class="icon"> <i class="icon-key"></i> </span>
               <h5>Password Settings</h5>
             </div>
             <div class="widget-content nopadding">
-              <form class="form-horizontal" method="post" action="{{ url('/admin/update-pwd') }}" name="password_validate" id="password_validate" novalidate="novalidate">{{ csrf_field() }}
+              <form class="form-horizontal" method="POST" action="{{ url('/admin/checkCredentials') }}">
+              {{ csrf_field() }}
                 <div class="control-group">
                   <label class="control-label">Current Password</label>
                   <div class="controls">
@@ -62,7 +62,7 @@
             </div>
           </div>
         </div>
-      </div>
+      
     </div>
   </div>
 

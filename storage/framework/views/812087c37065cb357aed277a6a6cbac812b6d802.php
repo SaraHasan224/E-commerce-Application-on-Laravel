@@ -48,13 +48,27 @@
                     </div>
                 </div>
                 <div class="form-actions">
-                    <span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-recover">Lost password?</a></span>
+                    
                     <span class="pull-right"><input type="submit" value="Login" class="btn btn-success" /></span>
                 </div>
             </form>
-            <form id="recoverform" action="#" class="form-vertical">
-				<p class="normal_text">Enter your e-mail address below and we will send you instructions how to recover a password.</p>
-				
+            
+            <form id="recoverform" action="#" class="form-vertical"><?php echo e(csrf_field()); ?>
+
+				<p> Enter your e-mail address below and we will send you instructions how to recover a password.</p>
+				<?php if(Session::has('error')): ?>
+                    <p class="normal_text">
+                    <?php echo session('error'); ?>
+
+                    </p>
+                <?php endif; ?>
+
+				<?php if(Session::has('success')): ?>
+                    <p class="normal_text">
+                    <?php echo session('success'); ?>
+
+                    </p>
+                <?php endif; ?>
                     <div class="controls">
                         <div class="main_input_box">
                             <span class="add-on bg_lo"><i class="icon-envelope"></i></span><input type="text" placeholder="E-mail address" />
@@ -63,9 +77,9 @@
                
                 <div class="form-actions">
                     <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="to-login">&laquo; Back to login</a></span>
-                    <span class="pull-right"><a class="btn btn-info"/>Reecover</a></span>
+                    <span class="pull-right"><a class="btn btn-info"/>Recover</a></span>
                 </div>
-            </form>
+            </form> 
         </div>
         
         <script src="<?php echo e(asset('js/backend_js/jquery.min.js')); ?>"></script>  

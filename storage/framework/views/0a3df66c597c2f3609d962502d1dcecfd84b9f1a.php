@@ -9,10 +9,19 @@
 <link rel="stylesheet" href="<?php echo e(asset('css/backend_css/fullcalendar.css')); ?>" />
 <link rel="stylesheet" href="<?php echo e(asset('css/backend_css/matrix-style.css')); ?>" />
 <link rel="stylesheet" href="<?php echo e(asset('css/backend_css/matrix-media.css')); ?>" />
+<link rel="stylesheet" href="<?php echo e(asset('css/backend_css/uniform.css')); ?>" />
+<link rel="stylesheet" href="<?php echo e(asset('css/backend_css/select2.css')); ?>" />
 <link href="<?php echo e(asset('fonts/backend_fonts/css/font-awesome.css')); ?>" rel="stylesheet" />
+<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="<?php echo e(asset('css/backend_css/jquery.gritter.css')); ?>" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 </head>
+<style>
+  .dataTables_filter{
+    padding-top:0;
+    margin-top:-40px;
+  }
+</style>
 <body>
 
 <!--Header-part-->

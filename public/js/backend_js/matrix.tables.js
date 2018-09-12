@@ -1,6 +1,3 @@
-
-$(document).ready(function(){
-	
 	$('.data-table').dataTable({
 		"bJQueryUI": true,
 		"sPaginationType": "full_numbers",
@@ -24,4 +21,4 @@ $(document).ready(function(){
 			}
 		});
 	});	
-});
+
