@@ -5,8 +5,8 @@
 <div id="content">
 <div id="breadcrumb"> 
         <a href="{{url('/admin/dashboard')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a>
-        <a href="{{url('/admin/sub-categories')}}" title="Go to Categories" class="tip-bottom"><i class="icon-tags"></i> Categories</a> 
-        <a href="{{url('/admin/sub-categories/add')}}" title="Add Categories" class="tip-bottom"><i class="icon-plus"></i>Add Categories</a> 
+        <a href="{{url('/admin/subCategories')}}" title="Go to Sub Categories" class="tip-bottom"><i class="icon-tags"></i> Sub Categories</a> 
+        <a href="{{url('/admin/subCategories/add')}}" title="Add Sub Category" class="tip-bottom"><i class="icon-plus"></i>Add Sub Categories</a> 
     </div>
 <div class="container-fluid">
   <hr>
@@ -17,57 +17,36 @@
           <h5>Add Sub Categories</h5>
         </div>
         <div class="widget-content nopadding">
-          <form action="#" method="get" class="form-horizontal">
+          <form action="{{url('/admin/subCategories/add')}}" method="post" name="subCategory_validate" id="subCategory_validate" class="form-horizontal">{{csrf_field()}}
             <div class="control-group">
-              <label class="control-label">First Name :</label>
+              <label class="control-label">Category Name :</label>
               <div class="controls">
-                <input type="text" class="span11" placeholder="First name" />
+                <input type="text" class="span11" name="subCategoryName" id="subCategoryName" placeholder="Enter category name" />
               </div>
             </div>
             <div class="control-group">
-              <label class="control-label">Last Name :</label>
+              <label class="control-label">Category Id :</label>
               <div class="controls">
-                <input type="text" class="span11" placeholder="Last name" />
+                <input type="text" class="span11" name="CategoryId" id="CategoryId" placeholder="Enter category name" />
               </div>
             </div>
             <div class="control-group">
-              <label class="control-label">Password input</label>
+              <label class="control-label">URL :</label>
               <div class="controls">
-                <input type="password"  class="span11" placeholder="Enter Password"  />
+                <input type="text" class="span11" name="url" id="url" placeholder="Enter URL" />
               </div>
             </div>
             <div class="control-group">
-              <label class="control-label">Company info :</label>
+              <label class="control-label">Description</label>
               <div class="controls">
-                <input type="text" class="span11" placeholder="Company name" />
+                <textarea class="span11" name="description" id="description"></textarea>
               </div>
             </div>
-            <div class="control-group">
-              <label class="control-label">Description field:</label>
-              <div class="controls">
-                <input type="text" class="span11" />
-                <span class="help-block">Description field</span> </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label">Message</label>
-              <div class="controls">
-                <textarea class="span11" ></textarea>
-              </div>
-            </div>
-             <div class="control-group">
-              <label class="control-label">File upload input</label>
-              <div class="controls">
-                <input type="file" />
-              </div>
-              <div class="control-group">
-              <label class="control-label">Date picker (dd-mm)</label>
-              <div class="controls">
-                <input type="text" data-date="01-02-2013" data-date-format="dd-mm-yyyy" value="01-02-2013" class="datepicker span11">
-                <span class="help-block">Date with Formate of  (dd-mm-yy)</span> </div>
-            </div>
-            </div>
-            <div class="form-actions">
+            <div class="form-actions pull-right">
               <button type="submit" class="btn btn-success">Save</button>
+            </div>
+            <div class="pull-left form-actions">
+              <a  href="/admin/subCategories" class="btn btn-default">Back</a>
             </div>
           </form>
         </div>

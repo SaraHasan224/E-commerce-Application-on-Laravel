@@ -1,5 +1,4 @@
 
-$(document).ready(function(){
     
     $('input[type=checkbox],input[type=radio],input[type=file]').uniform();
     
@@ -62,32 +61,83 @@ $(document).ready(function(){
     });
     
     $("#password_validate").validate({
-       rules:{
-			current_pwd:{
-				required: true,
-				minlength:6,
-				maxlength:20
-			},
-			new_pwd:{
-				required:true,
-				minlength:6,
-				maxlength:20
-			},
-			confirm_pwd:{
-				required:true,
-				minlength:6,
-				maxlength:20,
-				equalTo:"#new_pwd"
-			}
-	   },
-        errorClass: "help-inline",
-        errorElement: "span",
-        highlight:function(element, errorClass, validClass) {
-            $(element).parents('.control-group').addClass('error');
+        rules:{
+             current_pwd:{
+                 required: true,
+                 minlength:4,
+                 maxlength:20
+             },
+             new_pwd:{
+                 required:true,
+                 minlength:6,
+                 maxlength:20
+             },
+             confirm_pwd:{
+                 required:true,
+                 minlength:6,
+                 maxlength:20,
+                 equalTo:"#new_pwd"
+             }
         },
-        unhighlight: function(element, errorClass, validClass) {
-            $(element).parents('.control-group').removeClass('error');
-            $(element).parents('.control-group').addClass('success');
-        }
-    });
-});
+         errorClass: "help-inline",
+         errorElement: "span",
+         highlight:function(element, errorClass, validClass) {
+             $(element).parents('.control-group').addClass('error');
+         },
+         unhighlight: function(element, errorClass, validClass) {
+             $(element).parents('.control-group').removeClass('error');
+             $(element).parents('.control-group').addClass('success');
+         }
+     });    
+
+     $("#category_validate").validate({
+        rules:{
+            categoryName:{
+                 required: true
+             },
+             url:{
+                 required:true
+             },
+             description:{
+                 required:true
+             }
+        },
+         errorClass: "help-inline",
+         errorElement: "span",
+         highlight:function(element, errorClass, validClass) {
+             $(element).parents('.control-group').addClass('error');
+         },
+         unhighlight: function(element, errorClass, validClass) {
+             $(element).parents('.control-group').removeClass('error');
+             $(element).parents('.control-group').addClass('success');
+         }
+     });
+    
+
+     $("#subCategory_validate").validate({
+        rules:{
+            subCategoryName:{
+                 required: true
+             },
+             CategoryId:{
+                required: true,   
+                number: true
+            },
+             url:{
+                 required:true,
+             },
+             description:{
+                 required:true,
+                 minlength:10
+             }
+        },
+         errorClass: "help-inline",
+         errorElement: "span",
+         highlight:function(element, errorClass, validClass) {
+             $(element).parents('.control-group').addClass('error');
+         },
+         unhighlight: function(element, errorClass, validClass) {
+             $(element).parents('.control-group').removeClass('error');
+             $(element).parents('.control-group').addClass('success');
+         }
+     });

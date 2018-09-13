@@ -34,7 +34,7 @@
               <h5>Password Settings</h5>
             </div>
             <div class="widget-content nopadding">
-              <form class="form-horizontal" method="POST" action="{{ url('/admin/checkCredentials') }}">
+              <form class="form-horizontal" name="password_validate" id="password_validate" method="POST" action="{{ url('/admin/checkCredentials') }}">
               {{ csrf_field() }}
                 <div class="control-group">
                   <label class="control-label">Current Password</label>

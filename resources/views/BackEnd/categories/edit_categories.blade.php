@@ -17,40 +17,40 @@
           <h5>Edit Categories</h5>
         </div>
         <div class="widget-content nopadding">
-          <form action="#" method="get" class="form-horizontal">
+          <form action="{{url('/admin/categories/edit/'.$category->category_id)}}" name="category_validate" id="category_validate" method="post" class="form-horizontal">{{csrf_field()}}
             <div class="control-group">
               <label class="control-label">Category Name :</label>
               <div class="controls">
-                <input type="text" class="span11" placeholder="Enter category name" />
+                <input type="text" name="category_name" class="span11" value="{{$category->category_name}}" />
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">URL :</label>
               <div class="controls">
-                <input type="text" class="span11" placeholder="Enter URL" />
+                <input type="text" name="url" class="span11" value="{{$category->url}}" />
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Status :</label>
               <div class="controls">
-                <input type="number"  class="span11" placeholder="Enter Status"  />
+                 <select class="form-control" id="status" name="status" value="{{$sub_category->status}}">
+                  <option value="1">
+                    <button type="button" class="btn btn-info">Enable</button>
+                  </option>
+                  <option value="0">                
+                    <button type="button" class="btn btn-warning">Disable</button>
+                  </option>
+                </select>
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Description</label>
               <div class="controls">
-                <textarea class="span11" ></textarea>
+                <textarea class="span11" name="description" >{{$category->description}}</textarea>
               </div>
             </div>
-            <div class="control-group">
-              <label class="control-label">Date Added (dd-mm)</label>
-              <div class="controls">
-                <input type="text" data-date="01-02-2013" data-date-format="dd-mm-yyyy" value="01-02-2013" class="datepicker span11">
-                <span class="help-block">Date with Formate of  (dd-mm-yy)</span> </div>
-            </div>
-            </div>
             <div class="form-actions pull-right">
-              <button type="submit" class="btn btn-success">Save</button>
+              <button type="submit" value="Edit Categories" class="btn btn-success">Save</button>
             </div>
             <div class="pull-left form-actions">
               <a  href="/admin/categories" class="btn btn-default">Back</a>

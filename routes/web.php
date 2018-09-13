@@ -32,15 +32,14 @@ Route::group(['middleware' => ['auth']],function()
     //Routes for admin categories
     Route::match(['get','post'],'/admin/categories', 'CategoryController@categories');
     Route::match(['get','post'],'/admin/categories/add', 'CategoryController@addCategories');
-    Route::match(['get','post'],'/admin/categories/edit', 'CategoryController@editCategories');
+    Route::match(['get','post'],'/admin/categories/edit/{category_id}', 'CategoryController@editCategories');
     
     
-    //Routes for admin categories
-    Route::match(['get','post'],'/admin/sub-categories', 'SubCategoryController@sub_categories');
-    Route::match(['get','post'],'/admin/sub-categories/add', 'SubCategoryController@sub_categories');
-    Route::match(['get','post'],'/admin/sub-categories/edit', 'SubCategoryController@sub_categories');
+    //Routes for admin sub-categories
+    Route::match(['get','post'],'/admin/subCategories', 'SubCategoryController@sub_categories');
+    Route::match(['get','post'],'/admin/subCategories/add', 'SubCategoryController@add');
+    Route::match(['get','post'],'/admin/subCategories/edit/{id}', 'SubCategoryController@edit');
     
 
+    Route::get('/logout', 'AdminController@logout');
 });
-
-Route::get('/logout', 'AdminController@logout');

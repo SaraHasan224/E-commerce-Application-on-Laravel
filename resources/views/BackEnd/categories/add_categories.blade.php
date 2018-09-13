@@ -17,37 +17,24 @@
           <h5>Add Categories</h5>
         </div>
         <div class="widget-content nopadding">
-          <form action="#" method="get" class="form-horizontal">
+          <form action="{{ url('/admin/categories/add') }}" method="post" class="form-horizontal" id="category_validate" name="category_validate">{{csrf_field()}}
             <div class="control-group">
               <label class="control-label">Category Name :</label>
               <div class="controls">
-                <input type="text" class="span11" placeholder="Enter category name" />
+                <input type="text" class="span11" name="categoryName" id="categoryName" placeholder="Enter category name" />
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">URL :</label>
               <div class="controls">
-                <input type="text" class="span11" placeholder="Enter URL" />
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label">Status :</label>
-              <div class="controls">
-                <input type="number"  class="span11" placeholder="Enter Status"  />
+                <input type="text" class="span11" name="url" id="url" placeholder="Enter URL" />
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Description</label>
               <div class="controls">
-                <textarea class="span11" ></textarea>
+                <textarea class="span11" name="description" id="description"></textarea>
               </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label">Date Added (dd-mm)</label>
-              <div class="controls">
-                <input type="text" data-date="01-02-2013" data-date-format="dd-mm-yyyy" value="01-02-2013" class="datepicker span11">
-                <span class="help-block">Date with Formate of  (dd-mm-yy)</span> </div>
-            </div>
             </div>
             <div class="form-actions pull-right">
               <button type="submit" class="btn btn-success">Save</button>

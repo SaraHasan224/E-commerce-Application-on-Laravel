@@ -21,25 +21,32 @@
             <div class="control-group">
               <label class="control-label">Category Name :</label>
               <div class="controls">
-                <input type="text" class="span11" placeholder="Enter category name" />
+                <input type="text" class="span11" name="subCatName" placeholder="Enter category name" />
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">URL :</label>
               <div class="controls">
-                <input type="text" class="span11" placeholder="Enter URL" />
+                <input type="text" class="span11" name="url" placeholder="Enter URL" />
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Status :</label>
               <div class="controls">
-                <input type="number"  class="span11" placeholder="Enter Status"  />
+                 <select class="form-control" id="status" name="status" value="{{$category->status}}">
+                  <option value="1">
+                    <button type="button" class="btn btn-info">Enable</button>
+                  </option>
+                  <option value="0">                
+                    <button type="button" class="btn btn-warning">Disable</button>
+                  </option>
+                </select>
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Description</label>
               <div class="controls">
-                <textarea class="span11" ></textarea>
+                <textarea class="span11" name="description" ></textarea>
               </div>
             </div>
             <div class="control-group">

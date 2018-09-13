@@ -9,6 +9,19 @@
         <a href="{{url('/admin/categories')}}" title="Go to Categories" class="tip-bottom"><i class="icon-tags"></i> Categories</a> 
     </div>
     <h1>Categories</h1>
+     @if(Session::has('error'))
+        <div class="alert alert-danger alert-block">
+          <button type="button" class="close" data-dismiss="alert">x</button>
+          <strong>{!!session('error')!!}</strong>
+        </div>
+      @endif
+
+      @if(Session::has('success'))
+        <div class="alert alert-success alert-block">
+          <button type="button" class="close" data-dismiss="alert">x</button>
+          <strong>{!!session('success')!!}</strong>
+        </div>
+      @endif
   </div>
   <div class="container-fluid">
     <hr>
@@ -28,7 +41,6 @@
               <thead>
                 <tr>
                   <th><input type="checkbox" id="title-table-checkbox" name="title-table-checkbox" /></th>
-                  <th>Category Id</th>
                   <th>Category Name</th>
                   <th>Description</th>
                   <th>URL</th>
@@ -39,21 +51,24 @@
                 </tr>
               </thead>
               <tbody>
-                {{-- @if(count($services) > 0)
-                    @foreach($categories as $category)   
+                    @foreach($category as $categories)   
                     <tr>
                         <td><input type="checkbox" /></td>
-                        <td>{{$category->id}}</td>
-                        <td>{{$category->id}}</td>
-                        <td>{{$category->id}}</td>
-                        <td>{{$category->id}}</td>
-                        <td>{{$category->id}}</td>
-                        <td>{{$category->id}}</td>
-                        <td>{{$category->id}}</td>
-                        <td><button type="button" class="btn btn-primary">Edit</button></td>
+                        <td>{{$categories->category_name}}</td>
+                        <td>{{$categories->description}}</td>
+                        <td>{{$categories->url}}</td>
+                        <td>
+                            @if($categories->status == 1)                              
+                              <button type="button" class="btn btn-info">Active</button>
+                            @else
+                              <button type="button" class="btn btn-warning">Dis active</button>
+                            @endif
+                        </td>
+                        <td>{{$categories->created_at}}</td>
+                        <td>{{$categories->updated_at}}</td>
+                        <td><a href="{{url('/admin/categories/edit/'.$categories->category_id)}}" type="button" class="btn btn-primary">Edit</a></td>
                     </tr>
                     @endforeach
-                @endif --}}
                   
               </tbody>
             </table>
