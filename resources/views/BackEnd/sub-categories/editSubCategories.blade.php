@@ -5,8 +5,8 @@
 <div id="content">
 <div id="breadcrumb"> 
         <a href="{{url('/admin/dashboard')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a>
-        <a href="{{url('/admin/sub-categories')}}" title="Go to Categories" class="tip-bottom"><i class="icon-tags"></i> Sub Categories</a> 
-        <a href="{{url('/admin/sub-categories/edit')}}" title="Add Categories" class="tip-bottom"><i class="icon-plus"></i>Edit Sub Categories</a> 
+        <a href="{{url('/admin/subCategories')}}" title="Go to Sub Categories" class="tip-bottom"><i class="icon-tags"></i> Sub Categories</a> 
+        <a href="{{url('/admin/subCategories/add')}}" title="Add Sub Category" class="tip-bottom"><i class="icon-plus"></i>Edit Sub Categories</a> 
     </div>
 <div class="container-fluid">
   <hr>
@@ -14,26 +14,32 @@
     <div class="span12">
       <div class="widget-box">
         <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-          <h5>Edit Categories</h5>
+          <h5>Edit Sub Categories</h5>
         </div>
         <div class="widget-content nopadding">
-          <form action="#" method="get" class="form-horizontal">
+          <form action="{{url('/admin/subCategories/edit/'.$sub_category->sub_category_id)}}" name="category_validate" id="category_validate" method="post" class="form-horizontal">{{csrf_field()}}
             <div class="control-group">
               <label class="control-label">Category Name :</label>
               <div class="controls">
-                <input type="text" class="span11" name="subCatName" placeholder="Enter category name" />
+                <input type="text" name="subCatName" class="span11" value="{{$sub_category->sub_category_name}}" />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">CParent Id :</label>
+              <div class="controls">
+                <input type="text" name="parentId" class="span11" value="{{$sub_category->category_id}}" />
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">URL :</label>
               <div class="controls">
-                <input type="text" class="span11" name="url" placeholder="Enter URL" />
+                <input type="text" name="url" class="span11" value="{{$sub_category->url}}" />
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Status :</label>
               <div class="controls">
-                 <select class="form-control" id="status" name="status" value="{{$category->status}}">
+                 <select class="form-control" id="status" name="status" value="{{$sub_category->status}}">
                   <option value="1">
                     <button type="button" class="btn btn-info">Enable</button>
                   </option>
@@ -46,21 +52,14 @@
             <div class="control-group">
               <label class="control-label">Description</label>
               <div class="controls">
-                <textarea class="span11" name="description" ></textarea>
+                <textarea class="span11" name="description" >{{$sub_category->description}}</textarea>
               </div>
             </div>
-            <div class="control-group">
-              <label class="control-label">Date Added (dd-mm)</label>
-              <div class="controls">
-                <input type="text" data-date="01-02-2013" data-date-format="dd-mm-yyyy" value="01-02-2013" class="datepicker span11">
-                <span class="help-block">Date with Formate of  (dd-mm-yy)</span> </div>
-            </div>
-            </div>
             <div class="form-actions pull-right">
-              <button type="submit" class="btn btn-success">Save</button>
+              <button type="submit" value="Edit Sub Categories" class="btn btn-success">Save</button>
             </div>
             <div class="pull-left form-actions">
-              <a  href="/admin/categories" class="btn btn-default">Back</a>
+              <a  href="/admin/subCategories" class="btn btn-default">Back</a>
             </div>
           </form>
         </div>

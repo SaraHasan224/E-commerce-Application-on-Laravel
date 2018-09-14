@@ -5,13 +5,12 @@
     <li> <a href="charts.html"><i class="icon icon-signal"></i> <span>User</span></a> </li>
     <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Product Categories</span> <span class="label label-important">3</span></a>
       <ul>
+        <li><a href="{{url('/admin/products')}}">Products</a></li>
         <li><a href="{{url('/admin/categories')}}">Categories</a></li>
-        <li><a href="/admin/sub-categories">Sub Categories</a></li>
-        <li><a href="form-wizard.html">Form with Wizard</a></li>
+        <li><a href="{{url('/admin/subCategories')}}">Sub Categories</a></li>
       </ul>
-    </li>
-    
-    <li><a href="tables.html"><i class="icon icon-th"></i> <span>Tables</span></a></li>
+    </li> 
+    <li><a href="{{url('/admin/blogs')}}"><i class="icon icon-blogger"></i> <span>Blogs</span></a></li>
     <li><a href="grid.html"><i class="icon icon-fullscreen"></i> <span>Full width</span></a></li>
     <ul>
         <li><a href="form-common.html">Basic Form</a></li>

@@ -26,7 +26,7 @@ class SubCategoryController extends Controller
             $subCategory->description = $data['description'];
             $subCategory->remember_token = str_random(50);
             $subCategory -> save();
-
+            return redirect('/admin/subCategories')->with('success','Category updated successfully!');
         }
         return view('BackEnd.sub-categories.addSubCategories');
     }
@@ -35,18 +35,28 @@ class SubCategoryController extends Controller
         if($request -> isMethod('POST'))
         {
             $data = $request -> all();
-            SubCategory::where(['sub_category_id'->$id]->update([
-                'sub_category_name' => $data['subCatName'],
-                'category_id' => $data['parentId'],
-                'description' => $data['description'],
-                'url' => $data['url']
-            ]))
+           // dd ($data);
+            SubCategory::where([
+                'sub_category_id'=>$id])->update([
+                    'sub_category_name' => $data['subCatName'],
+                    'category_id' => $data['parentId'],
+                    'status' => $data['status'],
+                    'description' => $data['description'],
+                    'url' => $data['url']
+                ]);
+                
+            return redirect('/admin/subCategories')->with('success','Category updated successfully!');
         }
         $sub_category = SubCategory::where(['sub_category_id' => $id])->first();
         return view('BackEnd.sub-categories.editSubCategories')->with(compact('sub_category'));                
     }
 
-    public function delete()
+    public function delete(Request $request,$id = null)
     {
+        if(!empty($id))
+        {
+            SubCategory::where(['sub_category_id' => $id])->delete();
+            return redirect()->back()->with('success','Category deleted successfully!');
+        }
     }
 }

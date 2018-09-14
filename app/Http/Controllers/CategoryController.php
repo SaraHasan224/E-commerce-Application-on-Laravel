@@ -15,7 +15,7 @@ class CategoryController extends Controller
 //      return view('BackEnd.categories.categories') -> with('categories',$category);
         return view('BackEnd.categories.categories')->with(compact('category'));
     }
-    public function addCategories(Request $request)
+    public function add(Request $request)
     {
         if($request->isMethod('post'))
         {
@@ -32,19 +32,27 @@ class CategoryController extends Controller
         return view('BackEnd.categories.add_categories');
     
     }
-    public function deleteCategories()
+    public function delete(Request $request, $id = null)
     {
-        
+        if(!empty($id))
+        {
+            Category::where(['category_id'=>$id]) -> delete();
+            return redirect()->back()->with('error','Category deleted successfully!');
+        }
     }
 
-    public function editCategories(Request $request, $id = null)
+    public function edit(Request $request, $id = null)
     {
         if($request->isMethod('post'))
         {
             // dd($id);
             $data = $request->all();
             //echo '<pre>'; print_r($data);die;
-            Category::where(['category_id'=> $id])->update(['category_name'=>$data['category_name'],'url'=>$data['url'],'description'=>$data['description']]);
+            Category::where(['category_id'=> $id])->update([
+                    'category_name'=>$data['category_name'],
+                    'url'=>$data['url'],
+                    'description'=>$data['description']
+                    ]);
             return redirect('/admin/categories')->with('success','Category updated successfully!');
         }
         $category = Category::where(['category_id'=>$id])->first();

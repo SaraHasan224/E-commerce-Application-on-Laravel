@@ -141,3 +141,73 @@
              $(element).parents('.control-group').addClass('success');
          }
      });
+    
+
+     $("#blogs_validate").validate({
+        rules:{
+            title:{
+                 required: true
+             },
+            //  file:{
+            //     required: true
+            // },
+             url:{
+                 required:true,
+             },
+             description:{
+                 required:true,
+                 minlength:10
+             }
+        },
+         errorClass: "help-inline",
+         errorElement: "span",
+         highlight:function(element, errorClass, validClass) {
+             $(element).parents('.control-group').addClass('error');
+         },
+         unhighlight: function(element, errorClass, validClass) {
+             $(element).parents('.control-group').removeClass('error');
+             $(element).parents('.control-group').addClass('success');
+         }
+     });
+    
+
+     $("#product_validate").validate({
+        rules:{
+            productName:{
+                 required: true
+             },
+             categoryName:{
+                required: true
+            },
+            subCategoryName:{
+               required: true
+            },
+           file:{
+              required: true
+            },
+             url:{
+                 required:true,
+             },
+             description:{
+                 required:true,
+                 minlength:10
+             }
+        },
+         errorClass: "help-inline",
+         errorElement: "span",
+         highlight:function(element, errorClass, validClass) {
+             $(element).parents('.control-group').addClass('error');
+         },
+         unhighlight: function(element, errorClass, validClass) {
+             $(element).parents('.control-group').removeClass('error');
+             $(element).parents('.control-group').addClass('success');
+         }
+     });
+$(".delete").click(function(){
+   if(confirm("Are you sure you want to delete?"))
+   {
+       return true;
+   }
+       return false;
+
+});

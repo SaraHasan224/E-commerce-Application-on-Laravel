@@ -6,10 +6,10 @@
   <div id="content-header">
     <div id="breadcrumb"> 
         <a href="{{url('/admin/dashboard')}}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a>
-        <a href="{{url('/admin/subCategories')}}" title="Go to Categories" class="tip-bottom"><i class="icon-tags"></i> Sub Categories</a> 
+        <a href="{{url('/admin/blogs')}}" title="Go to Blog Post" class="tip-bottom"><i class="icon-tags"></i> Blogs</a> 
     </div>
-    <h1>Categories</h1>
-      @if(Session::has('error'))
+    <h1>Blogs</h1>
+     @if(Session::has('error'))
         <div class="alert alert-danger alert-block">
           <button type="button" class="close" data-dismiss="alert">x</button>
           <strong>{!!session('error')!!}</strong>
@@ -26,7 +26,7 @@
   <div class="container-fluid">
     <hr>
     <div class="pull-right">
-        <a href="{{url('/admin/subCategories/add')}}" type="button" class="btn btn-primary">Add</a>
+        <a href="{{url('/admin/blogs/add')}}" type="button" class="btn btn-primary">Add</a>
         <a type="button" class="btn btn-danger">Delete</a>
     </div>
     <div class="row-fluid">
@@ -34,18 +34,17 @@
 
         <div class="widget-box">
           <div class="widget-title"> <span class="icon"> <i class="icon-tags"></i> </span>
-            <h5>Categories</h5>
+            <h5>Blogs</h5>
           </div>
           <div class="widget-content ">
             <table class="table table-bordered table-striped with-check data-table">
               <thead>
                 <tr>
                   <th><input type="checkbox" id="title-table-checkbox" name="title-table-checkbox" /></th>
-                  <th>Sub Category Id</th>
-                  <th>Parent Id</th>
-                  <th>Category Name</th>
+                  <th>Title</th>
                   <th>Description</th>
                   <th>URL</th>
+                  <th>Image</th>
                   <th>Status</th>
                   <th>Created At</th>
                   <th>Updated At</th>
@@ -53,31 +52,30 @@
                 </tr>
               </thead>
               <tbody>
-                
-                    @foreach($subCategory as $subCategories)   
+                    @foreach($post as $posts)   
                     <tr>
                         <td><input type="checkbox" /></td>
-                        <td>{{$subCategories->sub_category_id}}</td>
-                        <td>{{$subCategories->category_id}}</td>
-                        <td>{{$subCategories->sub_category_name}}</td>
-                        <td>{{$subCategories->description}}</td>
-                        <td>{{$subCategories->url}}</td>
+                        <td>{{$posts->title}}</td>
+                        <td>{{$posts->description}}</td>
+                        <td>{{$posts->url}}</td>
+                        {{-- <td>{{$posts->image}}</td> --}}
+                        <td></td>
+                        
                         <td>
-                            @if($subCategories->status == 1)                              
+                            @if($posts->status == 1)                              
                               <button type="button" class="btn btn-info">Active</button>
                             @else
-                              <button type="button" class="btn btn-warning">DisActive</button>
+                              <button type="button" class="btn btn-warning">Dis active</button>
                             @endif
                         </td>
-                        <td>{{$subCategories->created_at}}</td>
-                        <td>{{$subCategories->updated_at}}</td>
+                        <td>{{$posts->created_at}}</td>
+                        <td>{{$posts->updated_at}}</td>
                         <td>
-                          <a href="/admin/subCategories/edit/{{$subCategories->sub_category_id}}" type="button" class="btn btn-primary">Edit</a>
-                          <a href="/admin/subCategories/delete/{{$subCategories->sub_category_id}}" type="button" class="btn btn-danger  delete">Delete</a>
+                          <a href="{{url('/admin/blogs/edit/'.$posts->id)}}" type="button" class="btn btn-primary">Edit</a>
+                          <a href="{{url('/admin/blogs/delete/'.$posts->id)}}" type="button" class="btn btn-danger delete">Delete</a>
                         </td>
                     </tr>
                     @endforeach
-              
                   
               </tbody>
             </table>
