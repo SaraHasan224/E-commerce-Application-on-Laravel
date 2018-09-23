@@ -1,5 +1,4 @@
-
-@extends('layouts.adminLayout.admin_header')
+@extends('BackEnd.include.header')
 @section('content')
 <!--main-container-part-->
 <div id="content">
@@ -24,6 +23,17 @@
                 <input type="text" class="span11" name="categoryName" id="categoryName" placeholder="Enter category name" />
               </div>
             </div>
+            {{-- <div class="control-group">
+              <label class="control-label">Main Category :</label>
+              <div class="controls">
+                 <select class="form-control" id="id" name="id">
+                  <option value="0"  id="id" name="id">Main Category</option>
+                  @foreach ($collection as $item)
+                     <option value="{{$item->category_id}}" id="id" name="id">{{ $item->category_name}}</option>
+                  @endforeach
+                </select>
+              </div>
+            </div> --}}
             <div class="control-group">
               <label class="control-label">URL :</label>
               <div class="controls">

@@ -1,5 +1,4 @@
-
-@extends('layouts.adminLayout.admin_header')
+@extends('BackEnd.include.header')
 @section('content')
 <!--main-container-part-->
 <div id="content">

@@ -10,9 +10,9 @@ class CategoryController extends Controller
 {
     public function categories(Request $request)
     {
-        $category = Category::get();
+        $category = Category::where(['sub_category_id'=> 0])->get();
+        
         $category = json_decode(json_encode($category));
-//      return view('BackEnd.categories.categories') -> with('categories',$category);
         return view('BackEnd.categories.categories')->with(compact('category'));
     }
     public function add(Request $request)
@@ -20,16 +20,18 @@ class CategoryController extends Controller
         if($request->isMethod('post'))
         {
             $data = $request->all();
-//          echo '<pre>'; print_r($data);die;
+       // echo '<pre>'; print_r($data);die;
             $category = new Category();
             $category -> category_name = $data['categoryName'];
+           // $category ->  sub_category_id = $data['id'];
             $category -> description = $data['description'];
             $category -> url = $data['url'];
             $category->remember_token = str_random(50);
             $category -> save();
             return redirect('/admin/categories')->with('success','Category added successfully!');
         }        
-        return view('BackEnd.categories.add_categories');
+        $collection = Category::where(['sub_category_id'=>0])->get();
+        return view('BackEnd.categories.add_categories')->with(compact('collection'));
     
     }
     public function delete(Request $request, $id = null)

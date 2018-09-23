@@ -1,5 +1,4 @@
-
-@extends('layouts.adminLayout.admin_header')
+@extends('BackEnd.include.header')
 @section('content')
 <!--main-container-part-->
 <div id="content">
@@ -17,23 +16,33 @@
           <h5>Edit Sub Categories</h5>
         </div>
         <div class="widget-content nopadding">
-          <form action="{{url('/admin/subCategories/edit/'.$sub_category->sub_category_id)}}" name="category_validate" id="category_validate" method="post" class="form-horizontal">{{csrf_field()}}
+          <form action="{{url('/admin/subCategories/edit/'.$sub_category->category_id)}}" name="category_validate" id="category_validate" method="post" class="form-horizontal">{{csrf_field()}}
             <div class="control-group">
               <label class="control-label">Category Name :</label>
               <div class="controls">
-                <input type="text" name="subCatName" class="span11" value="{{$sub_category->sub_category_name}}" />
+                <input type="text" name="subCatName" id="subCatName" class="span11" value="{{$sub_category->category_name}}" />
               </div>
             </div>
-            <div class="control-group">
-              <label class="control-label">CParent Id :</label>
+             <div class="control-group">
+              <label class="control-label">Main Category :</label>
               <div class="controls">
-                <input type="text" name="parentId" class="span11" value="{{$sub_category->category_id}}" />
+                 <select class="form-control" id="parentId" name="parentId">
+                   @foreach ($categoryName as $item)
+                   <option value="{{$item->category_id}}">{{ $item->category_name}}</option>
+                  @endforeach
+                </select>
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">URL :</label>
               <div class="controls">
-                <input type="text" name="url" class="span11" value="{{$sub_category->url}}" />
+                <input type="text" name="url" id="url" class="span11" value="{{$sub_category->url}}" />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Description</label>
+              <div class="controls">
+                <textarea class="span11" id="description" name="description" >{{$sub_category->description}}</textarea>
               </div>
             </div>
             <div class="control-group">
@@ -47,12 +56,6 @@
                     <button type="button" class="btn btn-warning">Disable</button>
                   </option>
                 </select>
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label">Description</label>
-              <div class="controls">
-                <textarea class="span11" name="description" >{{$sub_category->description}}</textarea>
               </div>
             </div>
             <div class="form-actions pull-right">

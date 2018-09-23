@@ -1,5 +1,4 @@
-
-@extends('layouts.adminLayout.admin_header')
+@extends('BackEnd.include.header')
 @section('content')
 <!--main-container-part-->
 <div id="content">
@@ -41,16 +40,13 @@
               <thead>
                 <tr>
                   <th><input type="checkbox" id="title-table-checkbox" name="title-table-checkbox" /></th>
+                  <th>Product Code</th>
                   <th>Product Name</th>
-                  <th>Description</th>
                   <th>Parent Category</th>
-                  <th>Child Category</th>
+                  <th>Parent Color</th>
+                  <th>Parent Size</th>
                   <th>Product Image</th>
-                  <th>URL</th>
-                  <th>Status</th>
-                  <th>Created At</th>
-                  <th>Updated At</th>
-                  <th></th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -58,27 +54,76 @@
            
                     <tr>
                         <td><input type="checkbox" /></td>
+                        <td>{{$product->product_code}}</td>
                         <td>{{$product->name}}</td>
-                        <td>{{$product->description}}</td>
-                        <td>{{$product->category->category_name}}</td>
-                        <td>{{$product->subcategory->sub_category_name}}</td>     
-                        <td>{{$product->image}}</td>
-                        <td>{{$product->url}}</td>
-                        <td>
+                        <td> 
+                                @foreach($categoryName as $name)
+                                    @if($product->category_id == $name->category_id)
+                                    {{$name->category_name}} 
+                                    @endif
+                                @endforeach                          
+                      </td>   
+                        <td>{{$product->Color}}</td>
+                        <td>{{$product->Size}}</td>
+                      <td>
+                        @if($product->image == "NoImageFound.jpg")
+                          <img src="{{asset('/images/backend_images/products/'.$product->image)}}" style="width:75px; height:75px;" />
+                        @else
+                          <img src="{{asset('/images/backend_images/products/small/'.$product->image)}}" style="width:75px; height:75px;" />
+                        @endif
+                      </td>
+                        {{-- <td>{{$product->url}}</td> --}}
+                        {{-- <td>
                             @if($product->status == 1)                              
                               <button type="button" class="btn btn-info">Active</button>
                             @else
                               <button type="button" class="btn btn-warning">Dis active</button>
                             @endif
-                        </td>
-                        <td>{{$product->created_at}}</td>
-                        <td>{{$product->updated_at}}</td>
+                        </td> --}}
+                       
                         <td>
+                        
+                          <a href="#myModal{{$product->product_id}}" data-toggle="modal" class="btn btn-success">View</a>
                           <a href="{{url('/admin/products/edit/'.$product->product_id)}}" type="button" class="btn btn-primary">Edit</a>
-                          <a href="{{url('/admin/products/delete/'.$product->product_id)}}" type="button" class="btn btn-danger delete">Delete</a>
-                        </td>
+                         
+                          <a href="{{url('admin/products/attribute/'.$product->product_id)}}" type="button" class="btn btn-primary">Add Attributes</a>
+                          
+                          {{-- <a href="{{url('/admin/products/delete/'.$product->product_id)}}" type="button" class="btn btn-danger delete">Delete</a> --}}
+                          <a rel="{{$product->product_id}}" rell="delete" href="JavaScript:void(0)" type="button" class="btn btn-danger deleteRecord">Delete</a>
+                      
                     </tr>
-                   
+                     <div id="myModal{{$product->product_id}}" class="modal hide">
+                      <div class="modal-header">
+                        <button data-dismiss="modal" class="close" type="button">×</button>
+                        <h3>Product Detail</h3>
+                      </div>
+                      <div class="modal-body">
+                          <p align="center">
+                              <img src="{{asset('/images/backend_images/products/small/'.$product->image)}}"/>
+                          </p>
+                          <p><b>Product Code:</b> {{$product->product_code}}</p>
+                        <p><b>Product Name:</b>  {{$product->name}}</p>
+                        @foreach($categoryName as $Catparent)
+                          @if($product->category_id == $Catparent->category_name)
+                            <b><p>Category Name:</b> {{$Catparent->category_name}}</p>
+                          @endif
+                        @endforeach
+                        <p><b>URL:</b> {{$product->url}}</p>
+                        <p><b>Description:</b> {{$product->description}}</p>      
+                        <p><b>Price:</b> {{$product->Price}}</p>
+                        <p><b>Quantity:</b> {{$product->Quantity}}</p>
+                        <p><b>Color:</b> {{$product->Color}}</p>
+                        <p><b>Status:</b>
+                          @if($product->status == 1)                              
+                               <strong style="color:green">Active</strong>
+                             @else
+                               <strong style="color:red">Disactive</strong>
+                             @endif
+                         </p>
+                        <p><b>Created At:</b> {{$product->created_at}}</p>
+                        <p><b>Updated At:</b> {{$product->updated_at}}</p>
+                      </div>
+                    </div>
                  @endforeach
               </tbody>
             </table>
@@ -90,6 +135,9 @@
   </div>
 </div>
 <!--end-main-container-part-->
+
+
+           
 @endsection
 
 

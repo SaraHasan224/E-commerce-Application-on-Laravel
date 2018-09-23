@@ -1,5 +1,4 @@
-
-@extends('layouts.adminLayout.admin_header')
+@extends('BackEnd.include.header')
 @section('content')
 <!--main-container-part-->
 <div id="content">
@@ -17,17 +16,22 @@
           <h5>Add Sub Categories</h5>
         </div>
         <div class="widget-content nopadding">
-          <form action="{{url('/admin/subCategories/add')}}" method="post" name="subCategory_validate" id="subCategory_validate" class="form-horizontal">{{csrf_field()}}
+          <form action="{{ url('/admin/subCategories/add') }}" method="post" class="form-horizontal" id="category_validate" name="category_validate">{{csrf_field()}}
             <div class="control-group">
-              <label class="control-label">Category Name :</label>
+              <label class="control-label">Sub Category Name :</label>
               <div class="controls">
-                <input type="text" class="span11" name="subCategoryName" id="subCategoryName" placeholder="Enter category name" />
+                <input type="text" class="span11" name="subCategoryName" id="subCategoryName" placeholder="Enter sub category name" />
               </div>
             </div>
             <div class="control-group">
-              <label class="control-label">Category Id :</label>
+              <label class="control-label">Main Category :</label>
               <div class="controls">
-                <input type="text" class="span11" name="CategoryId" id="CategoryId" placeholder="Enter category name" />
+                 <select class="form-control" id="parentId" name="parentId">
+                  <option value="0">Main Category</option>
+                  @foreach ($collection as $item)
+                     <option value="{{$item->category_id}}">{{ $item->category_name}}</option>
+                  @endforeach
+                </select>
               </div>
             </div>
             <div class="control-group">

@@ -1,5 +1,4 @@
-
-@extends('layouts.adminLayout.admin_header')
+@extends('BackEnd.include.header')
 @section('content')
 <!--main-container-part-->
 <div id="content">
@@ -17,7 +16,13 @@
           <h5>Edit Products</h5>
         </div>
         <div class="widget-content nopadding">
-          <form action="{{url('/admin/products/edit/'.$product->product_id)}}" name="category_validate" id="category_validate" method="post" class="form-horizontal">{{csrf_field()}}
+          <form enctype="multipart/form-data" action="{{url('/admin/products/edit/'.$product->product_id)}}" name="category_validate" id="category_validate" method="post" class="form-horizontal">{{csrf_field()}}
+            <div class="control-group">
+                <label class="control-label">Product Code :</label>
+                <div class="controls">
+                  <input type="text" name="code" id="code" class="span11" value="{{$product->product_code}}" />
+                </div>
+              </div>
             <div class="control-group">
               <label class="control-label">Product Name :</label>
               <div class="controls">
@@ -25,38 +30,35 @@
               </div>
             </div>
             <div class="control-group">
-              <label class="control-label">Description</label>
+              <label class="control-label">Category Name :</label>
               <div class="controls">
-                <textarea class="span11" name="description" >{{$product->description}}</textarea>
-              </div>
-            </div>
-             <div class="control-group">
-              <label class="control-label">Parent Category</label>
-              <div class="controls">
-                <select class="form-control" id="pCategory" name="pCategory" value="{{$product->category_id}}">
-              {{-- <option value="{{$product->category_id}}">{{$product->category->category_name}}</option>       --}}
-                
-                  <option value="{{$product->category_id}}">{{$product->category->category_name}}</option>                   --}}
-                
+                 <select class="form-control" id="pCategory" name="pCategory">
+                 <?php echo $dropdown ?>
                 </select>
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label">Child Category</label>
-              <div class="controls">
-                <textarea class="span11" name="cCategory" >{{$product->sub_category_id}}</textarea>
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label">File upload input</label>
-              <div class="controls">
-                <input type="file" name="image" id="image" />
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">URL :</label>
               <div class="controls">
                 <input type="text" name="url" class="span11" value="{{$product->url}}" />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Price :</label>
+              <div class="controls">
+                <input type="text" name="price" id="price" class="span11" value="{{$product->Price}}" />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Quantity :</label>
+              <div class="controls">
+                <input type="text" name="quantity" id="quantity" class="span11" value="{{$product->Quantity}}" />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Color :</label>
+              <div class="controls">
+                <input type="text" name="color" id="color" class="span11" value="{{$product->Color}}" />
               </div>
             </div>
             <div class="control-group">
@@ -79,6 +81,22 @@
                   </option>
                   @endif
                 </select>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Description</label>
+              <div class="controls">
+                <textarea class="span11" name="description" >{{$product->description}}</textarea>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Product Image</label>
+              <div class="controls">
+                <input type="file" name="image" id="image" />
+                <input type="hidden" name="current_image" value="{{$product->image}}}" />
+                @if(!empty($product->image))
+                  <img style="width:70px;" src="{{asset('/images/backend_images/products/small/'.$product->image)}}"/> | <a href={{url('/admin/products/deleteProductImage/'.$product->product_id)}}>Delete</a>
+                @endif
               </div>
             </div>
             <div class="form-actions pull-right">

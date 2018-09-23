@@ -1,5 +1,4 @@
-
-@extends('layouts.adminLayout.admin_header')
+@extends('BackEnd.include.header')
 @section('content')
 <!--main-container-part-->
 <div id="content">
@@ -17,23 +16,25 @@
           <h5>Add Products</h5>
         </div>
         <div class="widget-content nopadding">
-          <form action="{{ url('/admin/products/add') }}" method="post" class="form-horizontal" id="product_validate" name="product_validate">{{csrf_field()}}
+          <form enctype="multipart/form-data" action="{{ url('/admin/products/add') }}" method="post" class="form-horizontal" id="product_validate" name="product_validate">{{csrf_field()}}
+            <div class="control-group">
+              <label class="control-label">Product Code :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="code" id="code" placeholder="Enter product code" />
+              </div>
+            </div>
             <div class="control-group">
               <label class="control-label">Product Name :</label>
               <div class="controls">
-                <input type="text" class="span11" name="productName" id="productName" placeholder="Enter Product Name" />
+                <input type="text" class="span11" name="productName" id="productName" placeholder="Enter product name" />
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Category Name :</label>
               <div class="controls">
-                <input type="text" class="span11" name="categoryName" id="categoryName" placeholder="Enter Category Name" />
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label">Sub Category Name :</label>
-              <div class="controls">
-                <input type="text" class="span11" name="subCategoryName" id="subCategoryName" placeholder="Enter sub category Name" />
+                 <select class="form-control" id="category_id" name="category_id">
+                 <?php echo $dropdown ?>
+                </select>
               </div>
             </div>
             <div class="control-group">
@@ -43,6 +44,24 @@
               </div>
             </div>
             <div class="control-group">
+              <label class="control-label">Price :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="price" id="price" placeholder="Enter price" />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Color :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="color" id="color" placeholder="Enter color" />
+              </div>
+            </div>           
+            <div class="control-group">
+              <label class="control-label">Quantity :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="quantity" id="quantity" placeholder="Enter product quantity" />
+              </div>
+            </div>              
+            <div class="control-group">
               <label class="control-label">Description :</label>
               <div class="controls">
                 <textarea class="span11" name="description" id="description"></textarea>
@@ -51,7 +70,7 @@
             <div class="control-group">
               <label class="control-label">Image :</label>
               <div class="controls">
-                <input type="file"  name="Productimage" id="Productimage"/>
+                <input type="file"  name="image" id="image"/>
               </div>
             </div>
             <div class="form-actions pull-right">
@@ -71,5 +90,3 @@
 </div></div>
 <!--end-main-container-part-->
 @endsection
-
-

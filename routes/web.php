@@ -48,13 +48,14 @@ Route::group(['middleware' => ['auth']],function()
     Route::match(['get','post'],'/admin/products/add', 'ProductsController@add');
     Route::match(['get','post'],'/admin/products/edit/{productId}', 'ProductsController@edit');
     Route::match(['get','post'],'/admin/products/delete/{productId}', 'ProductsController@delete');
-     
+    Route::match(['get','post'],'/admin/products/deleteProductImage/{productId}', 'ProductsController@deleteProductImage');   
     
-    //Routes for blogs
-    Route::match(['get','post'],'/admin/blogs', 'BlogsController@index');
-    Route::match(['get','post'],'/admin/blogs/add', 'BlogsController@add');
-    Route::match(['get','post'],'/admin/blogs/edit/{prdocutsId}', 'BlogsController@edit');
-    Route::match(['get','post'],'/admin/blogs/delete/{prdocutsId}', 'BlogsController@delete');
+    //Routes for products
+    Route::match(['get','post'],'/admin/products/attribute/{productId}', 'ProductsController@addAttribute');   
+  //  Route::match(['get','post'],'/admin/products/attribute/edit/{productId}', 'ProductsController@editAttribute');   
+    Route::match(['get','post'],'/admin/products/attribute/add/{productId}', 'ProductsController@addAttribute');   
+    Route::match(['get','post'],'/admin/products/attribute/delete/{productId}', 'ProductsController@deleteAtribute');
+
     
 
     Route::get('/logout', 'AdminController@logout');

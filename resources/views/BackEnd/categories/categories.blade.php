@@ -1,5 +1,5 @@
 
-@extends('layouts.adminLayout.admin_header')
+@extends('BackEnd.include.header')
 @section('content')
 <!--main-container-part-->
 <div id="content">
@@ -35,6 +35,7 @@
         <div class="widget-box">
           <div class="widget-title"> <span class="icon"> <i class="icon-tags"></i> </span>
             <h5>Categories</h5>
+            
           </div>
           <div class="widget-content ">
             <table class="table table-bordered table-striped with-check data-table">
@@ -68,7 +69,7 @@
                         <td>{{$categories->updated_at}}</td>
                         <td>
                           <a href="{{url('/admin/categories/edit/'.$categories->category_id)}}" type="button" class="btn btn-primary">Edit</a>
-                          <a href="{{url('/admin/categories/delete/'.$categories->category_id)}}" type="button" class="btn btn-danger delete">Delete</a>
+                           <a rel="{{$categories->category_id}}" rell="delete" href="JavaScript:void(0)" type="button" class="btn btn-danger deleteCategory">Delete</a>
                         </td>
                     </tr>
                     @endforeach

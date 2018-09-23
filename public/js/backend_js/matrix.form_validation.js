@@ -1,5 +1,32 @@
-
+   var maxField = 10; //Input fields increment limitation
+    var addButton = $('.add_button'); //Add button selector
+    var wrapper = $('.field_wrapper'); //Input field wrapper
+    var fieldHTML = '<div style="padding-top:10px" >'+   
+                        '<input type="text" class="span11" name="sku[]" id="sku[]" placeholder="Enter sku"  style="width:120px; margin-right:3px"/>'+
+                        '<input type="text" class="span11" name="size[]" id="size[]" placeholder="Enter Size"  style="width:120px; margin-right:3px"/>'+
+                        '<input type="text" class="span11" name="price[]" id="price[]" placeholder="Enter Price"  style="width:120px; margin-right:3px"/>'+
+                        '<input type="text" class="span11" name="stock[]" id="stock[]" placeholder="Enter Stock"  style="width:120px; margin-right:3px"/>'+                        
+                        '<a href="javascript:void(0)" class="btn btn-warning remove_button"><span class="icon icon-delete" aria-hidden="true"></span> Remove</a>'+
+                    '</div>'; //New input field html 
+    var x = 1; //Initial field counter is 1                                                                                          
     
+    
+    //Once add button is clicked
+    $(addButton).click(function(){
+        console.log('Hi');
+        //Check maximum number of input fields
+        if(x < maxField){ 
+            x++; //Increment field counter
+            $(wrapper).append(fieldHTML); //Add field html
+        }
+    });
+    
+    //Once remove button is clicked
+    $(wrapper).on('click', '.remove_button', function(e){
+        e.preventDefault();
+        $(this).parent('div').remove(); //Remove field html
+        x--; //Decrement field counter
+    });
     $('input[type=checkbox],input[type=radio],input[type=file]').uniform();
     
     //$('select').select2();
@@ -173,16 +200,19 @@
 
      $("#product_validate").validate({
         rules:{
-            productName:{
+            code:{
                  required: true
              },
-             categoryName:{
+             productName:{
+                  required: true
+              },
+              category_id:{
                 required: true
             },
-            subCategoryName:{
-               required: true
+            color:{
+                required: true
             },
-           file:{
+           image:{
               required: true
             },
              url:{
@@ -203,11 +233,141 @@
              $(element).parents('.control-group').addClass('success');
          }
      });
-$(".delete").click(function(){
-   if(confirm("Are you sure you want to delete?"))
-   {
-       return true;
-   }
-       return false;
 
-});
+
+     $("#add_attribute").validate({
+        rules:{
+            sku:{
+                 required: true
+             },
+            size:{
+                required: true
+              },
+            price:{
+                required: true,
+                number:true,
+               },
+            stock:{
+                required: true,
+                number:true,
+            },
+        },
+         errorClass: "help-inline",
+         errorElement: "span",
+         highlight:function(element, errorClass, validClass) {
+             $(element).parents('.control-group').addClass('error');
+         },
+         unhighlight: function(element, errorClass, validClass) {
+             $(element).parents('.control-group').removeClass('error');
+             $(element).parents('.control-group').addClass('success');
+         }
+     });
+
+
+
+$(".deleteRecord").click(function()
+{
+    var id=$(this).attr('rel');
+    var deleteFunction = $(this).attr('rell');
+    swal({
+        title: 'Are you sure?',
+        text:"You will not be able to recover this record again!",
+        type: 'warning',
+        showCancelButton: true,
+        showCloseButton: true,
+        confirmButtonColor:'#3085d6',
+        confirmButtonText: 'Yes delete it!',
+        },
+        function(){
+            window.location.href="/admin/products/"+deleteFunction+"/"+id;
+        });
+      });
+
+      $(".deleteCategory").click(function()
+      {
+          var id=$(this).attr('rel');
+          var deleteFunction = $(this).attr('rell');
+          swal({
+              title: 'Are you sure?',
+              text:"You will not be able to recover this record again!",
+              type: 'warning',
+              showCancelButton: true,
+              showCloseButton: true,
+              confirmButtonColor:'#3085d6',
+              confirmButtonText: 'Yes delete it!',
+              },
+              function(){
+                  window.location.href="/admin/categories/"+deleteFunction+"/"+id;
+              }); 
+            });
+
+            $(".deleteSubCategory").click(function()
+            {
+                var id=$(this).attr('rel');
+                var deleteFunction = $(this).attr('rell');
+                swal({
+                    title: 'Are you sure?',
+                    text:"You will not be able to recover this record again!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    showCloseButton: true,
+                    confirmButtonColor:'#3085d6',
+                    confirmButtonText: 'Yes delete it!',
+                    },
+                    function(){
+                        window.location.href="/admin/subCategories/"+deleteFunction+"/"+id;
+                    });
+                  });
+
+            $("#size").click(function(){
+                
+                var size = document.getElementById("size");
+
+                // Get the output text
+                var text = document.getElementById("Quantity");
+                // If the checkbox is checked, display the output text
+                if (size.checked == true){
+                text.style.display = "inline";
+                } else {
+                text.style.display = "none";
+                }
+            
+            });
+    
+            $(".deleteAttribute").click(function()
+            {
+                var id=$(this).attr('rel');
+                var deleteFunction = $(this).attr('rell');
+                swal({
+                    title: 'Are you sure?',
+                    text:"You will not be able to recover this record again!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    showCloseButton: true,
+                    confirmButtonColor:'#3085d6',
+                    confirmButtonText: 'Yes delete it!',
+                    },
+                    function(){
+                        window.location.href="/admin/products/"+deleteFunction+"/"+id;
+                    });
+                  });
+
+                  $(".deleteAttribute").click(function()
+                  {
+                      var id=$(this).attr('rel');
+                      var deleteFunction = $(this).attr('rell');
+                      swal({
+                          title: 'Are you sure?',
+                          text:"You will not be able to recover this attribute again!",
+                          type: 'warning',
+                          showCancelButton: true,
+                          showCloseButton: true,
+                          confirmButtonColor:'#3085d6',
+                          confirmButtonText: 'Yes delete it!',
+                          },
+                          function(){
+                              window.location.href="/admin/products/attribute/"+deleteFunction+"/"+id;
+                          });
+                        });
+                  
+                  
