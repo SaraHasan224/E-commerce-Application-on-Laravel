@@ -1,3 +1,6 @@
+
+@extends('FrontEnd.include.header')
+@section('content')
         <!-- Start page content -->
         <section id="page-content" class="page-wrapper">
             <!-- Start Shop Full Grid View -->
@@ -9,23 +12,23 @@
                                 <div id="product-img-content">
                                     <div id="my-tab-content" class="tab-content mb-30">
                                         <div class="tab-pane b-img active" id="view1">
-                                            <a class="venobox" href="images/product/product-details/1.jpg" data-gall="gallery" title=""><img src="images/product/product-details/1.jpg" alt=""></a>
+                                            <a class="venobox" href="{{asset('images/frontend_images/product/product-details/1.jpg')}}" data-gall="gallery" title=""><img src="{{asset('images/frontend_images/product/product-details/1.jpg')}}" alt=""></a>
                                         </div>
                                         <div class="tab-pane b-img" id="view2">
-                                            <a class="venobox" href="images/product/product-details/2.jpg" data-gall="gallery" title=""><img src="images/product/product-details/2.jpg" alt=""></a>
+                                            <a class="venobox" href="{{asset('images/frontend_images/product/product-details/2.jpg')}}" data-gall="gallery" title=""><img src="{{asset('images/frontend_images/product/product-details/2.jpg')}}" alt=""></a>
                                         </div>
                                         <div class="tab-pane b-img" id="view3">
-                                            <a class="venobox" href="images/product/product-details/3.jpg" data-gall="gallery" title=""><img src="images/product/product-details/3.jpg" alt=""></a>
+                                            <a class="venobox" href="{{asset('images/frontend_images/product/product-details/3.jpg')}}" data-gall="gallery" title=""><img src="{{asset('images/frontend_images/product/product-details/3.jpg')}}" alt=""></a>
                                         </div>
                                         <div class="tab-pane b-img" id="view4">
-                                            <a class="venobox" href="images/product/product-details/4.jpg" data-gall="gallery" title=""><img src="images/product/product-details/4.jpg" alt=""></a>
+                                            <a class="venobox" href="{{asset('images/frontend_images/product/product-details/4.jpg')}}" data-gall="gallery" title=""><img src="{{asset('images/frontend_images/product/product-details/4.jpg')}}" alt=""></a>
                                         </div>
                                     </div>
                                     <div id="viewproduct" class="nav nav-tabs product-view bxslider" data-tabs="tabs">
-                                        <div class="pro-view b-img active"><a href="#view1" data-toggle="tab"><img src="images/product/product-details/s-1.jpg" alt=""></a></div>
-                                        <div class="pro-view b-img"><a href="#view2" data-toggle="tab"><img src="images/product/product-details/s-2.jpg" alt=""></a></div>
-                                        <div class="pro-view b-img"><a href="#view3" data-toggle="tab"><img src="images/product/product-details/s-3.jpg" alt=""></a></div>
-                                        <div class="pro-view b-img"><a href="#view4" data-toggle="tab"><img src="images/product/product-details/s-4.jpg" alt=""></a></div>
+                                        <div class="pro-view b-img active"><a href="#view1" data-toggle="tab"><img src="{{asset('images/frontend_images/product/product-details/s-1.jpg')}}" alt=""></a></div>
+                                        <div class="pro-view b-img"><a href="#view2" data-toggle="tab"><img src="{{asset('images/frontend_images/product/product-details/s-2.jpg')}}" alt=""></a></div>
+                                        <div class="pro-view b-img"><a href="#view3" data-toggle="tab"><img src="{{asset('images/frontend_images/product/product-details/s-3.jpg')}}" alt=""></a></div>
+                                        <div class="pro-view b-img"><a href="#view4" data-toggle="tab"><img src="{{asset('images/frontend_images/product/product-details/s-4.jpg')}}" alt=""></a></div>
                                     </div>
                                 </div>
                             </div>
@@ -159,7 +162,7 @@
                                 <div class="product-img-content mb-20">
                                     <div class="product-img">
                                         <a href="product-details.html">
-                                            <img alt="" src="images/product/1.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/product/1.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="product-action text-center">
@@ -194,7 +197,7 @@
                                 <div class="product-img-content mb-20">
                                     <div class="product-img">
                                         <a href="product-details.html">
-                                            <img alt="" src="images/product/2.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/product/2.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="product-action text-center">
@@ -230,7 +233,7 @@
                                 <div class="product-img-content mb-20">
                                     <div class="product-img">
                                         <a href="product-details.html">
-                                            <img alt="" src="images/product/3.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/product/3.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="product-action text-center">
@@ -265,7 +268,7 @@
                                 <div class="product-img-content mb-20">
                                     <div class="product-img">
                                         <a href="product-details.html">
-                                            <img alt="" src="images/product/4.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/product/4.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="product-action text-center">
@@ -300,102 +303,11 @@
             </div>
             <!-- End Of Related Product Area -->
 
-            <!-- Start Brand Area -->
-            <div class="brand-area pb-90">
-                <div class="container">
-                    <div class="row">
-                        <div class="brand-list">
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/1.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/2.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/3.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/4.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/5.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/6.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                             <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/1.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/2.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/3.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Of Brand Area -->
-            <!-- Start Newsletter Area -->
-            <div class="newsletter-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="newsletter-content default-bg clearfix ptb-40">
-                            <div class="col-md-offset-2 col-md-3 col-sm-5">
-                                <div class="newsletter-title text-white text-uppercase">
-                                    <h4>NewsLetter Sign-Up</h4>
-                                </div>
-                            </div>
-                            <div class="col-md-5 col-sm-7">
-                                <div class="signup-form">
-                                    <form class="news-form" action="#">
-                                        <input type="text" placeholder="Enter your email address..." class="f-form">
-                                        <button class="submit text-uppercase">subscribe</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Of Newsletter Area -->
+                      
+@include('FrontEnd.include.brand-area')
+
+@include('FrontEnd.include.newsletter')
+
         </section>
         <!-- End page content -->        <!-- Start page content -->
         <section id="page-content" class="page-wrapper">
@@ -408,23 +320,23 @@
                                 <div id="product-img-content">
                                     <div id="my-tab-content" class="tab-content mb-30">
                                         <div class="tab-pane b-img active" id="view1">
-                                            <a class="venobox" href="images/product/product-details/1.jpg" data-gall="gallery" title=""><img src="images/product/product-details/1.jpg" alt=""></a>
+                                            <a class="venobox" href="{{asset('images/frontend_images/product/product-details/1.jpg')}}" data-gall="gallery" title=""><img src="{{asset('images/frontend_images/product/product-details/1.jpg')}}" alt=""></a>
                                         </div>
                                         <div class="tab-pane b-img" id="view2">
-                                            <a class="venobox" href="images/product/product-details/2.jpg" data-gall="gallery" title=""><img src="images/product/product-details/2.jpg" alt=""></a>
+                                            <a class="venobox" href="{{asset('images/frontend_images/product/product-details/2.jpg')}}" data-gall="gallery" title=""><img src="{{asset('images/frontend_images/product/product-details/2.jpg')}}" alt=""></a>
                                         </div>
                                         <div class="tab-pane b-img" id="view3">
-                                            <a class="venobox" href="images/product/product-details/3.jpg" data-gall="gallery" title=""><img src="images/product/product-details/3.jpg" alt=""></a>
+                                            <a class="venobox" href="{{asset('images/frontend_images/product/product-details/3.jpg')}}" data-gall="gallery" title=""><img src="{{asset('images/frontend_images/product/product-details/3.jpg')}}" alt=""></a>
                                         </div>
                                         <div class="tab-pane b-img" id="view4">
-                                            <a class="venobox" href="images/product/product-details/4.jpg" data-gall="gallery" title=""><img src="images/product/product-details/4.jpg" alt=""></a>
+                                            <a class="venobox" href="{{asset('images/frontend_images/product/product-details/4.jpg')}}" data-gall="gallery" title=""><img src="{{asset('images/frontend_images/product/product-details/4.jpg')}}" alt=""></a>
                                         </div>
                                     </div>
                                     <div id="viewproduct" class="nav nav-tabs product-view bxslider" data-tabs="tabs">
-                                        <div class="pro-view b-img active"><a href="#view1" data-toggle="tab"><img src="images/product/product-details/s-1.jpg" alt=""></a></div>
-                                        <div class="pro-view b-img"><a href="#view2" data-toggle="tab"><img src="images/product/product-details/s-2.jpg" alt=""></a></div>
-                                        <div class="pro-view b-img"><a href="#view3" data-toggle="tab"><img src="images/product/product-details/s-3.jpg" alt=""></a></div>
-                                        <div class="pro-view b-img"><a href="#view4" data-toggle="tab"><img src="images/product/product-details/s-4.jpg" alt=""></a></div>
+                                        <div class="pro-view b-img active"><a href="#view1" data-toggle="tab"><img src="{{asset('images/frontend_images/product/product-details/s-1.jpg')}}" alt=""></a></div>
+                                        <div class="pro-view b-img"><a href="#view2" data-toggle="tab"><img src="{{asset('images/frontend_images/product/product-details/s-2.jpg')}}" alt=""></a></div>
+                                        <div class="pro-view b-img"><a href="#view3" data-toggle="tab"><img src="{{asset('images/frontend_images/product/product-details/s-3.jpg')}}" alt=""></a></div>
+                                        <div class="pro-view b-img"><a href="#view4" data-toggle="tab"><img src="{{asset('images/frontend_images/product/product-details/s-4.jpg')}}" alt=""></a></div>
                                     </div>
                                 </div>
                             </div>
@@ -558,7 +470,7 @@
                                 <div class="product-img-content mb-20">
                                     <div class="product-img">
                                         <a href="product-details.html">
-                                            <img alt="" src="images/product/1.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/product/1.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="product-action text-center">
@@ -593,7 +505,7 @@
                                 <div class="product-img-content mb-20">
                                     <div class="product-img">
                                         <a href="product-details.html">
-                                            <img alt="" src="images/product/2.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/product/2.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="product-action text-center">
@@ -629,7 +541,7 @@
                                 <div class="product-img-content mb-20">
                                     <div class="product-img">
                                         <a href="product-details.html">
-                                            <img alt="" src="images/product/3.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/product/3.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="product-action text-center">
@@ -664,7 +576,7 @@
                                 <div class="product-img-content mb-20">
                                     <div class="product-img">
                                         <a href="product-details.html">
-                                            <img alt="" src="images/product/4.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/product/4.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="product-action text-center">
@@ -707,63 +619,63 @@
                             <div class="col-md-12">
                                 <div class="single-brand text-center">
                                     <a href="#">
-                                        <img src="images/brand/1.png" alt="">
+                                        <img src="{{asset('images/frontend_images/brand/1.png')}}" alt="">
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="single-brand text-center">
                                     <a href="#">
-                                        <img src="images/brand/2.png" alt="">
+                                        <img src="{{asset('images/frontend_images/brand/2.png')}}" alt="">
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="single-brand text-center">
                                     <a href="#">
-                                        <img src="images/brand/3.png" alt="">
+                                        <img src="{{asset('images/frontend_images/brand/3.png')}}" alt="">
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="single-brand text-center">
                                     <a href="#">
-                                        <img src="images/brand/4.png" alt="">
+                                        <img src="{{asset('images/frontend_images/brand/4.png')}}" alt="">
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="single-brand text-center">
                                     <a href="#">
-                                        <img src="images/brand/5.png" alt="">
+                                        <img src="{{asset('images/frontend_images/brand/5.png')}}" alt="">
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="single-brand text-center">
                                     <a href="#">
-                                        <img src="images/brand/6.png" alt="">
+                                        <img src="{{asset('images/frontend_images/brand/6.png')}}" alt="">
                                     </a>
                                 </div>
                             </div>
                              <div class="col-md-12">
                                 <div class="single-brand text-center">
                                     <a href="#">
-                                        <img src="images/brand/1.png" alt="">
+                                        <img src="{{asset('images/frontend_images/brand/1.png')}}" alt="">
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="single-brand text-center">
                                     <a href="#">
-                                        <img src="images/brand/2.png" alt="">
+                                        <img src="{{asset('images/frontend_images/brand/2.png')}}" alt="">
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="single-brand text-center">
                                     <a href="#">
-                                        <img src="images/brand/3.png" alt="">
+                                        <img src="{{asset('images/frontend_images/brand/3.png')}}" alt="">
                                     </a>
                                 </div>
                             </div>

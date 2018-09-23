@@ -609,19 +609,19 @@ jQuery(document).ready(function($) {
             $('.style-customizer .styleChange li[data-style="'+tp_stylesheet+'"]').addClass("selected");
         } else {
             if (link.length>0) {
-                link.attr('href','css/color/' + tp_stylesheet + '.css');
+                link.attr('href','css/frontend_css/color/' + tp_stylesheet + '.css');
                 $('.style-customizer .styleChange li[data-style="'+tp_stylesheet+'"]').addClass("selected");
                 if ($(".swicher-title-page-dark").length>0) {
-                    document.getElementById("logo_img").src="images/customizer/logo/logo_dark_swicher-title_" + tp_stylesheet + ".png";
+                    document.getElementById("logo_img").src="images/frontend_images/customizer/logo/logo_dark_swicher-title_" + tp_stylesheet + ".png";
                 } else {
                 if ($("#logo_img").length>0) {
-                    document.getElementById("logo_img").src="images/customizer/logo/logo_" + tp_stylesheet + ".png";
+                    document.getElementById("logo_img").src="images/frontend_images/customizer/logo/logo_" + tp_stylesheet + ".png";
                 };
                 if ($("#logo_dark_img").length>0) {
-                    document.getElementById("logo_dark_img").src="images/customizer/logo/dark/logo_" + tp_stylesheet + ".png";
+                    document.getElementById("logo_dark_img").src="images/frontend_images/customizer/logo/dark/logo_" + tp_stylesheet + ".png";
                 };
                 if ($("#logo-footer").length>0) {
-                    document.getElementById("logo-footer").src="images/customizer/logo/logo_" + tp_stylesheet + ".png";
+                    document.getElementById("logo-footer").src="images/frontend_images/customizer/logo/logo_" + tp_stylesheet + ".png";
                 };
                 };
             };
@@ -673,18 +673,18 @@ jQuery(document).ready(function($) {
             tp_stylesheet = $this.data('style');
             $(".style-customizer .styleChange .selected").removeClass("selected");
             $this.addClass("selected");
-            link.attr('href', 'css/color/' + tp_stylesheet + '.css');
+            link.attr('href', 'css/frontend_css/color/' + tp_stylesheet + '.css');
             if ($(".swicher-title-page-dark").length>0) {
-                document.getElementById("logo_img").src="images/customizer/logo/logo_dark_swicher-title_" + tp_stylesheet + ".png";
+                document.getElementById("logo_img").src="images/frontend_images/customizer/logo/logo_dark_swicher-title_" + tp_stylesheet + ".png";
             } else {
                 if ($("#logo_img").length>0) {
-                    document.getElementById("logo_img").src="images/customizer/logo/logo_" + tp_stylesheet + ".png";
+                    document.getElementById("logo_img").src="images/frontend_images/customizer/logo/logo_" + tp_stylesheet + ".png";
                 };
                 if ($("#logo_dark_img").length>0) {
-                    document.getElementById("logo_dark_img").src="images/customizer/logo/dark/logo_" + tp_stylesheet + ".png";
+                    document.getElementById("logo_dark_img").src="images/frontend_images/customizer/logo/dark/logo_" + tp_stylesheet + ".png";
                 };
                 if ($("#logo-footer").length>0) {
-                    document.getElementById("logo-footer").src="images/customizer/logo/logo_" + tp_stylesheet + ".png";
+                    document.getElementById("logo-footer").src="images/frontend_images/customizer/logo/logo_" + tp_stylesheet + ".png";
                 };
             };
             $.cookie('tp_stylesheet', tp_stylesheet, 30);
@@ -693,18 +693,18 @@ jQuery(document).ready(function($) {
             tp_stylesheet_no_cookie = $this.data('style');
             $(".style-customizer .styleChange .selected").removeClass("selected");
             $this.addClass("selected");
-            link_no_cookie.attr('href', 'css/color/' + tp_stylesheet_no_cookie + '.css');
+            link_no_cookie.attr('href', 'css/frontend_css/color/' + tp_stylesheet_no_cookie + '.css');
             if ($(".swicher-title-page-dark").length>0) {
-                document.getElementById("logo_img").src="images/customizer/logo/logo_dark_swicher-title_" + tp_stylesheet_no_cookie + ".png";
+                document.getElementById("logo_img").src="images/frontend_images/customizer/logo/logo_dark_swicher-title_" + tp_stylesheet_no_cookie + ".png";
             } else {
                 if ($("#logo_img").length>0) {
-                    document.getElementById("logo_img").src="images/customizer/logo/logo_" + tp_stylesheet_no_cookie + ".png";
+                    document.getElementById("logo_img").src="images/frontend_images/customizer/logo/logo_" + tp_stylesheet_no_cookie + ".png";
                 };
                 if ($("#logo_dark_img").length>0) {
-                    document.getElementById("logo_dark_img").src="images/customizer/logo/dark/logo_" + tp_stylesheet_no_cookie + ".png";
+                    document.getElementById("logo_dark_img").src="images/frontend_images/customizer/logo/dark/logo_" + tp_stylesheet_no_cookie + ".png";
                 };
                 if ($("#logo-footer").length>0) {
-                    document.getElementById("logo-footer").src="images/customizer/logo/logo_" + tp_stylesheet_no_cookie + ".png";
+                    document.getElementById("logo-footer").src="images/frontend_images/customizer/logo/logo_" + tp_stylesheet_no_cookie + ".png";
                 };
             };
         };
@@ -794,15 +794,15 @@ jQuery(document).ready(function($) {
         var tp_stylesheet = 'skin-default';
         $('.style-customizer .styleChange li.selected').removeClass("selected");
         $('.style-customizer .styleChange li[data-style="'+tp_stylesheet+'"]').addClass("selected");
-        link.attr('href', 'css/color/' + tp_stylesheet + '.css');
+        link.attr('href', 'css/frontend_css/color/' + tp_stylesheet + '.css');
         if ($("#logo_img").length>0) {
-            document.getElementById("logo_img").src="images/customizer/logo/logo_" + tp_stylesheet + ".png";
+            document.getElementById("logo_img").src="images/frontend_images/customizer/logo/logo_" + tp_stylesheet + ".png";
         };
         if ($("#logo_dark_img").length>0) {
-            document.getElementById("logo_dark_img").src="images/customizer/logo/dark/logo_" + tp_stylesheet + ".png";
+            document.getElementById("logo_dark_img").src="images/frontend_images/customizer/logo/dark/logo_" + tp_stylesheet + ".png";
         };
         if ($("#logo-footer").length>0) {
-            document.getElementById("logo-footer").src="images/customizer/logo/logo_" + tp_stylesheet + ".png";
+            document.getElementById("logo-footer").src="images/frontend_images/customizer/logo/logo_" + tp_stylesheet + ".png";
         };
         $(window).trigger('resize');
         $('.desktopTopFixed').removeClass('desktopTopFixed');

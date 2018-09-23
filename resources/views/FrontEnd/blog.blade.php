@@ -1,3 +1,6 @@
+
+@extends('FrontEnd.include.header')
+@section('content')
         <!-- Start page content -->
         <section id="page-content" class="page-wrapper">
             <!-- Start Blog Page Two Area -->
@@ -12,7 +15,7 @@
                                             <div class="col-xs-12">
                                                 <div class="blog-image">
                                                     <a href="blog-details.html">
-                                                        <img src="images/blog/blog-2/1.jpg" alt="">
+                                                        <img src="{{asset('images/frontend_images/blog/blog-2/1.jpg')}}" alt="">
                                                     </a>
                                                 </div>
                                             </div>
@@ -36,7 +39,7 @@
                                             <div class="col-xs-12">
                                                 <div class="blog-image">
                                                     <a href="blog-details.html">
-                                                        <img src="images/blog/blog-2/2.jpg" alt="">
+                                                        <img src="{{asset('images/frontend_images/blog/blog-2/2.jpg')}}" alt="">
                                                     </a>
                                                 </div>
                                             </div>
@@ -60,7 +63,7 @@
                                             <div class="col-xs-12">
                                                 <div class="blog-image">
                                                     <a href="blog-details.html">
-                                                        <img src="images/blog/blog-2/3.jpg" alt="">
+                                                        <img src="{{asset('images/frontend_images/blog/blog-2/3.jpg')}}" alt="">
                                                     </a>
                                                 </div>
                                             </div>
@@ -84,7 +87,7 @@
                                             <div class="col-xs-12">
                                                 <div class="blog-image">
                                                     <a href="blog-details.html">
-                                                        <img src="images/blog/blog-2/4.jpg" alt="">
+                                                        <img src="{{asset('images/frontend_images/blog/blog-2/4.jpg')}}" alt="">
                                                     </a>
                                                 </div>
                                             </div>
@@ -108,7 +111,7 @@
                                             <div class="col-xs-12">
                                                 <div class="blog-image">
                                                     <a href="blog-details.html">
-                                                        <img src="images/blog/blog-2/1.jpg" alt="">
+                                                        <img src="{{asset('images/frontend_images/blog/blog-2/1.jpg')}}" alt="">
                                                     </a>
                                                 </div>
                                             </div>
@@ -132,7 +135,7 @@
                                             <div class="col-xs-12">
                                                 <div class="blog-image">
                                                     <a href="blog-details.html">
-                                                        <img src="images/blog/blog-2/2.jpg" alt="">
+                                                        <img src="{{asset('images/frontend_images/blog/blog-2/2.jpg')}}" alt="">
                                                     </a>
                                                 </div>
                                             </div>
@@ -176,7 +179,7 @@
                                         <li>
                                             <div class="post-thumb b-img">
                                                 <a href="blog-details.html">
-                                                    <img src="images/product/product-details/s-1.jpg" alt="">
+                                                    <img src="{{asset('images/frontend_images/product/product-details/s-1.jpg')}}" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
@@ -187,7 +190,7 @@
                                         <li>
                                             <div class="post-thumb b-img">
                                                 <a href="blog-details.html">
-                                                    <img src="images/product/product-details/s-2.jpg" alt="">
+                                                    <img src="{{asset('images/frontend_images/product/product-details/s-2.jpg')}}" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
@@ -198,7 +201,7 @@
                                         <li>
                                             <div class="post-thumb b-img">
                                                 <a href="blog-details.html">
-                                                    <img src="images/product/product-details/s-3.jpg" alt="">
+                                                    <img src="{{asset('images/frontend_images/product/product-details/s-3.jpg')}}" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
@@ -243,7 +246,7 @@
                                 <div class="single-blog">
                                     <div class="blog-image">
                                         <a href="#">
-                                            <img alt="" src="images/blog/1.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/blog/1.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="blog-content pb-20 text-center">
@@ -294,7 +297,7 @@
                                 <div class="single-blog">
                                     <div class="blog-image">
                                         <a href="#">
-                                            <img alt="" src="images/blog/2.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/blog/2.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="blog-content pb-20 text-center">
@@ -345,7 +348,7 @@
                                 <div class="single-blog rm-0">
                                     <div class="blog-image">
                                         <a href="#">
-                                            <img alt="" src="images/blog/3.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/blog/3.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="blog-content pb-20 text-center">
@@ -398,7 +401,7 @@
                                 <div class="single-blog">
                                     <div class="blog-image">
                                         <a href="#">
-                                            <img alt="" src="images/blog/4.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/blog/4.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="blog-content pb-20 text-center">
@@ -449,7 +452,7 @@
                                 <div class="single-blog">
                                     <div class="blog-image">
                                         <a href="#">
-                                            <img alt="" src="images/blog/5.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/blog/5.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="blog-content pb-20 text-center">
@@ -500,7 +503,7 @@
                                 <div class="single-blog rm-0">
                                     <div class="blog-image">
                                         <a href="#">
-                                            <img alt="" src="images/blog/6.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/blog/6.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="blog-content pb-20 text-center">
@@ -553,7 +556,7 @@
                                 <div class="single-blog">
                                     <div class="blog-image">
                                         <a href="#">
-                                            <img alt="" src="images/blog/1.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/blog/1.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="blog-content pb-20 text-center">
@@ -604,7 +607,7 @@
                                 <div class="single-blog">
                                     <div class="blog-image">
                                         <a href="#">
-                                            <img alt="" src="images/blog/2.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/blog/2.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="blog-content pb-20 text-center">
@@ -655,7 +658,7 @@
                                 <div class="single-blog rm-0">
                                     <div class="blog-image">
                                         <a href="#">
-                                            <img alt="" src="images/blog/3.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/blog/3.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="blog-content pb-20 text-center">
@@ -708,100 +711,10 @@
             </div>
             <!-- End Blog Page Area -->
             <!-- Start Brand Two Area -->
-            <div class="brand-area pb-90">
-                <div class="container">
-                    <div class="row">
-                        <div class="brand-list">
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/1.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/2.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/3.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/4.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/5.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/6.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                             <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/1.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/2.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/3.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Of Brand Area -->
-            <!-- Start Newsletter Area -->
-            <div class="newsletter-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="newsletter-content default-bg clearfix ptb-40">
-                            <div class="col-md-offset-2 col-md-3 col-sm-5">
-                                <div class="newsletter-title text-white text-uppercase">
-                                    <h4>NewsLetter Sign-Up</h4>
-                                </div>
-                            </div>
-                            <div class="col-md-5 col-sm-7">
-                                <div class="signup-form">
-                                    <form class="news-form" action="#">
-                                        <input type="text" placeholder="Enter your email address..." class="f-form">
-                                        <button class="submit text-uppercase">subscribe</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Of Newsletter Area -->
+          
+            @include('FrontEnd.include.brand-area')
+
+            @include('FrontEnd.include.newsletter')
+            
         </section>
         <!-- End page content -->

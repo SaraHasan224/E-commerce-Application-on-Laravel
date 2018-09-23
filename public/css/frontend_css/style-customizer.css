@@ -252,28 +252,28 @@ div.style-customizer .skin-amber {
 /*Background Patterns*/
 
 .pattern-1 {
-    background-image: url("../images/customizer/pattern/1.png");
+    background-image: url("../../images/frontend_images/customizer/pattern/1.png");
 }
 .pattern-2 {
-    background-image: url("../images/customizer/pattern/2.png");
+    background-image: url("../../images/frontend_images/customizer/pattern/2.png");
 }
 .pattern-3 {
-  background-image: url("../images/customizer/pattern/3.png");
+  background-image: url("../../images/frontend_images/customizer/pattern/3.png");
 }
 .pattern-4 {
-  background-image: url("../images/customizer/pattern/4.png");
+  background-image: url("../../images/frontend_images/customizer/pattern/4.png");
 }
 .pattern-5 {
-  background-image: url("../images/customizer/pattern/5.png");
+  background-image: url("../../images/frontend_images/customizer/pattern/5.png");
 }
 .pattern-6 {
-  background-image: url("../images/customizer/pattern/6.png");
+  background-image: url("../../images/frontend_images/customizer/pattern/6.png");
 }
 .pattern-7 {
-  background-image: url("../images/customizer/pattern/7.png");
+  background-image: url("../../images/frontend_images/customizer/pattern/7.png");
 }
 .pattern-8 {
-  background-image: url("../images/customizer/pattern/8.png");
+  background-image: url("../../images/frontend_images/customizer/pattern/8.png");
 }
 
 
@@ -290,31 +290,31 @@ div.style-customizer .skin-amber {
 }
 .main-bg-1, .main-bg-2, .main-bg-3, .main-bg-4, .main-bg-5, .main-bg-6, .main-bg-7, .main-bg-8 {
   background-attachment: fixed;
-  background-image: url("../images/customizer/bodybg/01.jpg");
+  background-image: url("../../images/frontend_images/customizer/bodybg/01.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
 .main-bg-2 {
-  background-image: url("../images/customizer/bodybg/02.jpg");
+  background-image: url("../../images/frontend_images/customizer/bodybg/02.jpg");
 }
 .main-bg-3 {
-  background-image: url("../images/customizer/bodybg/03.jpg");
+  background-image: url("../../images/frontend_images/customizer/bodybg/03.jpg");
 }
 .main-bg-4 {
-  background-image: url("../images/customizer/bodybg/04.jpg");
+  background-image: url("../../images/frontend_images/customizer/bodybg/04.jpg");
 }
 .main-bg-5 {
-  background-image: url("../images/customizer/bodybg/05.jpg");
+  background-image: url("../../images/frontend_images/customizer/bodybg/05.jpg");
 }
 .main-bg-6 {
-  background-image: url("../images/customizer/bodybg/06.jpg");
+  background-image: url("../../images/frontend_images/customizer/bodybg/06.jpg");
 }
 .main-bg-7 {
-  background-image: url("../images/customizer/bodybg/07.jpg");
+  background-image: url("../../images/frontend_images/customizer/bodybg/07.jpg");
 }
 .main-bg-8 {
-  background-image: url("../images/customizer/bodybg/08.jpg");
+  background-image: url("../../images/frontend_images/customizer/bodybg/08.jpg");
 }
 
 

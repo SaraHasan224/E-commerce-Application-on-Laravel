@@ -1,3 +1,6 @@
+
+@extends('FrontEnd.include.header')
+@section('content')
 <!-- Start page content -->
 <section id="page-content" class="page-wrapper">
     <!-- Start video Area -->
@@ -66,3 +69,8 @@
 </div>              
     <!-- End Of Video Area -->
 </section>
+
+
+@include('FrontEnd.include.brand-area')
+
+@include('FrontEnd.include.newsletter')

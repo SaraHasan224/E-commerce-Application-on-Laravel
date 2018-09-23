@@ -1,3 +1,6 @@
+
+@extends('FrontEnd.include.header')
+@section('content')
         <!-- Start page content -->
         <section id="page-content" class="page-wrapper">
             <!-- Start Blog Page Area -->
@@ -8,7 +11,7 @@
                             <div class="single-blog fix">
                                 <div class="post-thumbnail mb-50 b-img">
                                     <a href="blog-details.html">
-                                        <img src="images/blog/b-1.jpg" alt="">
+                                        <img src="{{asset('images/frontend_images/blog/b-1.jpg')}}" alt="">
                                     </a>
                                 </div>
                                 <div class="postinfo-wrapper pl-100">
@@ -80,7 +83,7 @@
                                         </div>
                                         <div class="author-info mb-30">
                                             <div class="author-avatar b-img">
-                                                <img src="images/blog/avatar.png" alt="">
+                                                <img src="{{asset('images/frontend_images/blog/avatar.png')}}" alt="">
                                             </div>
                                             <div class="author-description pl-20">
                                                 <h6>
@@ -94,7 +97,7 @@
                                             <h4 class="mb-50 pt-20">3 comments</h4>
                                             <div class="single-reply mb-20">
                                                 <div class="comment-author">
-                                                    <img src="images/testimonial/1.jpg" alt="">
+                                                    <img src="{{asset('images/frontend_images/testimonial/1.jpg')}}" alt="">
                                                 </div>
                                                 <div class="comment-info p-10">
                                                     <div class="comment-author-info mb-10">
@@ -110,7 +113,7 @@
                                             </div>
                                             <div class="single-reply pl-30 mb-20">
                                                 <div class="comment-author">
-                                                    <img src="images/testimonial/2.jpg" alt="">
+                                                    <img src="{{asset('images/frontend_images/testimonial/2.jpg')}}" alt="">
                                                 </div>
                                                 <div class="comment-info p-10">
                                                     <div class="comment-author-info mb-10">
@@ -126,7 +129,7 @@
                                             </div>
                                             <div class="single-reply">
                                                 <div class="comment-author">
-                                                    <img src="images/testimonial/1.jpg" alt="">
+                                                    <img src="{{asset('images/frontend_images/testimonial/1.jpg')}}" alt="">
                                                 </div>
                                                 <div class="comment-info p-10">
                                                     <div class="comment-author-info mb-10">
@@ -208,7 +211,7 @@
                                         <li>
                                             <div class="post-thumb b-img">
                                                 <a href="blog-details.html">
-                                                    <img src="images/product/product-details/s-1.jpg" alt="">
+                                                    <img src="{{asset('images/frontend_images/product/product-details/s-1.jpg')}}" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
@@ -219,7 +222,7 @@
                                         <li>
                                             <div class="post-thumb b-img">
                                                 <a href="blog-details.html">
-                                                    <img src="images/product/product-details/s-2.jpg" alt="">
+                                                    <img src="{{asset('images/frontend_images/product/product-details/s-2.jpg')}}" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
@@ -230,7 +233,7 @@
                                         <li>
                                             <div class="post-thumb b-img">
                                                 <a href="blog-details.html">
-                                                    <img src="images/product/product-details/s-3.jpg" alt="">
+                                                    <img src="{{asset('images/frontend_images/product/product-details/s-3.jpg')}}" alt="">
                                                 </a>
                                             </div>
                                             <div class="post-info">
@@ -273,100 +276,10 @@
             </div>
             <!-- End Blog Page Area -->
             <!-- Start Brand Area -->
-            <div class="brand-area pb-90">
-                <div class="container">
-                    <div class="row">
-                        <div class="brand-list">
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/1.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/2.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/3.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/4.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/5.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/6.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                             <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/1.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/2.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/3.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Of Brand Area -->
-            <!-- Start Newsletter Area -->
-            <div class="newsletter-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="newsletter-content default-bg clearfix ptb-40">
-                            <div class="col-md-offset-2 col-md-3 col-sm-5">
-                                <div class="newsletter-title text-white text-uppercase">
-                                    <h4>NewsLetter Sign-Up</h4>
-                                </div>
-                            </div>
-                            <div class="col-md-5 col-sm-7">
-                                <div class="signup-form">
-                                    <form class="news-form" action="#">
-                                        <input type="text" placeholder="Enter your email address..." class="f-form">
-                                        <button class="submit text-uppercase">subscribe</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Of Newsletter Area -->
+          
+            @include('FrontEnd.include.brand-area')
+
+            @include('FrontEnd.include.newsletter')
+            
         </section>
         <!-- End page content -->

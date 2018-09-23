@@ -1069,21 +1069,21 @@ textarea:focus {
 /*image background*/
  .bg-1 {
   background: url(../../images/bg/1.jpg);}
- .bg-2 { background: url(../../images/bg/2.jpg);}
- .bg-3 { background: url(../../images/bg/3.jpg);}
- .bg-4 { background: url(../../images/bg/4.jpg);}
- .bg-5 { background: url(../../images/bg/5.jpg);}
- .bg-6 { background: url(../../images/bg/6.jpg);}
- .bg-7 { background: url(../../images/bg/7.jpg);}
- .bg-8 { background: url(../../images/bg/8.jpg);}
- .bg-9 { background: url(../../images/bg/9.jpg);}
- .bg-10 { background: url(../../images/bg/10.jpg);}
+ .bg-2 { background: url(images/frontend_images/bg/2.jpg);}
+ .bg-3 { background: url(images/frontend_images/bg/3.jpg);}
+ .bg-4 { background: url(images/frontend_images/bg/4.jpg);}
+ .bg-5 { background: url(images/frontend_images/bg/5.jpg);}
+ .bg-6 { background: url(images/frontend_images/bg/6.jpg);}
+ .bg-7 { background: url(images/frontend_images/bg/7.jpg);}
+ .bg-8 { background: url(images/frontend_images/bg/8.jpg);}
+ .bg-9 { background: url(images/frontend_images/bg/9.jpg);}
+ .bg-10 { background: url(images/frontend_images/bg/10.jpg);}
   .bg-1, .bg-2, .bg-3, .bg-4, .bg-5, .bg-6, .bg-7, .bg-8, .bg-9, .bg-10{
     background-attachment: fixed; background-clip: initial; background-color: rgba(0, 0, 0, 0); background-origin: initial; background-position: center center; background-repeat: no-repeat; background-size: cover; position: relative; z-index: 0;
  }
 
   /*pattern background*/
-.pattern-bg { background:url(../../images/pattern/pattern-bg.png) repeat; background-position: top right; background-color: rgba(236, 239, 247, 1); }
+.pattern-bg { background:url(images/frontend_images/pattern/pattern-bg.png) repeat; background-position: top right; background-color: rgba(236, 239, 247, 1); }
 
 
 

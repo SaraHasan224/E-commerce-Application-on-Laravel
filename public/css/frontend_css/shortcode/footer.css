@@ -112,7 +112,7 @@ footer.footer-area {
 }
 /* footerThree css */
 .footer-area-3 {
-  background: rgba(0, 0, 0, 0) url("../../images/bg/footer-main-bg.jpg") no-repeat scroll center center / cover ;
+  background: rgba(0, 0, 0, 0) url("../../../images/frontend_images/bg/footer-main-bg.jpg") no-repeat scroll center center / cover ;
 }
 .footer-area-3 p, .footer-area-3 a {
   color: #a6abb3;

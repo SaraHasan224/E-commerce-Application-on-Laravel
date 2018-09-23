@@ -6,7 +6,7 @@
                         <div class="col-md-3 col-lg-3 col-sm-6 col-xs-12 footer-col">
                             <div class="footer-logo mb-20">
                                 <a href="#" title="Freak">
-                                    <img src="images/logo/logo-2.png" alt="">
+                                    <img src="{{url('images/frontend_images/logo/logo-2.png')}}" alt="">
                                 </a>
                             </div>
                             <div class="widget widget-about-us">
@@ -77,22 +77,22 @@
                                 <div class="inst-photo-container">
                                     <ul class="inst-photo">
                                         <li>
-                                            <a href="#"><img alt="" src="images/gallery/01.jpg"></a>
+                                            <a href="#"><img alt="" src="{{url('images/frontend_images/gallery/01.jpg')}}"></a>
                                         </li>
                                         <li>
-                                            <a href="#"><img alt="" src="images/gallery/02.jpg"></a>
+                                            <a href="#"><img alt="" src="{{url('images/frontend_images/gallery/02.jpg')}}"></a>
                                         </li>
                                         <li>
-                                            <a href="#"><img alt="" src="images/gallery/03.jpg"></a>
+                                            <a href="#"><img alt="" src="{{url('images/frontend_images/gallery/03.jpg')}}"></a>
                                         </li>
                                         <li>
-                                            <a href="#"><img alt="" src="images/gallery/04.jpg"></a>
+                                            <a href="#"><img alt="" src="{{url('images/frontend_images/gallery/04.jpg')}}"></a>
                                         </li>
                                         <li>
-                                            <a href="#"><img alt="" src="images/gallery/05.jpg"></a>
+                                            <a href="#"><img alt="" src="{{url('images/frontend_images/gallery/05.jpg')}}"></a>
                                         </li>
                                         <li>
-                                            <a href="#"><img alt="" src="images/gallery/06.jpg"></a>
+                                            <a href="#"><img alt="" src="{{url('images/frontend_images/gallery/06.jpg')}}"></a>
                                         </li>
                                     </ul>
                                     <div class="ins-follow-btn">
@@ -115,7 +115,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="footer-img">
-                                <img alt="" src="images/payment.png">
+                                <img alt="" src="{{url('images/frontend_images/payment.png')}}">
                             </div>
                         </div>
                     </div>
@@ -126,7 +126,7 @@
         <!--style-customizer start -->
         <div class="style-customizer closed">
             <div class="buy-button">
-                <a href="index.html" class="customizer-logo"><img src="images/logo/logo.png" alt="Theme Logo"></a>
+                <a href="index.html" class="customizer-logo"><img src="{{url('images/frontend_images/logo/logo.png')}}" alt="Theme Logo"></a>
                 <a class="opener" href="#"><i class="zmdi zmdi-settings"></i></a>
             </div>
             <div class="clearfix content-chooser">
@@ -163,14 +163,14 @@
                 <h3>Background Images</h3>
                 <p>Which background image you want to use?</p>
                 <ul class="patternChange main-bg-change clearfix">
-                    <li class="main-bg-1" data-style="main-bg-1" title="Background 1"> <img src="images/customizer/bodybg/01.jpg" alt=""></li>
-                    <li class="main-bg-2" data-style="main-bg-2" title="Background 2"> <img src="images/customizer/bodybg/02.jpg" alt=""></li>
-                    <li class="main-bg-3" data-style="main-bg-3" title="Background 3"> <img src="images/customizer/bodybg/03.jpg" alt=""></li>
-                    <li class="main-bg-4" data-style="main-bg-4" title="Background 4"> <img src="images/customizer/bodybg/04.jpg" alt=""></li>
-                    <li class="main-bg-5" data-style="main-bg-5" title="Background 5"> <img src="images/customizer/bodybg/05.jpg" alt=""></li>
-                    <li class="main-bg-6" data-style="main-bg-6" title="Background 6"> <img src="images/customizer/bodybg/06.jpg" alt=""></li>
-                    <li class="main-bg-7" data-style="main-bg-7" title="Background 7"> <img src="images/customizer/bodybg/07.jpg" alt=""></li>
-                    <li class="main-bg-8" data-style="main-bg-8" title="Background 8"> <img src="images/customizer/bodybg/08.jpg" alt=""></li>
+                    <li class="main-bg-1" data-style="main-bg-1" title="Background 1"> <img src="{{url('images/frontend_images/customizer/bodybg/01.jpg')}}" alt=""></li>
+                    <li class="main-bg-2" data-style="main-bg-2" title="Background 2"> <img src="{{url('images/frontend_images/customizer/bodybg/02.jpg')}}" alt=""></li>
+                    <li class="main-bg-3" data-style="main-bg-3" title="Background 3"> <img src="{{url('images/frontend_images/customizer/bodybg/03.jpg')}}" alt=""></li>
+                    <li class="main-bg-4" data-style="main-bg-4" title="Background 4"> <img src="{{url('images/frontend_images/customizer/bodybg/04.jpg')}}" alt=""></li>
+                    <li class="main-bg-5" data-style="main-bg-5" title="Background 5"> <img src="{{url('images/frontend_images/customizer/bodybg/05.jpg')}}" alt=""></li>
+                    <li class="main-bg-6" data-style="main-bg-6" title="Background 6"> <img src="{{url('images/frontend_images/customizer/bodybg/06.jpg')}}" alt=""></li>
+                    <li class="main-bg-7" data-style="main-bg-7" title="Background 7"> <img src="{{url('images/frontend_images/customizer/bodybg/07.jpg')}}" alt=""></li>
+                    <li class="main-bg-8" data-style="main-bg-8" title="Background 8"> <img src="{{url('images/frontend_images/customizer/bodybg/08.jpg')}}" alt=""></li>
                 </ul>
                 <ul class="resetAll">
                     <li><a class="button button-border button-reset" href="#">Reset All</a></li>
@@ -185,13 +185,13 @@
     <!-- Placed js at the end of the document so the pages load faster -->
 
     <!-- jquery latest version -->
-    <script src="js/vendor/jquery-3.1.1.min.js"></script>
+    <script src="{{asset('js/frontend_js/vendor/jquery-3.1.1.min.js')}}"></script>
     <!-- Bootstrap framework js -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{asset('js/frontend_js/bootstrap.min.js')}}"></script>
     <!-- All js plugins included in this file. -->
-    <script src="js/plugins.js"></script>
+    <script src="{{asset('js/frontend_js/plugins.js')}}"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
-    <script src="js/main.js"></script>
+    <script src="{{asset('js/frontend_js/main.js')}}"></script>
 
 </body>
 

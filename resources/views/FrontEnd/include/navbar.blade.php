@@ -49,7 +49,7 @@
                 <div class="col-sm-4">
                     <div class="header-logo text-center">
                         <a href="index.html">
-                            <img alt="" src="images/logo/logo.png">
+                            <img alt="" src="{{url('images/frontend_images/logo/logo.png')}}">
                         </a>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                                     <ul class="cart-list">
                                         <li class="p-10 mb-15">
                                             <a href="#" class="product-image">
-                                                <img src="images/shop/cart/1.jpg" alt="">
+                                                <img src="{{url('images/frontend_images/shop/cart/1.jpg')}}" alt="">
                                             </a>
                                             <div class="product-details ml-10">
                                                 <a href="#" class="remove">
@@ -92,7 +92,7 @@
                                         </li>
                                         <li class="p-10 mb-15">
                                             <a href="#" class="product-image">
-                                                <img src="images/shop/cart/2.jpg" alt="">
+                                                <img src="{{url('images/frontend_images/shop/cart/2.jpg')}}" alt="">
                                             </a>
                                             <div class="product-details ml-10">
                                                 <a href="#" class="remove">
@@ -105,7 +105,7 @@
                                         </li>
                                         <li class="p-10 mb-15">
                                             <a href="#" class="product-image">
-                                                <img src="images/shop/cart/3.jpg" alt="">
+                                                <img src="{{url('images/frontend_images/shop/cart/3.jpg')}}" alt="">
                                             </a>
                                             <div class="product-details ml-10">
                                                 <a href="#" class="remove">
@@ -178,7 +178,7 @@
                                             </ul>
                                             <div class="single-mega-item aside-img">
                                                 <a href="shop-full.html" class="b-img widget-img text-uppercase">
-                                                    <img src="images/widget/1.jpg" alt="">
+                                                    <img src="{{url('images/frontend_images/widget/1.jpg')}}" alt="">
                                                     <div class="best">best</div>
                                                     <div class="brand">brand</div>
                                                 </a>

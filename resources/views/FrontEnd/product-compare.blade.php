@@ -1,3 +1,6 @@
+
+@extends('FrontEnd.include.header')
+@section('content')
         <!-- Start page content -->
         <section id="page-content" class="page-wrapper">
             <!-- Start Shop Full Grid View -->
@@ -11,7 +14,7 @@
                                         <div class="product-img-content mb-20">
                                             <div class="product-img">
                                                 <a href="product-details.html">
-                                                    <img alt="" src="images/product/1.jpg">
+                                                    <img alt="" src="{{asset('images/frontend_images/product/1.jpg')}}">
                                                 </a>
                                             </div>
                                             <div class="product-action text-center">
@@ -27,7 +30,7 @@
                                         <div class="product-img-content mb-20">
                                             <div class="product-img">
                                                 <a href="product-details.html">
-                                                    <img alt="" src="images/product/2.jpg">
+                                                    <img alt="" src="{{asset('images/frontend_images/product/2.jpg')}}">
                                                 </a>
                                             </div>
                                             <div class="product-action text-center">
@@ -135,7 +138,7 @@
                                 <div class="product-img-content mb-20">
                                     <div class="product-img">
                                         <a href="product-details.html">
-                                            <img alt="" src="images/product/1.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/product/1.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="product-action text-center">
@@ -170,7 +173,7 @@
                                 <div class="product-img-content mb-20">
                                     <div class="product-img">
                                         <a href="product-details.html">
-                                            <img alt="" src="images/product/2.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/product/2.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="product-action text-center">
@@ -206,7 +209,7 @@
                                 <div class="product-img-content mb-20">
                                     <div class="product-img">
                                         <a href="product-details.html">
-                                            <img alt="" src="images/product/3.jpg">
+                                            <img alt="" src="images{{asset('images/frontend_images/product/3.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="product-action text-center">
@@ -241,7 +244,7 @@
                                 <div class="product-img-content mb-20">
                                     <div class="product-img">
                                         <a href="product-details.html">
-                                            <img alt="" src="images/product/4.jpg">
+                                            <img alt="" src="{{asset('images/frontend_images/product/4.jpg')}}">
                                         </a>
                                     </div>
                                     <div class="product-action text-center">
@@ -275,101 +278,10 @@
                 </div>
             </div>
             <!-- End Of Related Product Area -->
-            <!-- Start Brand Area -->
-            <div class="brand-area pb-90">
-                <div class="container">
-                    <div class="row">
-                        <div class="brand-list">
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/1.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/2.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/3.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/4.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/5.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/6.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                             <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/1.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/2.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/3.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Of Brand Area -->
-            <!-- Start Newsletter Area -->
-            <div class="newsletter-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="newsletter-content default-bg clearfix ptb-40">
-                            <div class="col-md-offset-2 col-md-3 col-sm-5">
-                                <div class="newsletter-title text-white text-uppercase">
-                                    <h4>NewsLetter Sign-Up</h4>
-                                </div>
-                            </div>
-                            <div class="col-md-5 col-sm-7">
-                                <div class="signup-form">
-                                    <form class="news-form" action="#">
-                                        <input type="text" placeholder="Enter your email address..." class="f-form">
-                                        <button class="submit text-uppercase">subscribe</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Of Newsletter Area -->
+                    
+@include('FrontEnd.include.brand-area')
+
+@include('FrontEnd.include.newsletter')
+
         </section>
         <!-- End page content -->

@@ -1,3 +1,6 @@
+
+@extends('FrontEnd.include.header')
+@section('content')
         <!-- Start page content -->
         <div id="page-content" class="page-wrapper">
             <!-- Start Shop Left Side Bar -->
@@ -70,7 +73,7 @@
                                                     <div class="product-img-content mb-20">
                                                         <div class="product-img">
                                                             <a href="product-details.html">
-                                                                <img src="images/product/3.jpg" alt="">
+                                                                <img src="{{asset('images/frontend_images/product/3.jpg')}}" alt="">
                                                             </a>
                                                         </div>
                                                         <div class="product-action text-center">
@@ -103,7 +106,7 @@
                                                     <div class="product-img-content mb-20">
                                                         <div class="product-img">
                                                             <a href="product-details.html">
-                                                                <img src="images/product/8.jpg" alt="">
+                                                                <img src="{{asset('images/frontend_images/product/8.jpg')}}" alt="">
                                                             </a>
                                                         </div>
                                                         <div class="product-action text-center">
@@ -136,7 +139,7 @@
                                                     <div class="product-img-content mb-20">
                                                         <div class="product-img">
                                                             <a href="product-details.html">
-                                                                <img src="images/product/1.jpg" alt="">
+                                                                <img src="{{asset('images/frontend_images/product/1.jpg')}}" alt="">
                                                             </a>
                                                         </div>
                                                         <span class="new-label text-uppercase">-30%</span>
@@ -172,7 +175,7 @@
                                                     <div class="product-img-content mb-20">
                                                         <div class="product-img">
                                                             <a href="product-details.html">
-                                                                <img src="images/product/4.jpg" alt="">
+                                                                <img src="{{asset('images/frontend_images/product/4.jpg')}}" alt="">
                                                             </a>
                                                         </div>
                                                         <span class="new-label red-color text-uppercase">sale</span>
@@ -207,7 +210,7 @@
                                                     <div class="product-img-content mb-20">
                                                         <div class="product-img">
                                                             <a href="product-details.html">
-                                                                <img src="images/product/7.jpg" alt="">
+                                                                <img src="{{asset('images/frontend_images/product/7.jpg')}}" alt="">
                                                             </a>
                                                         </div>
                                                         <span class="new-label text-uppercase">-30%</span>
@@ -241,7 +244,7 @@
                                                     <div class="product-img-content mb-20">
                                                         <div class="product-img">
                                                             <a href="product-details.html">
-                                                                <img src="images/product/2.jpg" alt="">
+                                                                <img src="{{asset('images/frontend_images/product/2.jpg')}}" alt="">
                                                             </a>
                                                         </div>
                                                         <div class="product-action text-center">
@@ -276,7 +279,7 @@
                                                     <div class="product-img-content mb-20">
                                                         <div class="product-img">
                                                             <a href="product-details.html">
-                                                                <img src="images/product/1.jpg" alt="">
+                                                                <img src="{{asset('images/frontend_images/product/1.jpg')}}" alt="">
                                                             </a>
                                                         </div>
                                                         <span class="new-label text-uppercase">New</span>
@@ -310,7 +313,7 @@
                                                     <div class="product-img-content mb-20">
                                                         <div class="product-img">
                                                             <a href="product-details.html">
-                                                                <img src="images/product/6.jpg" alt="">
+                                                                <img src="{{asset('images/frontend_images/product/6.jpg')}}" alt="">
                                                             </a>
                                                         </div>
                                                         <div class="product-action text-center">
@@ -343,7 +346,7 @@
                                                     <div class="product-img-content mb-20">
                                                         <div class="product-img">
                                                             <a href="product-details.html">
-                                                                <img src="images/product/3.jpg" alt="">
+                                                                <img src="{{asset('images/frontend_images/product/3.jpg')}}" alt="">
                                                             </a>
                                                         </div>
                                                         <span class="new-label text-uppercase">-30%</span>
@@ -380,7 +383,7 @@
                                                 <div class="col-xs-12 col-sm-5 col-md-4">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img src="images/product/6.jpg" alt="">
+                                                            <img src="{{asset('images/frontend_images/product/6.jpg'}}" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="product-action text-center">
@@ -417,7 +420,7 @@
                                                 <div class="col-xs-12 col-sm-5 col-md-4">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img src="images/product/1.jpg" alt="">
+                                                            <img src="{{asset('images/frontend_images/product/1.jpg')}}" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="product-action text-center">
@@ -454,7 +457,7 @@
                                                 <div class="col-xs-12 col-sm-5 col-md-4">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img src="images/product/5.jpg" alt="">
+                                                            <img src="{{asset('images/frontend_images/product/5.jpg')}}" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="product-action text-center">
@@ -491,7 +494,7 @@
                                                 <div class="col-xs-12 col-sm-5 col-md-4">
                                                     <div class="product-img">
                                                         <a href="product-details.html">
-                                                            <img src="images/product/2.jpg" alt="">
+                                                            <img src="{{asset('images/frontend_images/product/2.jpg')}}" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="product-action text-center">
@@ -696,7 +699,7 @@
                                 </aside> 
                                 <aside class="single-aside aside-img">
                                     <a href="#" class="b-img widget-img text-uppercase">
-                                        <img src="images/widget/1.jpg" alt="">
+                                        <img src="{{asset('images/frontend_images/widget/1.jpg')}}" alt="">
                                         <div class="best">best</div>
                                         <div class="brand">brand</div>
                                     </a>
@@ -707,102 +710,11 @@
                 </div>
             </div>
             <!-- End Of Shop Left Side Bar -->
-            <!-- Start Brand Area -->
-            <div class="brand-area pb-90">
-                <div class="container">
-                    <div class="row">
-                        <div class="brand-list">
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/1.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/2.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/3.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/4.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/5.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/6.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                             <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/1.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/2.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="single-brand text-center">
-                                    <a href="#">
-                                        <img src="images/brand/3.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Of Brand Area -->
-            <!-- Start Newsletter Area -->
-            <div class="newsletter-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="newsletter-content default-bg clearfix ptb-40">
-                            <div class="col-md-offset-2 col-md-3 col-sm-5">
-                                <div class="newsletter-title text-white text-uppercase">
-                                    <h4>NewsLetter Sign-Up</h4>
-                                </div>
-                            </div>
-                            <div class="col-md-5 col-sm-7">
-                                <div class="signup-form">
-                                    <form class="news-form" action="#">
-                                        <input type="text" placeholder="Enter your email address..." class="f-form">
-                                        <button class="submit text-uppercase">subscribe</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Of Newsletter Area -->
+             
+@include('FrontEnd.include.brand-area')
+
+@include('FrontEnd.include.newsletter')
+
         </div>
         <!-- End page content -->
         
