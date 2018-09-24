@@ -124,7 +124,7 @@
         </footer>
         <!-- End footer area -->
         <!--style-customizer start -->
-        <div class="style-customizer closed">
+        {{-- <div class="style-customizer closed">
             <div class="buy-button">
                 <a href="index.html" class="customizer-logo"><img src="{{url('images/frontend_images/logo/logo.png')}}" alt="Theme Logo"></a>
                 <a class="opener" href="#"><i class="zmdi zmdi-settings"></i></a>
@@ -176,7 +176,7 @@
                     <li><a class="button button-border button-reset" href="#">Reset All</a></li>
                 </ul>
             </div>
-        </div>
+        </div> --}}
         <!--style-customizer end --> 
     </div>
     <!-- Body main wrapper end -->

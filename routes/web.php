@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'IndexController@index');
+Route::get('/shop', 'IndexController@products');
 
 
 Route::get('/admin', 'AdminController@login');

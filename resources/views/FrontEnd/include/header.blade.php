@@ -51,5 +51,9 @@
 @include('FrontEnd.include.slider')
 
 @yield('content')
+           
+@include('FrontEnd.include.brand-area')
+
+@include('FrontEnd.include.newsletter')
 
 @include('FrontEnd.include.footer')

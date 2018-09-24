@@ -177,7 +177,7 @@ footer.footer-area {
 }
 .widget-latest-tweet li::before {
   color: #2395ec;
-  content: "ï ";
+  content: "";
   font-family: material-design-iconic-font;
   font-size: 25px;
   left: 0;

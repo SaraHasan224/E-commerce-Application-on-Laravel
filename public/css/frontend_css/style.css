@@ -520,7 +520,7 @@
   color: #606060;
   position: relative;
 }
-.testimonial-info > p::before {
+/* .testimonial-info > p::before {
   color: #AAAAAA;
   content: "ï†²";
   font-size: 30px;
@@ -538,7 +538,7 @@
   font-size: 30px;
   position: absolute;
   right: 185px;
-}
+} */
 .owl-theme .owl-controls .owl-page span {
   background: #fff none repeat scroll 0 0;
   border-radius: 20px;
@@ -649,7 +649,7 @@
 /*  8. Breadcrumbs Area CSS
 /*----------------------------------------*/
 .breadcrumbs-area {
-  background: rgba(0, 0, 0, 0) url("images/frontend_images/breadcrumb.jpg") no-repeat scroll center center;
+  background: rgba(0, 0, 0, 0) url("../../images/frontend_images/breadcrumb.jpg") no-repeat scroll center center;
 }
 .breadcrumbs h3 {
   font-weight: 600;
@@ -1316,6 +1316,16 @@
 /*----------------------------------------*/
 /*  14. Quick View css
 /*----------------------------------------*/
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  display:none;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0 !important;
+  background-color: #000;
+}
 #productModal .modal-dialog {
   margin: 5% auto;
   max-width: 96%;

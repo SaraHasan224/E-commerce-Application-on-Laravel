@@ -1,5 +1,6 @@
 
 @extends('FrontEnd.include.header')
+
 @section('content')
         <!-- Start page content -->
         <section id="page-content" class="page-wrapper">
@@ -1224,6 +1225,7 @@
                     </div>                    
                 </div>
             </div>
+        </div>
             <!-- End of Testimonial Area -->
             <!-- Start Blog Area -->
             <div class="blog-area section-padding">
@@ -1395,13 +1397,6 @@
                 </div>
             </div>
             <!-- End Of Blog Area -->
-        
-          
-@include('FrontEnd.include.brand-area')
-
-@include('FrontEnd.include.newsletter')
-
-        </section>
-        <!-- End page content -->
+  
 
 @endsection

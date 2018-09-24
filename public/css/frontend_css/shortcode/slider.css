@@ -56,7 +56,7 @@ NOTE: This is Slider style file. All Slider related style included in this file.
 }
 .nivo-directionNav a::before {
   color: #fff;
-  content: "ï‹º";
+  content: "";
   display: inline-block;
   font-family: material-design-iconic-font;
   font-size: 48px;
@@ -91,7 +91,7 @@ NOTE: This is Slider style file. All Slider related style included in this file.
   z-index: 9;
 }
 .nivo-directionNav a.nivo-nextNav::before {
-  content: "ï‹»";
+  content: "";
 }
 .nivo-directionNav a:hover {
   background: #01A6A9;

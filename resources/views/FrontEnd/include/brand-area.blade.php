@@ -63,7 +63,7 @@
                                 <div class="col-md-12">
                                     <div class="single-brand text-center">
                                         <a href="#">
-                                            <img src="{{url('images/frontend_images/frontend_images/brand/3.png')}}" alt="">
+                                            <img src="{{url('images/frontend_images/brand/3.png')}}" alt="">
                                         </a>
                                     </div>
                                 </div>

@@ -21,3 +21,6 @@
         </div>
     </div>
     <!-- End Of Newsletter Area -->
+    
+        </div>
+        <!-- End page content -->
