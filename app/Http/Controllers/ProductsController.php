@@ -19,6 +19,7 @@ class ProductsController extends Controller
     public function index(request $request)
     {
         $products = Products::all();
+ 
         $categoryName = Category::all();
         // foreach($products as $product):
         //          $product->category->category_name;
@@ -64,13 +65,15 @@ class ProductsController extends Controller
                 if($image_tmp->isValid())
                 {
                     $extension = $image_tmp->getClientOriginalExtension();
+                    
                     $filename = rand(111,99999).".".$extension;
+                   
                     $large_image_path = 'images/backend_images/products/large/'.$filename;
                     $medium_image_path = 'images/backend_images/products/medium/'.$filename;
                     $small_image_path = 'images/backend_images/products/small/'.$filename;
 //                     //Image Resize
                     Image::make($image_tmp)->save($large_image_path);
-                    Image::make($image_tmp)->resize(600,600)->save($medium_image_path);
+                    Image::make($image_tmp)->resize(250,333)->save($medium_image_path);
                     Image::make($image_tmp)->resize(300,300)->save($small_image_path);         
 //                     //Store image name in products table
                 } 
@@ -104,7 +107,8 @@ class ProductsController extends Controller
         if($request -> isMethod('post'))
         {
             $data = $request ->  all();
-            //dd($data);
+            //dd($request->hasFile('image'));
+            //dd(Input::file('image'));
             if($request->hasFile('image'))
             {
                 $image_tmp = Input::file('image');
@@ -120,10 +124,6 @@ class ProductsController extends Controller
                     Image::make($image_tmp)->resize(600,600)->save($medium_image_path);
                     Image::make($image_tmp)->resize(300,300)->save($small_image_path);         
                 }
-                else
-                {
-                    $filename = $data['current_image'];
-                } 
                 Products::where(['product_id' => $id])->update([
                     'name' => $data['name'],
                     'product_code' => $data['code'],
@@ -131,14 +131,13 @@ class ProductsController extends Controller
                     'description' => $data['description'],
                     'price' => $data['price'],
                     'color' => $data['color'],
-                    'size' => $data['size'],
                     'quantity' => $data['quantity'],
                     'url' => $data['url'],
                     'status' => $data['status'],
                     'image' => $filename
                 ]);
             }
-           
+            
             return redirect('/admin/products')->with('success','Product successfully updated');
         }
         //Get product details
@@ -184,7 +183,26 @@ class ProductsController extends Controller
 
     public function deleteProductImage($id = null)
     {
-     
+        //Get Image name
+        $productImage = Products::where(['product_id'=>$id])->first();
+        //Get Product Image Paths
+        $large_image_path = 'images/backend_images/products/large/';
+        $medium_image_path = 'images/backend_images/products/medium/';
+        $small_image_path = 'images/backend_images/products/small/';
+        //Delete image if not exists in folder
+        if(file_exists($large_image_path.$productImage->image))
+        {
+            unlink(public_path($large_image_path.$productImage->image));
+        }
+        if(file_exists($medium_image_path.$productImage->image))
+        {
+            unlink(public_path($medium_image_path.$productImage->image));
+        }
+        if(file_exists($small_image_path.$productImage->image))
+        {
+            unlink(public_path($small_image_path.$productImage->image));
+        }
+        //Delete Image from Products Table
         Products::where(['product_id'=>$id])->update(['image'=>'']);
         return redirect()->back()->with('success','Product Image has been deleted successfully!!');
     }
@@ -225,4 +243,46 @@ class ProductsController extends Controller
             return redirect()->back()->with('error','Product deleted successfully!!');
         }
     }
+
+
+           
+    public function addAlternateImage(Request $request,$id=null)
+    {
+       
+        $productDetails = Products::where(['product_id'=>$id])->first();
+            if($request->hasFile('image'))
+            {            
+                $data = $request -> all();
+                $image_tmp = Input::file('image');
+                if($image_tmp->isValid())
+                {
+                    $extension = $image_tmp->getClientOriginalExtension();
+                    $filename = rand(111,99999).".".$extension;
+                    $large_image_path = 'images/backend_images/products/large/'.$filename;
+                    $medium_image_path = 'images/backend_images/products/medium/'.$filename;
+                    $small_image_path = 'images/backend_images/products/small/'.$filename;
+//                     //Image Resize
+                    Image::make($image_tmp)->save($large_image_path);
+                    Image::make($image_tmp)->resize(600,600)->save($medium_image_path);
+                    Image::make($image_tmp)->resize(300,300)->save($small_image_path);         
+                }
+        //     foreach($data['sku'] as $key => $val)
+        //     {
+        //         if(!empty($val))
+        //         {
+        //             $attribute = new ProductsAttribute;
+        //             $attribute -> product_id = $id;                    
+        //             $attribute -> sku = $val;                    
+        //             $attribute -> size = $data['size'][$key];
+        //             $attribute -> price = $data['price'][$key];
+        //             $attribute -> stock = $data['stock'][$key];
+        //             $attribute -> save();
+        //         }
+        //     }
+            
+        // return redirect('/admin/products/attribute/'.$productDetails->product_id)->with('success','Product Attribute has been added successfully!!');
+        }
+        return view('BackEnd.products.addAlternateImages')->with(compact('productDetails'));
+    }
+
 }

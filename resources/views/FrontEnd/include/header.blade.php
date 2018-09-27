@@ -48,7 +48,6 @@
     
 @include('FrontEnd.include.navbar')
 
-@include('FrontEnd.include.slider')
 
 @yield('content')
            

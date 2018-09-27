@@ -1,5 +1,6 @@
    var maxField = 10; //Input fields increment limitation
     var addButton = $('.add_button'); //Add button selector
+    var addImageButton = $('.add_image_button'); //Add button selector
     var wrapper = $('.field_wrapper'); //Input field wrapper
     var fieldHTML = '<div style="padding-top:10px" >'+   
                         '<input type="text" class="span11" name="sku[]" id="sku[]" placeholder="Enter sku"  style="width:120px; margin-right:3px"/>'+
@@ -9,7 +10,7 @@
                         '<a href="javascript:void(0)" class="btn btn-warning remove_button"><span class="icon icon-delete" aria-hidden="true"></span> Remove</a>'+
                     '</div>'; //New input field html 
     var x = 1; //Initial field counter is 1                                                                                          
-    
+    var addMultipleImages = ' <input type="file"  name="image[]" id="image[]"/><br/>';
     
     //Once add button is clicked
     $(addButton).click(function(){
@@ -21,6 +22,16 @@
         }
     });
     
+    
+    //Once add button is clicked
+    $(addImageButton).click(function(){
+        console.log('Hi');
+        //Check maximum number of input fields
+        if(x < maxField){ 
+            x++; //Increment field counter
+            $(wrapper).append(addMultipleImages); //Add field html
+        }
+    });
     //Once remove button is clicked
     $(wrapper).on('click', '.remove_button', function(e){
         e.preventDefault();
@@ -61,6 +72,107 @@
         }
     });
     
+
+    $("#banner_validate").validate({
+        rules:{
+            required:{
+                required:true
+            },
+            title:{
+                required:true
+            },
+            description:{
+                required:true
+            },
+            text:{
+                required:true
+            },
+            link:{
+                required:true
+            },
+            image:{
+                required:true,
+                file: true
+            }
+        },
+        errorClass: "help-inline",
+        errorElement: "span",
+        highlight:function(element, errorClass, validClass) {
+            $(element).parents('.control-group').addClass('error');
+        },
+        unhighlight: function(element, errorClass, validClass) {
+            $(element).parents('.control-group').removeClass('error');
+            $(element).parents('.control-group').addClass('success');
+        }
+    });
+    
+
+    $("#brand_validate").validate({
+        rules:{
+            required:{
+                required:true
+            },
+            name:{
+                required:true
+            },
+            description:{
+                required:true
+            },
+            url:{
+                required:true
+            },
+            image:{
+                required:true,
+                file: true
+            }
+        },
+        errorClass: "help-inline",
+        errorElement: "span",
+        highlight:function(element, errorClass, validClass) {
+            $(element).parents('.control-group').addClass('error');
+        },
+        unhighlight: function(element, errorClass, validClass) {
+            $(element).parents('.control-group').removeClass('error');
+            $(element).parents('.control-group').addClass('success');
+        }
+    });
+    
+
+    $("#slider_validate").validate({
+        rules:{
+            required:{
+                required:true
+            },
+            title:{
+                required:true
+            },
+            description:{
+                required:true
+            },
+            text:{
+                required:true
+            },
+            link:{
+                required:true
+            },
+            image:{
+                required:true,
+                file: true
+            }
+        },
+        errorClass: "help-inline",
+        errorElement: "span",
+        highlight:function(element, errorClass, validClass) {
+            $(element).parents('.control-group').addClass('error');
+        },
+        unhighlight: function(element, errorClass, validClass) {
+            $(element).parents('.control-group').removeClass('error');
+            $(element).parents('.control-group').addClass('success');
+        }
+    });
+    
+
+
     $("#number_validate").validate({
         rules:{
             min:{

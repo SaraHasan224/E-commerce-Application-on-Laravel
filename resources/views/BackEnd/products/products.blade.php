@@ -43,8 +43,8 @@
                   <th>Product Code</th>
                   <th>Product Name</th>
                   <th>Parent Category</th>
-                  <th>Parent Color</th>
-                  <th>Parent Size</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
                   <th>Product Image</th>
                   <th>Actions</th>
                 </tr>
@@ -63,8 +63,8 @@
                                     @endif
                                 @endforeach                          
                       </td>   
-                        <td>{{$product->Color}}</td>
-                        <td>{{$product->Size}}</td>
+                        <td>{{$product->Quantity}}</td>
+                        <td>$ {{$product->Price}}</td>
                       <td>
                         @if($product->image == "NoImageFound.jpg")
                           <img src="{{asset('/images/backend_images/products/'.$product->image)}}" style="width:75px; height:75px;" />
@@ -86,7 +86,7 @@
                           <a href="#myModal{{$product->product_id}}" data-toggle="modal" class="btn btn-success">View</a>
                           <a href="{{url('/admin/products/edit/'.$product->product_id)}}" type="button" class="btn btn-primary">Edit</a>
                          
-                          <a href="{{url('admin/products/attribute/'.$product->product_id)}}" type="button" class="btn btn-primary">Add Attributes</a>
+                          <a href="{{url('admin/products/attribute/'.$product->product_id)}}" type="button" class="btn btn-primary">Attributes</a>
                           
                           {{-- <a href="{{url('/admin/products/delete/'.$product->product_id)}}" type="button" class="btn btn-danger delete">Delete</a> --}}
                           <a rel="{{$product->product_id}}" rell="delete" href="JavaScript:void(0)" type="button" class="btn btn-danger deleteRecord">Delete</a>

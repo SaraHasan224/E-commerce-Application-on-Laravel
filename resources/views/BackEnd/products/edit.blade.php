@@ -16,7 +16,7 @@
           <h5>Edit Products</h5>
         </div>
         <div class="widget-content nopadding">
-          <form enctype="multipart/form-data" action="{{url('/admin/products/edit/'.$product->product_id)}}" name="category_validate" id="category_validate" method="post" class="form-horizontal">{{csrf_field()}}
+          <form enctype="multipart/form-data" action="{{url('/admin/products/edit/'.$product->product_id)}}"  method="post" class="form-horizontal">{{csrf_field()}}
             <div class="control-group">
                 <label class="control-label">Product Code :</label>
                 <div class="controls">
@@ -92,8 +92,8 @@
             <div class="control-group">
               <label class="control-label">Product Image</label>
               <div class="controls">
+                <input type="hidden" name="current_image" value="{{$product->image}}" />
                 <input type="file" name="image" id="image" />
-                <input type="hidden" name="current_image" value="{{$product->image}}}" />
                 @if(!empty($product->image))
                   <img style="width:70px;" src="{{asset('/images/backend_images/products/small/'.$product->image)}}"/> | <a href={{url('/admin/products/deleteProductImage/'.$product->product_id)}}>Delete</a>
                 @endif

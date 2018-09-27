@@ -19,8 +19,23 @@
         </a>
       </li> 
       <li> 
-        <a href="{{url('/admin/users')}}"><i class="icon icon-user"></i>
-         <span>Users</span>
+        <a href="{{url('/admin/slider')}}"><i class="icon icon-user"></i>
+         <span>Sliders</span>
+        </a>
+      </li> 
+      <li> 
+        <a href="{{url('/admin/banners')}}"><i class="icon icon-user"></i>
+         <span>Banners</span>
+        </a>
+      </li> 
+      <li> 
+        <a href="{{url('/admin/brands')}}"><i class="icon icon-user"></i>
+         <span>Brands</span>
+        </a>
+      </li> 
+      <li> 
+        <a href="{{url('/admin/newsletter')}}"><i class="icon icon-user"></i>
+         <span>Newsletter Signup</span>
         </a>
       </li> 
       <li> 

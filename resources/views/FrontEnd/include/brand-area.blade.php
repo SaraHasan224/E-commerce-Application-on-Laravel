@@ -4,13 +4,15 @@
                     <div class="container">
                         <div class="row">
                             <div class="brand-list">
-                                <div class="col-md-12">
-                                    <div class="single-brand text-center">
-                                        <a href="#">
-                                            <img src="{{url('images/frontend_images/brand/1.png')}}" alt="">
-                                        </a>
+                                {{-- @foreach ($posts as $post)
+                                    <div class="col-md-12">
+                                        <div class="single-brand text-center">
+                                            <a href="#">
+                                                <img src="{{asset('/images/backend_images/brands/'.$post->image)}}" alt="">
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
+                                @endforeach --}}
                                 <div class="col-md-12">
                                     <div class="single-brand text-center">
                                         <a href="#">
@@ -67,7 +69,7 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 </div>

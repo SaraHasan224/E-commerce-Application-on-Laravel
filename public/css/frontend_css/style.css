@@ -256,6 +256,8 @@
 .product-content a {
   color: #252525;
   font-weight: 500;
+  font-size: 20px;
+
 }
 .product-content a:hover {
   color: #01a6a9;
