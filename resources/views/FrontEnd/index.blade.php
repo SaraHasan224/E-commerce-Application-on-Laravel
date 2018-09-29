@@ -1037,27 +1037,15 @@
             <div class="service-area section-padding">
                 <div class="container">
                     <div class="row">
+                        @foreach ($getContent as $content)
                         <div class="col-sm-4">
                             <div class="single-item text-white pl-120">
-                                <i class="zmdi zmdi-shopping-cart"></i>
-                                <h4>FREE SHipping</h4>
-                                <p>Lorem ipsum dolor sit amet, onsectetur adipisicing</p>
+                                <i class="zmdi zmdi-{{$content->icon}}"></i>
+                                <h4>{{$content->heading}}</h4>
+                                <p>{{$content->text}}</p>
                             </div>
                         </div>
-                        <div class="col-sm-4">
-                            <div class="single-item text-white pl-120">
-                                <i class="zmdi zmdi-headset"></i>
-                                <h4>24/7 SUPPORT</h4>
-                                <p>Lorem ipsum dolor sit amet, onsectetur adipisicing</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="single-item text-white pl-120 rm-0">
-                                <i class="zmdi zmdi-balance-wallet"></i>
-                                <h4>100% MONEY BACK</h4>
-                                <p>Lorem ipsum dolor sit amet, onsectetur adipisicing</p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -1301,35 +1289,34 @@
                         <div class="row">
                             <div class="col-md-offset-2 col-md-8">
                                 <div class="testimonial-list">
+                                    @foreach ($getViews as $view)
                                     <div class="single-testimonial text-center">
-                                        <img alt="" src="{{asset('images/frontend_images/testimonial/1.jpg')}}">
+                                        <img alt="" src="{{asset('images/backend_images/index/views/'.$view->image)}}">
                                         <div class="testimonial-info white-bg clearfix">
                                             <div class="testimonial-author text-uppercase">
-                                                <h5>ANIKA MOLLIK</h5>
-                                                <p>chairmen</p>
+                                                <h5>{{$view->name}}</h5>
+                                                <p>{{$view->position}}</p>
                                             </div>
-                                            <p>consectetur adipisicing elit, sed do eiusmod tempor  incididunt  
-    labore et dolore magna aliqua. Ut enim ad minim veniam,voluptate velit esse cillu nulla pariatur. Excepteur sint occaecat</p>
+                                            <p>{{$view->view}}</p>
                                         </div>
                                     </div>
-                                    <div class="single-testimonial text-center">
+                                    @endforeach
+                                    {{-- <div class="single-testimonial text-center">
                                         <img alt="" src="{{asset('images/frontend_images/testimonial/2.jpg')}}">
                                         <div class="testimonial-info white-bg clearfix">
                                             <div class="testimonial-author text-uppercase">
                                                 <h5>Ashim Kumar</h5>
                                                 <p>CEO</p>
                                             </div>
-                                            <p>consectetur adipisicing elit, sed do eiusmod tempor  incididunt  
-    labore et dolore magna aliqua. Ut enim ad minim veniam,voluptate velit esse cillu nulla pariatur. Excepteur sint occaecat</p>
+                                            <p>consectetur adipisicing elit, sed do eiusmod tempor  incididunt labore et dolore magna aliqua. Ut enim ad minim veniam,voluptate velit esse cillu nulla pariatur. Excepteur sint occaecat</p>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
                     </div>                    
                 </div>
             </div>
-        </div>
             <!-- End of Testimonial Area -->
             <!-- Start Blog Area -->
             <div class="blog-area section-padding">

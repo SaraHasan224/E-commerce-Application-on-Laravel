@@ -1,5 +1,5 @@
 
-@extends('FrontEnd.include.header')
+@extends('FrontEnd.include.header2')
 @section('content')
         <!-- Start page content -->
         <section id="page-content" class="page-wrapper">
@@ -7,26 +7,27 @@
             <div class="blog-details-area section-padding">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-9 col-md-push-3 col-xs-12">
+                    @foreach ($getData as $data)
+                        <div class="col-md-12  col-xs-12">
                             <div class="single-blog fix">
                                 <div class="post-thumbnail mb-50 b-img">
-                                    <a href="blog-details.html">
-                                        <img src="{{asset('images/frontend_images/blog/b-1.jpg')}}" alt="">
+                                    <a href="{{url('/blog-detail/'.$data->id)}}">
+                                        <img src="{{asset('images/backend_images/blogs/'.$data->image)}}" alt="">
                                     </a>
                                 </div>
                                 <div class="postinfo-wrapper pl-100">
                                     <div class="post-date text-uppercase ptb-10">
-                                        <span class="day">10</span>
-                                        <span class="month">Mar</span>
+                                        <span class="day">{{$data->created_at->format('d')}}</span>
+                                        <span class="month">{{$data->created_at->format('M')}}</span>
                                     </div>
                                     <div class="post-info">
                                         <h3 class="blog-post-title mb-20">
-                                            <a href="blog-details.html">Blog image post layout investigationes demonstraverunt</a>
+                                            <a href="{{url('/blog-detail/'.$data->id)}}">{{$data->title}}</a>
                                         </h3>
                                         <div class="entry-meta ptb-10 mb-30 text-uppercase">
                                             Posted by
                                             <span class="author vcard">
-                                                <a title="View all posts by admin" class="url fn n" href="#">admin</a>
+                                                <a title="View all posts by admin" class="url fn n" href="#">{{$data->author}}</a>
                                             </span>
                                             /
                                             <a href="#">Fashion</a>
@@ -34,12 +35,11 @@
                                             <a href="#">HTML</a>
                                         </div>
                                         <div class="entry-summary">
-                                            <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit. Aliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id ultrices, finibus tortor. Mauris eu dui ut lectus fermentum</p>
+                                            <p>{{$data->description}}</p>
                                             <blockquote>
-                                                <p>Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur. In venenatis elit ac ultrices convallis. Duis est nisi, tincidunt ac urna sed, cursus blandit lectus. In ullamcorper sit amet ligula ut eleifend. Proin dictum tempor ligula, ac feugiat metus. Sed finibus tortor eu scelerisque scelerisque.</p>
+                                                <p>{{$data->emphasized_text}}</p>
                                             </blockquote>
-                                            <p>Aenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.</p>
-                                            <p>Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel. Vivamus finibus mi a neque pretium, ut convallis dui lacinia. Morbi a rutrum velit. Curabitur sagittis quam quis consectetur mattis. Aenean sit amet quam vel turpis interdum sagittis et eget neque. Nunc ante quam, luctus et neque a, interdum iaculis metus. Aliquam vel ante mattis, placerat orci id, vehicula quam. Suspendisse quis eros cursus, viverra urna sed, commodo mauris. Cras diam arcu, fringilla a sem condimentum, viverra facilisis nunc. Curabitur vitae orci id nulla maximus maximus. Nunc pulvinar sollicitudin molestie.</p>
+                                            <p>{{$data->description2}}</p>
                                         </div>
                                         <div class="entry-meta ptb-10 mb-30 text-uppercase">
                                             <a href="#">3 comments </a>
@@ -186,100 +186,12 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-3 col-md-pull-9 col-xs-12">
-                            <div class="left-blog-sidebar">
-                                <div class="blog-sidebar mb-30 fix">
-                                    <h4 class="aside-title text-uppercase pb-20 mb-30">Search</h4>
-                                    <form action="#" id="blog-search">
-                                        <input type="text" placeholder="Search">
-                                        <button class="submit"><i class="zmdi zmdi-search"></i></button>
-                                    </form>
-                                </div>
-                                <div class="blog-sidebar mb-30 fix">
-                                    <h4 class="aside-title text-uppercase pb-20 mb-30">Categories</h4>
-                                    <ul>
-                                        <li><a href="#">Dresses</a></li>
-                                        <li><a href="#">shoes</a></li>
-                                        <li><a href="#">Handbags</a></li>
-                                        <li><a href="#">Clothing</a></li>
-                                    </ul>
-                                </div>
-                                <div class="blog-sidebar post mb-30 fix">
-                                    <h4 class="aside-title text-uppercase pb-20 mb-30">Recent Post</h4>
-                                    <ul>
-                                        <li>
-                                            <div class="post-thumb b-img">
-                                                <a href="blog-details.html">
-                                                    <img src="{{asset('images/frontend_images/product/product-details/s-1.jpg')}}" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="post-info">
-                                                <a href="blog-details.html">Blog image post</a>
-                                                <span>March 10, 2015</span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="post-thumb b-img">
-                                                <a href="blog-details.html">
-                                                    <img src="{{asset('images/frontend_images/product/product-details/s-2.jpg')}}" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="post-info">
-                                                <a href="blog-details.html">Blog image post</a>
-                                                <span>March 10, 2015</span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="post-thumb b-img">
-                                                <a href="blog-details.html">
-                                                    <img src="{{asset('images/frontend_images/product/product-details/s-3.jpg')}}" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="post-info">
-                                                <a href="blog-details.html">Blog image post</a>
-                                                <span>March 10, 2015</span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="blog-sidebar mb-30 fix">
-                                    <h4 class="aside-title text-uppercase pb-20 mb-30">Popular Tags</h4>
-                                    <ul class="tags-list">
-                                        <li><a href="#">Clothing</a></li>
-                                        <li><a href="#">accessories</a></li>
-                                        <li><a href="#">fashion</a></li>
-                                        <li><a href="#">footwear</a></li>
-                                        <li><a href="#">good</a></li>
-                                        <li><a href="#">kid</a></li>
-                                        <li><a href="#">men</a></li>
-                                        <li><a href="#">women</a></li>
-                                    </ul>
-                                    <div class="actions">
-                                        <a href="#">View All Tags</a>
-                                    </div>
-                                </div>
-                                <div class="blog-sidebar fix">
-                                    <h4 class="aside-title text-uppercase pb-20 mb-30">Blog Archives</h4>
-                                    <ul>
-                                        <li><a href="#">January 2016</a></li>
-                                        <li><a href="#">December 2015</a></li>
-                                        <li><a href="#">November 2015</a></li>
-                                        <li><a href="#">September 2015</a></li>
-                                        <li><a href="#">August 2015</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        </div>                        
+                    @endforeach
+
                     </div>
                 </div>
             </div>
             <!-- End Blog Page Area -->
             <!-- Start Brand Area -->
-          
-            @include('FrontEnd.include.brand-area')
-
-            @include('FrontEnd.include.newsletter')
-            
-        </section>
-        <!-- End page content -->
+@endsection

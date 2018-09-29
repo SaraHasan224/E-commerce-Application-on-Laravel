@@ -61,9 +61,9 @@
                         <td>{{$post->link}}</td>
                         <td>
                         @if($post->image == "")
-                          <img src="{{asset('/images/backend_images/products/'.$post->image)}}" style="width:75px; height:75px;" />
+                          <img src="{{asset('/images/backend_images/products/'.$post->image)}}" style="width:250px; height:100px;" />
                         @else
-                          <img src="{{asset('/images/backend_images/slider/'.$post->image)}}" style="width:75px; height:75px;" />
+                          <img src="{{asset('/images/backend_images/slider/'.$post->image)}}" style="width:250px; height:100px;" />
                         @endif
                         </td>
                         <td>

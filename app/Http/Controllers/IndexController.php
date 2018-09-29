@@ -7,11 +7,18 @@ use App\Http\Controllers\Controller;
 use App\Products;
 use App\Category;
 use App\Banner;
+use App\IndexPageData;
 use App\Slider;
+use App\OwnersView;
 use App\Blogs;
+use App\Brands;
+use App\About;
+use App\OurTeam;
+use App\Videos;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class IndexController extends Controller
 {
+
     public function render($request, Exception $e)
     {
         if($e instanceof NotFoundHttpException)
@@ -23,12 +30,14 @@ class IndexController extends Controller
     //Index Page Loads Here...
     public function index()
     {
+        $getViews = OwnersView::orderBy('id')->where('status','<>',0)->get();
+        $getContent = IndexPageData::orderBy('id')->where('status','<>',0)->get();
         $getSliders = Slider::orderBy('id')->where('status','<>',0)->get();
         $getBanners = Banner::orderBy('id')->where('status','<>',0)->get();
         $getBlogs   = Blogs::latest()->where('status','<>',0)->take(3)->get();
         $latestProducts   = Products::latest()->where('status','<>',0)->take(8)->get();
        // $bestSellerProducts = Products::orderBy('sell', 'desc')->take(3)->get();
-        return view('FrontEnd.index')->with(compact('getBanners','getSliders','getBlogs','latestProducts','bestSellerProducts'));
+        return view('FrontEnd.index')->with(compact('getBanners','getSliders','getBlogs','latestProducts','bestSellerProducts','getViews','getContent'));
     }
     //Products Page Loads Here...
     public function shop()
@@ -74,7 +83,14 @@ class IndexController extends Controller
         $getBlogs = Blogs::orderBy('title')->where('status','<>',0)->get();
         return view('FrontEnd.blog')->with(compact('getBlogs'));
     }  
-    
+     
+    //Blog detail Page Loads Here...
+    public function blogDetail($id = null)
+    {
+        $getData = Blogs::where(['id'=>$id])->where('status','<>',0)->get();
+        return view('FrontEnd.blog-detail')->with(compact('getData'));
+    }   
+
     //Page Not Found Page Loads Here...
     public function error()
     {
@@ -86,4 +102,68 @@ class IndexController extends Controller
         $getProducts = Products::where(['product_id'=>$id])->where('status','<>',0)->first();
         return view('FrontEnd.product-detail')->with(compact('getProducts'));
     }
+
+
+    //About Page Loads Here...
+    public function about()
+    {
+        $getTeam = OurTeam::orderBy('id')->where('status','<>',0)->get();
+        $getContent = About::orderBy('id')->where('status','<>',0)->take(1)->get();
+        return view('FrontEnd.about')->with(compact('getTeam','getContent'));
+    }
+    
+    //Contact Page Loads Here...
+    public function contact()
+    { 
+        return view('FrontEnd.contact');
+    }  
+         
+    //Video Page Loads Here...
+    public function video()
+    { 
+        $getVideos = Videos::orderBy('id')->where('status','<>',0)->get();
+        return view('FrontEnd.video')->with(compact('getVideos'));
+    }       
+
+    //Wishlist Page Loads Here...
+    public function wishlist()
+    { 
+        return view('FrontEnd.wishlist');
+    }        
+
+    //User Login Loads Here...
+    public function userLogin()
+    { 
+        return view('FrontEnd.userlogin');
+    }  
+     
+    //User Register Page Loads Here...
+    public function register()
+    { 
+        return view('FrontEnd.userlogin');
+    }  
+    //User Login Loads Here...
+    public function userAccount()
+    { 
+        return view('FrontEnd.account');
+    }  
+    //Checkout Page Loads Here...
+    public function checkout()
+    { 
+        return view('FrontEnd.checkout');
+    }  
+     
+    //Cart Page Loads Here...
+    public function cart()
+    { 
+        return view('FrontEnd.cart');
+    }  
+     
+    //Product Compare Page Loads Here...
+    public function productCompare()
+    { 
+        return view('FrontEnd.product-compare');
+    }  
+     
+     
 }

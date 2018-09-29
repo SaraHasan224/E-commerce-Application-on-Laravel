@@ -2,6 +2,12 @@
 <div id="sidebar"><a href="{{url('/admin/dashboard')}}" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
     <ul>
       <li class="active"><a href="{{url('/admin/dashboard')}}"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+      <li class="submenu"> <a href="#"><i class="icon icon-sitemap"></i> <span>Users</span></a>
+        <ul>
+          <li><a href="{{url('/admin/users')}}">Users</a></li>
+          <li><a href="{{url('/admin/wishlist')}}">Wishlist</a></li>
+        </ul>
+      </li>
       <li class="submenu"> <a href="#"><i class="icon icon-sitemap"></i> <span>Categories</span> <span class="label label-important">2</span></a>
         <ul>
           <li><a href="{{url('/admin/categories')}}">Categories</a></li>
@@ -39,11 +45,25 @@
         </a>
       </li> 
       <li> 
-        <a href="{{url('/admin/contact')}}"><i class="icon icon-phone"></i>
-         <span>Contact</span>
+        <a href="{{url('/admin/index')}}"><i class="icon icon-phone"></i>
+         <span>Index Page Content</span>
         </a>
       </li> 
-      
+      <li> 
+        <a href="{{url('/admin/support')}}"><i class="icon icon-phone"></i>
+         <span>Customer Support</span>
+        </a>
+      </li>  
+      <li> 
+        <a href="{{url('/admin/footer')}}"><i class="icon icon-phone"></i>
+         <span>Footer</span>
+        </a>
+      </li>       
+      <li> 
+        <a href="{{url('/admin/video')}}"><i class="icon icon-phone"></i>
+         <span>Videos</span>
+        </a>
+      </li>  
     </ul>
   </div>
   <!--sidebar-menu-->

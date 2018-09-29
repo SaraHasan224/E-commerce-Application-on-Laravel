@@ -57,21 +57,23 @@
                         <div class="header-top header-top-right">
                             <ul>
                                 <li class="lh-50">
-                                    <a href="#" class="pr-20 text-uppercase">account</a>
+                                    <a href="" class="pr-20 text-uppercase">Account</a>
                                     <div class="header-top-down header-top-hover pl-15 lh-35">
                                         <ul>
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="compare.html">My bag</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="wishlist.html">Wishlist</a></li>
+                                            <a href="{{url('/account')}}" class="pr-20 text-uppercase">Account</a>
+                                            <a href="{{url('/log-in')}}" class="pr-20 text-uppercase">Login</a>
+                                            <a href="{{url('/logout')}}" class="pr-20 text-uppercase">Logout</a>
                                         </ul>
                                     </div>
                                 </li>
                                 <li class="lh-50">
-                                    <a href="checkout.html" class="prl-20 text-uppercase">check out</a>
+                                    <a href="{{url('/wishlist')}}" class="prl-20 text-uppercase">Wishlist</a>
+                                </li>
+                                <li class="lh-50">
+                                    <a href="{{url('/checkout')}}" class="prl-20 text-uppercase">check out</a>
                                 </li>
                                 <li class="cart-link lh-50">
-                                    <a href="#" class="pl-20">
+                                    <a href="{{url('/cart')}}" class="pl-20">
                                         <i class="zmdi zmdi-shopping-cart"></i>
                                         <span>2</span>
                                     </a>
@@ -124,7 +126,7 @@
                                                 <span class="ml-35">$190.98</span>
                                             </p>
                                             <p class="buttons m-0">
-                                                <a href="#" class="button extra-small">
+                                                <a href="{{url('/checkout')}}" class="button extra-small">
                                                     <span>Checkout</span> 
                                                 </a>
                                             </p>
@@ -146,6 +148,7 @@
                                 <nav id="primary-menu">
                                     <ul class="main-menu text-center">
                                         <li><a href="{{url('/')}}">Home</a></li>
+                                        <li><a href="{{url('/about')}}">About Us</a></li>
                                         <li class="mega-parent"><a href="{{url('/shop')}}">Shop</a>
                                             <div class="mega-menu-area header-top-hover p-30">
                                                 <ul class="single-mega-item">
@@ -184,47 +187,8 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="mega-parent"><a href="#">Features</a>
-                                            <div class="mega-menu-area header-top-hover p-30">
-                                                <ul class="single-mega-item">
-                                                    <li><h2 class="mega-menu-title mb-15">Elements 1</h2></li>
-                                                    <li><a href="elements-header-1-sticky.html">Header 1 Sticky</a></li>
-                                                    <li><a href="elements-header-1-no-sticky.html">Header 1 No Sticky</a></li>
-                                                    <li><a href="elements-header-2-sticky.html">Header 2 Sticky</a></li>
-                                                    <li><a href="elements-header-2-no-sticky.html">Header 2 No Sticky</a></li>
-                                                    <li><a href="elements-footer-1.html">Footer One</a></li>
-                                                    <li><a href="elements-footer-2.html">Footer Two</a></li>
-                                                </ul>
-                                                <ul class="single-mega-item">
-                                                    <li><h2 class="mega-menu-title mb-15">Elements 2</h2></li>
-                                                    <li><a href="elements-accordion.html">Accordion</a></li>
-                                                    <li><a href="elements-alerts.html">Alerts</a></li>
-                                                    <li><a href="elements-audio.html">Audio</a></li>
-                                                    <li><a href="elements-banner.html">Banner</a></li>
-                                                    <li><a href="elements-breadcrumbs.html">Breadcrumbs</a></li>
-                                                    <li><a href="elements-buttons.html">Buttons</a></li>
-                                                </ul>
-                                                <ul class="single-mega-item">
-                                                    <li><h2 class="mega-menu-title mb-15">Elements 3</h2></li>
-                                                    <li><a href="elements-call-to-action.html">Call To Action</a></li>
-                                                    <li><a href="elements-contact-form.html">Dynamic Contact Form</a></li>
-                                                    <li><a href="elements-map.html">Map</a></li>
-                                                    <li><a href="elements-pagination.html">Pagination</a></li>
-                                                    <li><a href="elements-progress-bars.html">Progress Bars</a></li>
-                                                    <li><a href="elements-section-title.html">section Title</a></li>
-                                                </ul>
-                                                <ul class="single-mega-item">
-                                                    <li><h2 class="mega-menu-title mb-15">Elements 4</h2></li>
-                                                    <li><a href="elements-tab.html">Tab</a></li>
-                                                    <li><a href="elements-typography.html">Typography</a></li>
-                                                    <li><a href="elements-up-comming-product-1.html">Up Comming Product 1</a></li>
-                                                    <li><a href="elements-up-comming-product-2.html">Up Comming Product 2</a></li>
-                                                    <li><a href="elements-video.html">Video</a></li>
-                                                </ul>
-                                            </div>
-                                        </li>
                                         <li><a href="{{url('/blog')}}">Blog</a></li>
-                                        <li><a href="contact.html">Contact Us</a></li>
+                                        <li><a href="{{url('/contact')}}">Contact Us</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -242,100 +206,10 @@
                         <div class="mobile-menu">
                             <nav id="dropdown">
                                 <ul>
-                                <li><a href="{{url('/')}}">Home</a></li>                                       
-                                    <li><a href="shop.html">women</a></li>
-                                    <li><a href="shop.html">Features</a>
-                                        <ul>
-                                            <li><a href="#">Elements 1</a>
-                                                <ul>
-                                                    <li><a href="elements-header-1-sticky.html">Header 1 Sticky</a></li>
-                                                    <li><a href="elements-header-1-no-sticky.html">Header 1 No Sticky</a></li>
-                                                    <li><a href="elements-header-2-sticky.html">Header 2 Sticky</a></li>
-                                                    <li><a href="elements-header-2-no-sticky.html">Header 2 No Sticky</a></li>
-                                                    <li><a href="elements-footer-1.html">Footer One</a></li>
-                                                    <li><a href="elements-footer-2.html">Footer Two</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Elements 2</a>
-                                                <ul>
-                                                    <li><a href="elements-accordion.html">Accordion</a></li>
-                                                    <li><a href="elements-alerts.html">Alerts</a></li>
-                                                    <li><a href="elements-audio.html">Audio</a></li>
-                                                    <li><a href="elements-banner.html">Banner</a></li>
-                                                    <li><a href="elements-breadcrumbs.html">Breadcrumbs</a></li>
-                                                    <li><a href="elements-buttons.html">Buttons</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Elements 3</a>
-                                                <ul>
-                                                    <li><a href="elements-call-to-action.html">Call To Action</a></li>
-                                                    <li><a href="elements-contact-form.html">Dynamic Contact Form</a></li>
-                                                    <li><a href="elements-map.html">Map</a></li>
-                                                    <li><a href="elements-pagination.html">Pagination</a></li>
-                                                    <li><a href="elements-progress-bars.html">Progress Bars</a></li>
-                                                    <li><a href="elements-section-title.html">section Title</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Elements 4</a>
-                                                <ul>
-                                                    <li><a href="elements-tab.html">Tab</a></li>
-                                                    <li><a href="elements-typography.html">Typography</a></li>
-                                                    <li><a href="elements-up-comming-product-1.html">Up Comming Product 1</a></li>
-                                                    <li><a href="elements-up-comming-product-2.html">Up Comming Product 2</a></li>
-                                                    <li><a href="elements-video.html">Video</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="{{url('/blog')}}">blog</a>
-                                        <ul>
-                                            <li><a href="#">Men’s</a>
-                                                <ul>
-                                                    <li><a href="shop-full.html">Blazers</a></li>
-                                                    <li><a href="shop-full.html">Jackets</a></li>
-                                                    <li><a href="shop-full.html">Collections</a></li>
-                                                    <li><a href="shop-full.html">T-Shirts</a></li>
-                                                    <li><a href="shop-full.html">jens pant’s</a></li>
-                                                    <li><a href="shop-full.html">sports shoes</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Women’s</a>
-                                                <ul>
-                                                    <li><a href="shop-full.html">Cocktail</a></li>
-                                                    <li><a href="shop-full.html">Sunglass</a></li>
-                                                    <li><a href="shop-full.html">Evening</a></li>
-                                                    <li><a href="shop-full.html">Footwear</a></li>
-                                                    <li><a href="shop-full.html">Bootees Bags</a></li>
-                                                    <li><a href="shop-full.html">Furniture</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Accessaories</a>
-                                                <ul>
-                                                    <li><a href="shop-full.html">Gagets</a></li>
-                                                    <li><a href="shop-full.html">Laptop</a></li>
-                                                    <li><a href="shop-full.html">Mobile</a></li>
-                                                    <li><a href="shop-full.html">Lifestyle</a></li>
-                                                    <li><a href="shop-full.html">Gens pant’s</a></li>
-                                                    <li><a href="shop-full.html">Sports items</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Pages</a>
-                                        <ul>
-                                            <li><a href="404.html">404 page</a></li>
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                            <li><a href="shop-full.html">Shop Full Wide</a></li>
-                                            <li><a href="shop-grid-left.html">Shop Grid Left</a></li>
-                                            <li><a href="shop-grid-right.html">Shop Grid Right</a></li>
-                                            <li><a href="product-details.html">Product Details</a></li>
-                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="{{url('/')}}">Home</a></li>                                       
+                                    <li><a href="{{url('/shop')}}">Shop</a></li>
+                                    <li><a href="{{url('/blog')}}">Blog</a>
+                                    <li><a href="{{url('/contact')}}">Contact Us</a></li>
                                 </ul>
                             </nav>
                         </div>

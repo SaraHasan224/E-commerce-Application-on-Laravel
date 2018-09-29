@@ -1,7 +1,13 @@
 	$('.data-table').dataTable({
+		
 		"bJQueryUI": true,
 		"sPaginationType": "full_numbers",
+		"dom": 'Bfrtip',
+        "buttons": [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+		],
 		"sDom": '<""l>t<"F"fp>'
+		
 	});
 	
 	$('input[type=checkbox],input[type=radio],input[type=file]').uniform();

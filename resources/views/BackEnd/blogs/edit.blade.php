@@ -64,6 +64,18 @@
               </div>
             </div>
             <div class="control-group">
+              <label class="control-label">Description 2</label>
+              <div class="controls">
+                <textarea class="span11" name="description2" >{{$post->description2}}</textarea>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Highlighted  text</label>
+              <div class="controls">
+                <textarea class="span11" name="emphasized_text" >{{$post->emphasized_text}}</textarea>
+              </div>
+            </div>
+            <div class="control-group">
               <label class="control-label">Image</label>
               <div class="controls">
                 <input type="file" name="image" id="image" />

@@ -54,9 +54,9 @@
                         <td><input type="checkbox" /></td>
                         <td>
                         @if($post->image == "")
-                          <img src="{{asset('/images/backend_images/products/'.$post->image)}}" style="width:75px; height:75px;" />
+                          <img src="{{asset('/images/backend_images/products/'.$post->image)}}" style="width:250px; height:150px;" />
                         @else
-                          <img src="{{asset('/images/backend_images/banners/'.$post->image)}}" style="width:75px; height:75px;" />
+                          <img src="{{asset('/images/backend_images/banners/'.$post->image)}}" style="width:250px; height:150px;" />
                         @endif
                         </td>
                         <td>{{$post->url}}</td>

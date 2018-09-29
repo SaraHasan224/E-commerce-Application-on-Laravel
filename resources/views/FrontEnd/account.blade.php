@@ -1,5 +1,5 @@
 
-@extends('FrontEnd.include.header')
+@extends('FrontEnd.include.header2')
 @section('content')
         <!-- Start page content -->
         <section id="page-content" class="page-wrapper">
@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="procced-checkout">
-                                <h4 class="procced-title text-uppercase pb-15 mb-20"><strong>Procced to Checkout</strong></h4>
+                                <h4 class="procced-title text-uppercase pb-15 mb-20"><strong>My Account</strong></h4>
                                 <p>Welcome to your account. Here you can manage all of your personal information and orders.</p>
                             </div>
                         </div>
@@ -318,6 +318,4 @@
                 </div>
             </div>
             <!-- End Of Wishlist Area -->
-
-        </section>
-        <!-- End page content -->
+@endsection

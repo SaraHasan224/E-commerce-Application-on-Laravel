@@ -41,6 +41,18 @@
                 <textarea class="span11" name="description" id="description"></textarea>
               </div>
             </div>
+            <div class="control-group">
+              <label class="control-label">Description 2</label>
+              <div class="controls">
+                <textarea class="span11" name="description2" id="description2"></textarea>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Highlighted Text</label>
+              <div class="controls">
+                <textarea class="span11" name="emphasized_text" id="emphasized_text"></textarea>
+              </div>
+            </div>
             
             <div class="control-group">
               <label class="control-label">Image :</label>

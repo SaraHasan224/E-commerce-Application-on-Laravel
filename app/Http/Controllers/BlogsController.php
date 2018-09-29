@@ -37,6 +37,8 @@ class BlogsController extends Controller
             $post -> title = $data['title'];
             $post -> author = $data['author'];
             $post -> description = $data['description'];
+            $post -> description2 = $data['description2'];
+            $post -> emphasized_text = $data['emphasized_text'];
             $post -> url = $data['url'];
             if($request->hasFile('image'))
             {
@@ -77,6 +79,8 @@ class BlogsController extends Controller
                 'title' => $data['title'],
                 'author' => $data['author'],
                 'description' => $data['description'],
+                'description2' => $data['description2'],
+                'emphasized_text' => $data['emphasized_text'],
                 'url' => $data['url'],
                 'status' => $data['status'],
                 'image' => $filename

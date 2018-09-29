@@ -12,9 +12,11 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
  
-    public function constant()
-    {
-        $posts = Brands::orderBy('id')->get();
-        return view()->with('posts');
-    }
+    // public function __construct()
+    // {
+    //     $getBrands = Brands::orderBy('id')->where('status','<>',0)->get();
+    //     return view()->with(compact('getBrands'));
+    // }
+
+    
 }

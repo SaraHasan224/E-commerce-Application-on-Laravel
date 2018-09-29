@@ -4,7 +4,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="brand-list">
-                                {{-- @foreach ($posts as $post)
+                                {{-- @foreach ($getBrands as $post)
                                     <div class="col-md-12">
                                         <div class="single-brand text-center">
                                             <a href="#">
@@ -27,7 +27,7 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                {{-- <div class="col-md-12">
                                     <div class="single-brand text-center">
                                         <a href="#">
                                             <img src="{{url('images/frontend_images/brand/4.png')}}" alt="">
@@ -68,7 +68,7 @@
                                             <img src="{{url('images/frontend_images/brand/3.png')}}" alt="">
                                         </a>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div> 
                         </div>
                     </div>

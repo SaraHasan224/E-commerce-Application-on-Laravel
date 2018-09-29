@@ -1,5 +1,5 @@
     
-@extends('FrontEnd.include.header')
+@extends('FrontEnd.include.header2')
 @section('content')
     <!-- Start page content -->
         <section id="page-content" class="page-wrapper">
@@ -190,10 +190,4 @@
             </div>
             <!-- End Of Wishlist Area -->
 
-                      
-@include('FrontEnd.include.brand-area')
-
-@include('FrontEnd.include.newsletter')
-
-        </section>
-        <!-- End page content -->
+@endsection

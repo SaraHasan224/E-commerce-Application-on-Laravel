@@ -1,35 +1,38 @@
 
-@extends('FrontEnd.include.header')
+@extends('FrontEnd.include.header2')
 @section('content')
 <!-- Start page content -->
 <section id="page-content" class="page-wrapper">
     <!-- Start About us Area -->
     <div class="about-us-area section-padding">
         <div class="container">
+                @foreach ($getContent as $content)
             <div class="row">
-                <div class="col-md-12">
-                    <div class="section-title-2 text-uppercase text-center mb-40">
-                        <h4>About us</h4>
-                    </div>                            
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-7 col-sm-12 col-xs-12">
-                    <div class="about-page-cntent">
-                        <h4 class="text-uppercase"><strong>The standard lorem ipsum passage</strong></h4>
-                        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, ullam, commodi consequatur?</p>
-                        <blockquote>
-                            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>
-                        </blockquote>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu nisi ac mi malesuada vestibulum. Phasellus tempor nunc eleifend cursus molestie. Mauris lectus arcu, pellentesque at sodales sit amet, condimentum id nunc. Donec ornare mattis suscipit. Praesent fermentum accumsan vulputate.</p>
+                    <div class="col-md-12">
+                            <div class="section-title-2 text-uppercase text-center mb-40">
+                                <h4>About us</h4>
+                            </div>                            
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-5 col-sm-12 col-xs-12">
-                    <div class="img-element b-img">
-                        <img src="{{url('images/frontend_images/about/ab.jpg')}}" alt="">
+                    <div class="row">
+                        <div class="col-md-7 col-sm-12 col-xs-12">
+                            <div class="about-page-cntent">
+                                <h4 class="text-uppercase"><strong>{{$content->heading}}</strong></h4>
+                                <p>{{$content->description1}}/p>
+                                <blockquote>
+                                    <p>{{$content->emphasized_text}}</p>
+                                </blockquote>
+                                <p>{{$content->description2}}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-sm-12 col-xs-12">
+                            <div class="img-element b-img">
+                                <img src="{{asset('images/backend_images/about/'.$content->cover_image)}}" alt="">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+            
+                @endforeach
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title-2 text-uppercase text-center mtb-40">
@@ -38,11 +41,12 @@
                 </div>
             </div>
             <div class="row">
+                @foreach ($getTeam as $team)
                 <div class="col-md-3 col-sm-4">
                     <div class="item-team text-center text-capitalize">
                         <div class="team-info">
                             <div class="team-img mb-10">
-                                <img width="250" height="250" alt="team4" class="img-responsive" src="{{url('images/frontend_images/about/1.jpg')}}">
+                                <img width="250" height="250" alt="team4" class="img-responsive" src="{{asset('images/backend_images/our-team/'.$team->image)}}">
                                 <div class="mask">
                                     <div class="mask-inner">
                                         <a href=""><i class="zmdi zmdi-facebook"></i></a>
@@ -51,11 +55,12 @@
                                 </div>
                             </div>
                         </div>
-                        <h5>Martin Demichelis</h5>
-                        <h6>PHP Developer</h6>
+                        <h5>{{$team->name}}</h5>
+                        <h6>{{$team->position}}</h6>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-4">
+                @endforeach
+                {{-- <div class="col-md-3 col-sm-4">
                     <div class="item-team text-center text-capitalize">
                         <div class="team-info">
                             <div class="team-img mb-10">
@@ -105,16 +110,10 @@
                         <h5>Martin Demichelis</h5>
                         <h6>PHP Developer</h6>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
     <!-- End Of About us Area -->
     <!-- Start Brand Area -->
-          
-    @include('FrontEnd.include.brand-area')
-
-    @include('FrontEnd.include.newsletter')
-    
-</section>
-<!-- End page content -->
+@endsection

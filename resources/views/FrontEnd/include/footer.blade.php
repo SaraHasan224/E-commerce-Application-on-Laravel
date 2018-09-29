@@ -110,12 +110,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="copyright copyright-2">
-                                <p>Copyright &copy; 2016 <a href="#">Freaktheme</a> . All Right Reserved.</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="footer-img">
-                                <img alt="" src="{{url('images/frontend_images/payment.png')}}">
+                                <p>Copyright &copy; 2016 <a href="{{url('/')}}">Freak</a> . All Right Reserved.</p>
                             </div>
                         </div>
                     </div>

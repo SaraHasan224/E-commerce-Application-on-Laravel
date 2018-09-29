@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 27, 2018 at 02:09 PM
+-- Generation Time: Sep 29, 2018 at 02:47 PM
 -- Server version: 10.1.33-MariaDB
 -- PHP Version: 7.2.6
 
@@ -25,12 +25,39 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `about`
+--
+
+CREATE TABLE `about` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `heading` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description1` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description2` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `emphasized_text` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cover_image` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `about`
+--
+
+INSERT INTO `about` (`id`, `heading`, `description1`, `description2`, `emphasized_text`, `cover_image`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(4, 'THE STANDARD LOREM IPSUM PASSAGE', 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, ullam, commodi consequatur?', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu nisi ac mi malesuada vestibulum. Phasellus tempor nunc eleifend cursus molestie. Mauris lectus arcu, pellentesque at sodales sit amet, condimentum id nunc. Donec ornare mattis suscipit. Praesent fermentum accumsan vulputate.', 'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur', '27572.jpg', 1, 'bG4B7PJQKj2Nm1dR3JY0HTDEr4WGkpZa9Ny4gYINr1Vyy2KRUy', '2018-09-29 02:37:35', '2018-09-29 02:43:29'),
+(5, 'FREE SHIPPING', 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, ullam, commodi consequatur?', 'dfsd', 'Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur', '45532.jpg', 1, 'Vkp1oZZY3jK3kKcSi6LeqbYBLjcamRGU7YierZZbOXRogsI3K5', '2018-09-29 02:57:46', '2018-09-29 02:57:46');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `banners`
 --
 
 CREATE TABLE `banners` (
   `id` int(11) NOT NULL,
-  `image` text NOT NULL,
+  `image` varchar(200) NOT NULL,
   `url` text NOT NULL,
   `status` int(1) NOT NULL DEFAULT '1',
   `remember_token` varchar(100) DEFAULT NULL,
@@ -44,7 +71,7 @@ CREATE TABLE `banners` (
 
 INSERT INTO `banners` (`id`, `image`, `url`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, '12006.jpg', 'shop', 1, 'MRDjG6a6Z8xuATrsGIHHif2pZj1w2YzCb9bOU3RGMSiknedKpa', '2018-09-27 04:18:11', '2018-09-27 06:45:03'),
-(2, '25169.jpg', 'shop', 1, 'acdKsfOrMr72aTfhzOGqxm0OWBYlrnuPpohewjYye1Ot7ktGiD', '2018-09-27 04:18:58', '2018-09-27 04:18:58'),
+(2, '8645.jpg', 'shop', 1, 'acdKsfOrMr72aTfhzOGqxm0OWBYlrnuPpohewjYye1Ot7ktGiD', '2018-09-27 04:18:58', '2018-09-28 05:32:33'),
 (3, '44693.jpg', 'shop', 1, 'awp622w4W0u5Mx6X07hpb9GCX9xsOBBFx61sWvNZbpi15FvI3g', '2018-09-27 04:19:07', '2018-09-27 04:19:07'),
 (5, '88241.jpg', 'shop', 1, 'NfWiyC8VP74CfNEiFfXqvYbdXZcpdUEhBsUaeNaNljpqnLqwBn', '2018-09-27 04:19:25', '2018-09-27 04:19:25');
 
@@ -56,12 +83,14 @@ INSERT INTO `banners` (`id`, `image`, `url`, `status`, `remember_token`, `create
 
 CREATE TABLE `blogs` (
   `id` int(10) UNSIGNED NOT NULL,
-  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `author` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description2` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `emphasized_text` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `status` tinyint(1) NOT NULL DEFAULT '1',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -71,17 +100,17 @@ CREATE TABLE `blogs` (
 -- Dumping data for table `blogs`
 --
 
-INSERT INTO `blogs` (`id`, `title`, `author`, `description`, `url`, `image`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Internet Retailer – Portal to eCommerce Intelligence', 'Mike Bob', 'Ecommerce industry strategies for online merchants. Provides daily news, articles, research, webinars and ranking the global leaders in ecommerce.', '001', '64076.jpg', 1, 'smo4oKAKRkNAjZ5xitUnLmf3SZktzwyxJoS0LWf2hKDbMOfrOV', '2018-09-13 11:46:21', '2018-09-26 04:31:45'),
-(2, 'Practical eCommerce', 'Taliya Murad', 'Ecommerce marketing and business strategies to help you succeed online. Conversion, SEO, social media, platforms, marketing, much more. Independent and practical advice since 2005.', '002', '28362.png', 1, 'AvyxA79NA2HcpbEkYlxscOeTbDG4AUOsRqa1BSSK9egrOVJNgT', '2018-09-13 11:46:21', '2018-09-26 05:29:40'),
-(3, 'Get Elastic', 'Waan Fateh', '#1 Subscribed Ecommerce Blog. Get Elastic blog is meant to share ecommerce best practices and better ways to manage the digital relationships.', '003', '98145.jpg', 1, 'smo4oKAKRkNAjZ5xitUnLmf3SZktzwyxJoS0LWf2hKDbMOfrOV', '2018-09-13 11:46:21', '2018-09-26 03:59:04'),
-(4, 'eCommerce Times', 'Adam Bin Muhammad', 'Everything you need to know about doing business on the Internet. Information for C-Level executives and small-to-mid-sized business managers', '004', '29464.jpg', 1, NULL, '2018-09-13 11:46:21', '2018-09-26 03:59:11'),
-(5, 'eCommerce Fuel', 'Jihan Sikander', 'Sharing eCommerce tools, tips and guides to help you build your own profitable, life-changing eCommerce website.', '005', '38708.jpg', 1, 'ImeQAycMUlCKplHD9iGmfi5R2D92arxs8uUQdkHAtCEfLpn0UV', '2018-09-13 11:46:21', '2018-09-26 03:59:19'),
-(6, 'A Better Lemonade Stand', 'Haya ', 'A Better Lemonade Stand is an online ecommerce incubator, supporting early stage ecommerce entrepreneurs. Learn how to start an online business.', '006', '7454.jpg', 1, 'Af4FaQaYoF4htn5JQtPxYyqwkDw2lOf2di01alvTMRucRxgaEE', '2018-09-13 11:46:21', '2018-09-26 03:59:29'),
-(7, 'eCommerce Training Academy Blog', 'Zumar Faris', 'An eCommerce blog to help grow your online business and not start one. Learn proven tips and tactics to help you increase sales.', '007', '92940.jpg', 1, 'RMRNLa9tJXjI7wXnAcvfc0VLAsaVk4VhQAPTa3pGT2mNMcWSjQ', '2018-09-13 11:46:21', '2018-09-26 03:59:38'),
-(8, 'Ecommerce Blogging: Everything You Need To Know', 'Tim Jones', 'If you’ve ever thought about starting a blog for your ecommerce store but didn’t follow through it’s time to reconsider. Ecommerce blogging can help drive more traffic to your website. With more traffic, you strike a better chance of growing your sales. Compared to a company that doesn’t blog, companies who blog can get as much as 97% more backlinks giving them more traffic to monetize. Also, businesses that blog drive 55% more traffic back to their website and ecommerce stores with high traffic tend to have higher sales. In this article, you’ll learn why you should start a blog, blogging tips, where to find blog post ideas, and how to monetize your blog.\r\n\r\nLet’s dive into other reasons why you should consider starting a blog.', '001', 'blog-880x450.jpg', 1, 'j1oFHJ9Qgkx2cSU0RXDUWWiy9phW3uKBH9y33yuFpLMsU3OxuM', '2018-09-26 03:04:59', '2018-09-26 03:04:59'),
-(9, 'Blog Post 1', 'Van Fateh', 'According to Jeff Bullas, adding images to your blog content can help your blog get 94% more views. You can use images from free stock image websites, create your own infographics, or make images on Canva to break up your copy with pictures. If you write long form blog content, images can help break up the text making it easier for someone to read.', '003', '84031.jpg', 1, 'QEJQLccGIpk03xMd7rmflhVQV6XjbXHiKNlHOOx7zyklaBDXS9', '2018-09-26 03:12:19', '2018-09-26 03:59:47'),
-(10, 'Ecommerce Blogging: Why You Should Be Starting a Blog', 'Taliya Murad', 'An ecommerce blog allows you to connect and communicate with your customers. If you run a fitness store, creating fitness blog content allows you to talk about a topic that both you and your customers love. By creating content around your passion, you’ll find customers who share the same interests. Over time, they’ll likely buy from your store because you sell products that are relevant to them. A store blog allows you to open the dialogue with your customers so you can get to know them, their interests and their needs.\r\n\r\nStarting a blog helps you rank better in search engines. While product pages can rank if optimized, in general, long form copy tends to perform best. By creating regular blog content for your store, you’ll be able to build out your web pages which will help bring in more customers. You can use an SEO plug-in on your store and Keyword Planner to ensure you’re optimizing for keywords correctly.  By posting blog content multiple times a week, you should see some of your content ranking well on Google.\r\n\r\nBy creating valuable content for your readers, you can position yourself as the leading expert within your niche. You can share special tips, tactics and advice to your readers to help them succeed. If the advice you share with your readers helps them succeed, they’ll continue reading your blog content because they know they can count on you to give top-tier advice.', '002', '3299.jpg', 1, 'VaOXyIoJ7yfMSmgNkxTsoG5PSVF68TuNDM0X9mrYkORlWsLqYk', '2018-09-26 03:08:13', '2018-09-26 04:00:03');
+INSERT INTO `blogs` (`id`, `title`, `author`, `description`, `description2`, `emphasized_text`, `url`, `image`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Internet Retailer – Portal to eCommerce Intelligence', 'Mike Bob', 'Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor ac ante egestas hendrerit. Aliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id ultrices, finibus tortor. Mauris eu dui ut lectus fermentum', 'Aenean et tempor eros, vitae sollicitudin velit. Etiam varius enim nec quam tempor, sed efficitur ex ultrices. Phasellus pretium est vel dui vestibulum condimentum. Aenean nec suscipit nibh. Phasellus nec lacus id arcu facilisis elementum. Curabitur lobortis, elit ut elementum congue, erat ex bibendum odio, nec iaculis lacus sem non lorem. Duis suscipit metus ante, sed convallis quam posuere quis. Ut tincidunt eleifend odio, ac fringilla mi vehicula nec. Nunc vitae lacus eget lectus imperdiet tempus sed in dui. Nam molestie magna at risus consectetur, placerat suscipit justo dignissim. Sed vitae fringilla enim, nec ullamcorper arcu.  Suspendisse turpis ipsum, tempus in nulla eu, posuere pharetra nibh. In dignissim vitae lorem non mollis. Praesent pretium tellus in tortor viverra condimentum. Nullam dignissim facilisis nisl, accumsan placerat justo ultricies vel. Vivamus finibus mi a neque pretium, ut convallis dui lacinia. Morbi a rutrum velit. Curabitur sagittis quam quis consectetur mattis. Aenean sit amet quam vel turpis interdum sagittis et eget neque. Nunc ante quam, luctus et neque a, interdum iaculis metus. Aliquam vel ante mattis, placerat orci id, vehicula quam. Suspendisse quis eros cursus, viverra urna sed, commodo mauris. Cras diam arcu, fringilla a sem condimentum, viverra facilisis nunc. Curabitur vitae orci id nulla maximus maximus. Nunc pulvinar sollicitudin molestie.', 'Quisque semper nunc vitae erat pellentesque, ac placerat arcu consectetur. In venenatis elit ac ultrices convallis. Duis est nisi, tincidunt ac urna sed, cursus blandit lectus. In ullamcorper sit amet ligula ut eleifend. Proin dictum tempor ligula, ac feugiat metus. Sed finibus tortor eu scelerisque scelerisque.', '001', '64076.jpg', 1, 'smo4oKAKRkNAjZ5xitUnLmf3SZktzwyxJoS0LWf2hKDbMOfrOV', '2018-09-13 11:46:21', '2018-09-26 04:31:45'),
+(2, 'Practical eCommerce', 'Taliya Murad', 'Ecommerce marketing and business strategies to help you succeed online. Conversion, SEO, social media, platforms, marketing, much more. Independent and practical advice since 2005.', '', '', '002', '28362.png', 1, 'AvyxA79NA2HcpbEkYlxscOeTbDG4AUOsRqa1BSSK9egrOVJNgT', '2018-09-13 11:46:21', '2018-09-26 05:29:40'),
+(3, 'Get Elastic', 'Waan Fateh', '#1 Subscribed Ecommerce Blog. Get Elastic blog is meant to share ecommerce best practices and better ways to manage the digital relationships.', '', '', '003', '98145.jpg', 1, 'smo4oKAKRkNAjZ5xitUnLmf3SZktzwyxJoS0LWf2hKDbMOfrOV', '2018-09-13 11:46:21', '2018-09-26 03:59:04'),
+(4, 'eCommerce Times', 'Adam Bin Muhammad', 'Everything you need to know about doing business on the Internet. Information for C-Level executives and small-to-mid-sized business managers', '', '', '004', '29464.jpg', 1, NULL, '2018-09-13 11:46:21', '2018-09-26 03:59:11'),
+(5, 'eCommerce Fuel', 'Jihan Sikander', 'Sharing eCommerce tools, tips and guides to help you build your own profitable, life-changing eCommerce website.', '', '', '005', '38708.jpg', 1, 'ImeQAycMUlCKplHD9iGmfi5R2D92arxs8uUQdkHAtCEfLpn0UV', '2018-09-13 11:46:21', '2018-09-26 03:59:19'),
+(6, 'A Better Lemonade Stand', 'Haya ', 'A Better Lemonade Stand is an online ecommerce incubator, supporting early stage ecommerce entrepreneurs. Learn how to start an online business.', '', '', '006', '7454.jpg', 1, 'Af4FaQaYoF4htn5JQtPxYyqwkDw2lOf2di01alvTMRucRxgaEE', '2018-09-13 11:46:21', '2018-09-26 03:59:29'),
+(7, 'eCommerce Training Academy Blog', 'Zumar Faris', 'An eCommerce blog to help grow your online business and not start one. Learn proven tips and tactics to help you increase sales.', '', '', '007', '92940.jpg', 1, 'RMRNLa9tJXjI7wXnAcvfc0VLAsaVk4VhQAPTa3pGT2mNMcWSjQ', '2018-09-13 11:46:21', '2018-09-26 03:59:38'),
+(8, 'Ecommerce Blogging: Everything You Need To Know', 'Tim Jones', 'If you’ve ever thought about starting a blog for your ecommerce store but didn’t follow through it’s time to reconsider. Ecommerce blogging can help drive more traffic to your website. With more traffic, you strike a better chance of growing your sales. Compared to a company that doesn’t blog, companies who blog can get as much as 97% more backlinks giving them more traffic to monetize. Also, businesses that blog drive 55% more traffic back to their website and ecommerce stores with high traffic tend to have higher sales. In this article, you’ll learn why you should start a blog, blogging tips, where to find blog post ideas, and how to monetize your blog.\r\n\r\nLet’s dive into other reasons why you should consider starting a blog.', '', '', '001', 'blog-880x450.jpg', 1, 'j1oFHJ9Qgkx2cSU0RXDUWWiy9phW3uKBH9y33yuFpLMsU3OxuM', '2018-09-26 03:04:59', '2018-09-26 03:04:59'),
+(9, 'Blog Post 1', 'Van Fateh', 'According to Jeff Bullas, adding images to your blog content can help your blog get 94% more views. You can use images from free stock image websites, create your own infographics, or make images on Canva to break up your copy with pictures. If you write long form blog content, images can help break up the text making it easier for someone to read.', '', '', '003', '84031.jpg', 1, 'QEJQLccGIpk03xMd7rmflhVQV6XjbXHiKNlHOOx7zyklaBDXS9', '2018-09-26 03:12:19', '2018-09-26 03:59:47'),
+(10, 'Ecommerce Blogging: Why You Should Be Starting a Blog', 'Taliya Murad', 'An ecommerce blog allows you to connect and communicate with your customers. If you run a fitness store, creating fitness blog content allows you to talk about a topic that both you and your customers love. By creating content around your passion, you’ll find customers who share the same interests. Over time, they’ll likely buy from your store because you sell products that are relevant to them. A store blog allows you to open the dialogue with your customers so you can get to know them, their interests and their needs.\r\n\r\nStarting a blog helps you rank better in search engines. While product pages can rank if optimized, in general, long form copy tends to perform best. By creating regular blog content for your store, you’ll be able to build out your web pages which will help bring in more customers. You can use an SEO plug-in on your store and Keyword Planner to ensure you’re optimizing for keywords correctly.  By posting blog content multiple times a week, you should see some of your content ranking well on Google.\r\n\r\nBy creating valuable content for your readers, you can position yourself as the leading expert within your niche. You can share special tips, tactics and advice to your readers to help them succeed. If the advice you share with your readers helps them succeed, they’ll continue reading your blog content because they know they can count on you to give top-tier advice.', '', '', '002', '3299.jpg', 1, 'VaOXyIoJ7yfMSmgNkxTsoG5PSVF68TuNDM0X9mrYkORlWsLqYk', '2018-09-26 03:08:13', NULL);
 
 -- --------------------------------------------------------
 
@@ -91,11 +120,11 @@ INSERT INTO `blogs` (`id`, `title`, `author`, `description`, `url`, `image`, `st
 
 CREATE TABLE `brands` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` tinyint(4) NOT NULL DEFAULT '1',
-  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `image` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -121,10 +150,10 @@ INSERT INTO `brands` (`id`, `name`, `description`, `url`, `status`, `image`, `re
 
 CREATE TABLE `categories` (
   `category_id` int(10) UNSIGNED NOT NULL,
-  `category_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `category_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `sub_category_id` int(11) DEFAULT '0',
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -183,6 +212,83 @@ INSERT INTO `categories` (`category_id`, `category_name`, `sub_category_id`, `de
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `location` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contactNumber` int(11) NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subject` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `footer`
+--
+
+CREATE TABLE `footer` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `page_title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `indexpage`
+--
+
+CREATE TABLE `indexpage` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `heading` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `icon` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` int(1) NOT NULL DEFAULT '1',
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `indexpage`
+--
+
+INSERT INTO `indexpage` (`id`, `heading`, `text`, `icon`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(3, 'FREE SHIPPING', 'Enjoy FREE shipping all over Pakistan by using the Disount Code: FREESHIPPING on checkout', 'shopping-cart', 1, 'ZzA0nEfekLDO19eR1rUtHcW3qkiIU9weB7gP6C2zwManH1oEUf', '2018-09-28 06:01:34', '2018-09-28 06:05:28'),
+(4, '24 HOUR SUPPORT', 'we offers you with confidential and anonymous 24-hour non-judgmental telephone support.', 'headset', 1, 'XR5RV3TV6N2K5r9NwJyvQNWmkj44YUXr8vb8yX8CLMwdXbcmMc', '2018-09-28 06:03:32', '2018-09-28 06:03:32'),
+(5, '100% MONEY BACK', '100% Satisfaction & Money Back Guarantees. We want you to be totally delighted with our service and ', 'balance-wallet', 1, '2kSUZtVbRRhNQnBtUjJE1mShC3StNe9qVHrhEW00McVxq1BVwm', '2018-09-28 06:04:12', '2018-09-28 06:04:12');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -207,7 +313,18 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (9, '2018_09_26_120747_create_product_images_table', 5),
 (10, '2018_09_27_071608_create_banners_table', 6),
 (11, '2018_09_27_110343_create_brands_table', 7),
-(12, '2018_09_27_114947_create_newsletter_signup_table', 8);
+(12, '2018_09_27_114947_create_newsletter_signup_table', 8),
+(13, '2018_09_28_075021_create_index_page_data_table', 9),
+(14, '2018_09_28_081320_create_owner_view_table', 10),
+(15, '2018_09_28_112126_create_about_table', 11),
+(16, '2018_09_28_112211_create_our_team_table', 11),
+(17, '2018_09_29_090130_create_feedback_table', 12),
+(18, '2018_09_29_090331_create_contact_table', 13),
+(19, '2018_09_29_101536_create_footer_table', 13),
+(20, '2018_09_29_101607_create_photo_stream_table', 13),
+(21, '2018_09_29_101633_create_social_media_accounts_table', 13),
+(22, '2018_09_29_101650_create_videos_table', 13),
+(23, '2018_09_29_101707_create_wishlist_table', 13);
 
 -- --------------------------------------------------------
 
@@ -226,6 +343,59 @@ CREATE TABLE `newsletter-signup` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `our-team`
+--
+
+CREATE TABLE `our-team` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `position` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `our-team`
+--
+
+INSERT INTO `our-team` (`id`, `name`, `position`, `image`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Martin Demichelis', 'PHP Developer', '85090.jpg', 1, '4wRFSYbI3SFqNU6Mf8OjRv6LOwa8F8gjkO1qkzpRKCqwlo8xuD', '2018-09-28 07:17:55', '2018-09-28 07:17:55'),
+(3, 'Havier Macherano', 'Developer', '64188.jpg', 1, 't5Jr4UmfeJvwSXdC0GXTFyiSi83lNU4sKKOCtTlyETsjCwLHCS', '2018-09-28 07:22:21', '2018-09-28 07:22:21'),
+(4, 'Havier Macherano', 'Developer', '46973.jpg', 1, 'DRfLWO1dg3LFsOg9hTHWwAjrOSNm96tPxIoo7Y4hpIXu776wqg', '2018-09-28 07:22:41', '2018-09-29 02:48:43'),
+(5, 'Martin Demichelis', 'PHP Developer', '93332.jpg', 1, 'BfMWGo5TQIDO6AJvHi8qamAT99LxUjFCYOV2Yv2cFNPwLTInhh', '2018-09-29 02:34:22', '2018-09-29 02:53:26');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `owner-views`
+--
+
+CREATE TABLE `owner-views` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `position` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `view` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` int(1) DEFAULT '1',
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `owner-views`
+--
+
+INSERT INTO `owner-views` (`id`, `name`, `position`, `view`, `image`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(3, 'ANIKA MOLLIK', 'Chairmen', 'consectetur adipisicing elit, sed do eiusmod tempor  incididunt labore et dolore magna aliqua. Ut enim ad minim veniam,voluptate velit esse cillu nulla pariatur. Excepteur sint occaecat', '43479.jpg', 1, '7YEcdVgXtgPa8SJqvqtikeZ5zWNkO6a8pwbfuercmnLPddoVwu', '2018-09-28 06:09:00', '2018-09-28 06:14:21'),
+(5, 'Ashim Kumar', 'CEO', 'consectetur adipisicing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad minim veniam,voluptate velit esse cillu nulla pariatur. Excepteur sint occaecat', '99580.jpg', 1, 'xddyNmSa6hgRgrFS0YRGeNnbzFTklTSlLwfOS5kKgK9JuV9tff', '2018-09-28 07:20:25', '2018-09-28 07:20:25');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `password_resets`
 --
 
@@ -238,23 +408,51 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `photostream`
+--
+
+CREATE TABLE `photostream` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link_to` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `photostream`
+--
+
+INSERT INTO `photostream` (`id`, `image`, `link_to`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, '', '#', 1, 'DIGujRvE4X0nvcmb0M0rCQKbC1e9DqJqp9cVDakxhYSbIDOjnZ', '2018-09-29 07:36:23', '2018-09-29 07:45:31'),
+(2, '9709.jpg', '#', 1, '0WsIECC3uKbvAHf8tQH9i29b5vcQywQIKUlEyTdvTB8WLfGo7n', '2018-09-29 07:38:24', '2018-09-29 07:38:24'),
+(3, '93760.jpg', '#', 1, 'Ju9uqh5ntBlrTjPv0RnEgB3SViClxgRsm2FzmPsN2xCsWMxHb3', '2018-09-29 07:38:39', '2018-09-29 07:38:39'),
+(4, '13863.jpg', '#', 1, 'BeesKQhgWuGED2j1y7rdniZDoTd9A2LKFH4XndNNHEXkSrqhwl', '2018-09-29 07:38:51', '2018-09-29 07:38:51'),
+(5, '66032.jpg', '#', 1, 'QMNSnY1lRMmjmnPFiNYoWt4chd90PPlcCERHH6SeFhStZRo5rR', '2018-09-29 07:39:00', '2018-09-29 07:39:00'),
+(6, '14654.jpg', '#', 1, 'y1i5yuNFbLECgK0lBpmEJO0QtDFbP8pvHFEiXeHd2oP4xlsVta', '2018-09-29 07:39:11', '2018-09-29 07:39:11');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
   `product_id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `product_code` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `product_code` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `category_id` int(11) NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `Price` int(11) NOT NULL,
   `discountedPrice` int(11) NOT NULL,
-  `Color` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Size` text COLLATE utf8mb4_unicode_ci,
+  `Color` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Size` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Quantity` int(11) DEFAULT NULL,
-  `url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` tinyint(4) DEFAULT '1',
-  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '555',
+  `url` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) DEFAULT '1',
+  `image` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -292,8 +490,8 @@ INSERT INTO `products` (`product_id`, `name`, `product_code`, `category_id`, `de
 CREATE TABLE `product_attributes` (
   `id` int(10) UNSIGNED NOT NULL,
   `product_id` int(11) NOT NULL,
-  `sku` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `size` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sku` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `size` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` double(8,2) NOT NULL,
   `stock` int(11) NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -322,8 +520,8 @@ INSERT INTO `product_attributes` (`id`, `product_id`, `sku`, `size`, `price`, `s
 CREATE TABLE `product_images` (
   `id` int(10) UNSIGNED NOT NULL,
   `product_id` int(11) NOT NULL,
-  `status` tinyint(4) NOT NULL,
-  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `image` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -338,10 +536,10 @@ CREATE TABLE `product_images` (
 CREATE TABLE `sliders` (
   `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `text` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `link` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` int(1) NOT NULL DEFAULT '1',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -353,8 +551,25 @@ CREATE TABLE `sliders` (
 --
 
 INSERT INTO `sliders` (`id`, `title`, `description`, `text`, `link`, `image`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, '2016', 'BOUTIQUE SPECIAL COLLECTION', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ipsum dolor sit amet labore et dolore', 'shop', '77252.jpg', 1, 'rn9DydS51P46q1OxSjARw7HnmYhPuTD5PoBVanRiOfRkcOmww3', '2018-09-27 02:50:59', '2018-09-27 03:16:44'),
-(2, '2017', 'BOUTIQUE SPECIAL COLLECTION', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ipsum dolor sit amet labore et dolore', 'shop', '18754.jpg', 1, 'rn9DydS51P46q1OxSjARw7HnmYhPuTD5PoBVanRiOfRkcOmww3', '2018-09-27 02:50:59', '2018-09-27 03:16:33');
+(1, '2016', 'BOUTIQUE SPECIAL COLLECTION', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ipsum dolor sit amet', 'shop', '77252.jpg', 1, 'rn9DydS51P46q1OxSjARw7HnmYhPuTD5PoBVanRiOfRkcOmww3', '2018-09-27 02:50:59', '2018-09-27 03:16:44'),
+(2, '2017', 'BOUTIQUE SPECIAL COLLECTION', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ipsum dolor sit amet', 'shop', '18754.jpg', 1, 'rn9DydS51P46q1OxSjARw7HnmYhPuTD5PoBVanRiOfRkcOmww3', '2018-09-27 02:50:59', '2018-09-27 03:16:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `social_media_accounts`
+--
+
+CREATE TABLE `social_media_accounts` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `icon` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -367,7 +582,8 @@ CREATE TABLE `users` (
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `admin` tinyint(1) DEFAULT NULL,
+  `admin` tinyint(1) DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '1',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -377,12 +593,60 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `admin`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'sara hasan', 'sarahasan@gmail.com', '$2y$10$hQmRkdoUIuASIRmh55e2h.hIRsYsO7W.ZEIGdTjVtrieNjdf7.p8K', 1, 'TyEbaadtuHdpjq36UZeSvJcHd3H1xzf5tpHXtAEXw4rFSo63GdhzSQcq0kIP', '2018-09-10 08:23:53', '2018-09-13 05:10:34');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `admin`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'sara hasan', 'sarahasan@gmail.com', '$2y$10$hQmRkdoUIuASIRmh55e2h.hIRsYsO7W.ZEIGdTjVtrieNjdf7.p8K', 1, 1, 'TyEbaadtuHdpjq36UZeSvJcHd3H1xzf5tpHXtAEXw4rFSo63GdhzSQcq0kIP', '2018-09-10 08:23:53', '2018-09-13 05:10:34'),
+(3, 'sara', 'sara@gmail.com', '$2y$10$uVCc06CoBpFcuH7BVmX.zO.RJSTLGhCapT52UEQH2.apGDeGIqkNW', 0, 1, 'yz30CzVPz04ZaTZLEgnwH7NHI996vQ1AoaoGZXA1gHWYYpHtU4', '2018-09-29 06:32:49', '2018-09-29 06:32:49');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `videos`
+--
+
+CREATE TABLE `videos` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `videos`
+--
+
+INSERT INTO `videos` (`id`, `title`, `description`, `link`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(4, 'Youtube Video', 'BOUTIQUE SPECIAL COLLECTION', 'https://www.youtube.com/embed/P-y372Rz_0c', 1, '8bJukurWB9Aq6O2z793xjSwigwKXpaVaiBIZ2TxbovM6h7oNF3', '2018-09-29 06:54:18', '2018-09-29 06:54:18'),
+(5, 'Vimeo Video', 'ss', 'https://player.vimeo.com/video/40934652', 1, '5H6evlukSyGvr3GLp6FXoGaUg4XVZoc7XNlMTnO5CFx3nIF7cm', '2018-09-29 06:54:44', '2018-09-29 06:54:44');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wishlist`
+--
+
+CREATE TABLE `wishlist` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `status` tinyint(4) NOT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `about`
+--
+ALTER TABLE `about`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `banners`
@@ -409,6 +673,30 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`category_id`);
 
 --
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `footer`
+--
+ALTER TABLE `footer`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `indexpage`
+--
+ALTER TABLE `indexpage`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -421,10 +709,28 @@ ALTER TABLE `newsletter-signup`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `our-team`
+--
+ALTER TABLE `our-team`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `owner-views`
+--
+ALTER TABLE `owner-views`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Indexes for table `photostream`
+--
+ALTER TABLE `photostream`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `products`
@@ -451,6 +757,12 @@ ALTER TABLE `sliders`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `social_media_accounts`
+--
+ALTER TABLE `social_media_accounts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -458,8 +770,26 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
+-- Indexes for table `videos`
+--
+ALTER TABLE `videos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `about`
+--
+ALTER TABLE `about`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `banners`
@@ -471,7 +801,7 @@ ALTER TABLE `banners`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `brands`
@@ -486,16 +816,58 @@ ALTER TABLE `categories`
   MODIFY `category_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `footer`
+--
+ALTER TABLE `footer`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `indexpage`
+--
+ALTER TABLE `indexpage`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `newsletter-signup`
 --
 ALTER TABLE `newsletter-signup`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `our-team`
+--
+ALTER TABLE `our-team`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `owner-views`
+--
+ALTER TABLE `owner-views`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `photostream`
+--
+ALTER TABLE `photostream`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -519,13 +891,31 @@ ALTER TABLE `product_images`
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `social_media_accounts`
+--
+ALTER TABLE `social_media_accounts`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `videos`
+--
+ALTER TABLE `videos`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -40,13 +40,13 @@
                                             <div class="col-sm-4 col-xs-12" style="margin-bottom: 20px;">
                                                 <div class="single-blog">
                                                     <div class="blog-image">
-                                                        <a href="#">
+                                                        <a href="{{url('/blog-detail/'.$blogs->id)}}">
                                                             <img alt="" src="{{asset('images/backend_images/blogs/'.$blogs->image)}}" style="width:100%; height:185px;">
                                                         </a>
                                                     </div>
                                                     <div class="blog-content pb-20 text-center">
                                                         <div class="date-added mb-20 pt-20"><i class="zmdi zmdi-time mr-10"></i>Date : {{$blogs->created_at->format('d M Y')}}</div>
-                                                        <h5><a class="blog-title text-capitalize" href="#">{{$blogs->title}}</a></h5>
+                                                        <h5><a class="blog-title text-capitalize" href="{{url('/blog-detail/'.$blogs->id)}}">{{$blogs->title}}</a></h5>
                                                         <div class="post-info-author mt-30">
                                                             <span class="author mr-20">
                                                                 <i class="zmdi zmdi-account"></i>
@@ -82,7 +82,7 @@
                                                                 02 Comments
                                                             </span> --}}
                                                         </div>
-                                                        <a href="#" class="button extra-small mt-60 text-uppercase">
+                                                        <a href="{{url('/blog-detail/'.$blogs->id)}}" class="button extra-small mt-60 text-uppercase">
                                                             <span>Read More</span>
                                                         </a>
                                                     </div>                                    

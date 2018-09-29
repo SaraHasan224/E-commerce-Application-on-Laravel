@@ -36,7 +36,7 @@
             <h5>Products</h5>
           </div>
           <div class="widget-content ">
-            <table class="table table-bordered table-striped with-check data-table">
+            <table class="table table-bordered table-striped with-check data-table nowrap">
               <thead>
                 <tr>
                   <th><input type="checkbox" id="title-table-checkbox" name="title-table-checkbox" /></th>
