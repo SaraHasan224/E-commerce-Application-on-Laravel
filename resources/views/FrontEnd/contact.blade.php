@@ -16,7 +16,7 @@
                         <div class="col-md-5 col-sm-6">
                             <div class="contact-form">
                                 <div class="title text-uppercase mb-15">
-                                    <h4><strong>get in touch</strong></h4>
+                                    <h4><strong>Get in touch</strong></h4>
                                 </div>
                                 <form id="contact-form" action="mail.php" method="post">
                                     <input type="text" name="name" placeholder="Name*">
@@ -33,23 +33,22 @@
                                 <div class="title text-uppercase mb-15">
                                     <h4><strong>CONTACT FORM</strong></h4>
                                 </div>
-                                <ul class="toggle-footer text-ash p-30">
-                                    <li class="mb-30 pl-45">
-                                        <i class="zmdi zmdi-pin"></i>
-                                        <p>House No 08, Road No 08, <br>
-                                        Din Bari, Dhaka, Bangladesh</p>
-                                    </li>
-                                    <li class="mb-30 pl-45">
-                                        <i class="zmdi zmdi-email"></i>
-                                        <p>Username@gmail.com <br>
-                                        Damo@gmail.com</p>
-                                    </li>
-                                    <li class="pl-45">
-                                        <i class="zmdi zmdi-phone"></i>
-                                        <p>+660 256 24857<br>
-                                        +660 256 24857</p>
-                                    </li>
-                                </ul>
+                                @foreach ($getAddress as $address)
+                                    <ul class="toggle-footer text-ash p-30">
+                                        <li class="mb-30 pl-45">
+                                            <i class="zmdi zmdi-pin"></i>
+                                            <p>{{$address->location}}</p>
+                                        </li>
+                                        <li class="mb-30 pl-45">
+                                            <i class="zmdi zmdi-email"></i>
+                                            <p>{{$address->email}}</p>
+                                        </li>
+                                        <li class="pl-45">
+                                            <i class="zmdi zmdi-phone"></i>
+                                            <p>{{$address->contactNumber}}</p>
+                                        </li>
+                                    </ul>                                    
+                                @endforeach
                             </div>
                         </div>
                     </div>

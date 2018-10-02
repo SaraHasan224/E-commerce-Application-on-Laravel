@@ -152,6 +152,13 @@ Route::group(['middleware' => ['auth']],function()
     Route::match(['get','post'],'/admin/video/edit/{category_id}', 'VideoController@edit');
     Route::match(['get','post'],'/admin/video/delete/{category_id}', 'VideoController@delete'); 
 
+    //Routes for Customer support
+    Route::match(['get','post'],'/admin/support', 'SupportController@index');
+    Route::match(['get','post'],'/admin/reach-us-at', 'SupportController@support');
+    Route::match(['get','post'],'/admin/reach-us-at/add', 'SupportController@add');
+    Route::match(['get','post'],'/admin/reach-us-at/edit/{category_id}', 'SupportController@edit');
+    Route::match(['get','post'],'/admin/reach-us-at/delete/{category_id}', 'SupportController@delete'); 
+
     //Routes for footer
     Route::match(['get','post'],'/admin/footer', 'FooterController@index');
     Route::match(['get','post'],'/admin/footer/add', 'FooterController@add');

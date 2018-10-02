@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
@@ -13,9 +11,9 @@ use Image;
 use Sessions;
 use Auth;
 use DB;
-
 class FooterController extends Controller
-{  public function index(Request $request)
+{  
+    public function index(Request $request)
     {
         $getPageLinks = Footer::orderBy('id')->get();
         $getAccounts = SocialMediaAccounts::orderBy('id')->get();
@@ -36,14 +34,13 @@ class FooterController extends Controller
         {
             $data = $request->all();
             $post = new Footer;     
-            $post -> title = $data['title'];
-            $post -> description = $data['description'];
-            $post -> link = $data['link'];
+            $post -> page_title = $data['name'];
+            $post -> url = $data['link'];
             $post->remember_token = str_random(50);
             $post->save();         
-            return redirect('/admin/video')->with('success','Video successfully added');
+            return redirect('/admin/footer')->with('success','Footer successfully added');
         }
-        return view('BackEnd.videos.add');
+        return view('BackEnd.footer.links.add');
     }
     public function edit(Request $request,$id=null)
     {
@@ -51,18 +48,16 @@ class FooterController extends Controller
         {
             $data = $request -> all();
             Footer::where(['id'=>$id])->update([
-            'title' => $data['title'],
-            'description' => $data['description'],
-            'link' => $data['link'],
+            'page_title' => $data['title'],
+            'url' => $data['url'],
             'status' => $data['status'],
             ]);
-            return redirect('/admin/video')->with('success','Video successfully updated');
+            return redirect('/admin/footer')->with('success','Footer links successfully updated');
            
         }
         $getLinks = Footer::where(['id'=>$id])->first();
         return view('BackEnd.footer.edit')->with(compact('getLinks'));
     }
-
     //Social Media
     public function deletemedia(Request $request,$id=null)
     {
@@ -78,14 +73,14 @@ class FooterController extends Controller
         {
             $data = $request->all();
             $post = new SocialMediaAccounts;     
-            $post -> title = $data['title'];
-            $post -> description = $data['description'];
+            $post -> name = $data['name'];
+            $post -> icon = $data['icon'];
             $post -> link = $data['link'];
             $post->remember_token = str_random(50);
             $post->save();         
-            return redirect('/admin/video')->with('success','Video successfully added');
+            return redirect('/admin/footer')->with('success','Social Media account successfully added to website');
         }
-        return view('BackEnd.videos.add');
+        return view('BackEnd.footer.media.add');
     }
     public function editmedia(Request $request,$id=null)
     {
@@ -93,18 +88,17 @@ class FooterController extends Controller
         {
             $data = $request -> all();
             SocialMediaAccounts::where(['id'=>$id])->update([
-            'title' => $data['title'],
-            'description' => $data['description'],
+            'name' => $data['name'],
+            'icon' => $data['icon'],
             'link' => $data['link'],
             'status' => $data['status'],
             ]);
-            return redirect('/admin/video')->with('success','Video successfully updated');
+            return redirect('/admin/footer')->with('success','Social Media account successfully updated');
            
         }
         $getMedia = SocialMediaAccounts::where(['id'=>$id])->first();
         return view('BackEnd.footer.edit')->with(compact('getMedia'));
     }
-
     //Photostream
     public function deletephotostream(Request $request,$id=null)
     {
@@ -114,7 +108,6 @@ class FooterController extends Controller
             return redirect()->back()->with('error','Photo Stream deleted successfully!!');
         }
     }
-
     public function addphotostream(Request $request)
     {
         if($request -> isMethod('post'))
@@ -158,7 +151,7 @@ class FooterController extends Controller
                 }
             }
             PhotoStream::where(['id'=>$id])->update([                
-            'link_to' => $data['url'],
+            'link_to' => $data['link'],
             'status' => $data['status'],
             'image' => $filename
             ]);
@@ -169,7 +162,6 @@ class FooterController extends Controller
         return view('BackEnd.footer.edit')->with(compact('getPhotoStream'));
        
     }
-
     
     public function deletephotostreamImages($id = null)
     {

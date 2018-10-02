@@ -15,6 +15,8 @@ use App\Brands;
 use App\About;
 use App\OurTeam;
 use App\Videos;
+use App\ReachUsAt;
+use App\Location;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class IndexController extends Controller
 {
@@ -115,7 +117,9 @@ class IndexController extends Controller
     //Contact Page Loads Here...
     public function contact()
     { 
-        return view('FrontEnd.contact');
+        $getAddress = ReachUsAt::orderBy('id')->where('status','<>',0)->take(1)->get();
+        // $getLocation = Location::orderBy('id')->where('status','<>',0)->take(1)->get();
+        return view('FrontEnd.contact')->with(compact('getAddress','getLocation'));
     }  
          
     //Video Page Loads Here...

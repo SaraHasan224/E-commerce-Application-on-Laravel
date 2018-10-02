@@ -55,6 +55,11 @@
         </a>
       </li>  
       <li> 
+        <a href="{{url('/admin/reach-us-at')}}"><i class="icon icon-phone"></i>
+         <span>Reach us at</span>
+        </a>
+      </li>  
+      <li> 
         <a href="{{url('/admin/footer')}}"><i class="icon icon-phone"></i>
          <span>Footer</span>
         </a>
