@@ -1,12 +1,12 @@
-	$('.data-table').dataTable({
-		
+	$('.data-table').DataTable({
+		"responsive": true,
 		"bJQueryUI": true,
 		"sPaginationType": "full_numbers",
 		"dom": 'Bfrtip',
+		"sDom": '<""l>t<"F"fp>',
         "buttons": [
             'copy', 'csv', 'excel', 'pdf', 'print'
-		],
-		"sDom": '<""l>t<"F"fp>'
+		]
 		
 	});
 	

@@ -30,9 +30,7 @@
           <div class="widget-box">
             <div class="widget-title"> <span class="icon"> <i class="icon-tags"></i> </span>
               <h5>Reach Us At</h5>
-              <div class="pull-right">
-                  <a href="{{url('/admin/reach-us-at/add')}}" type="button" class="btn btn-primary" style="margin-top:3px; margin-right:10px">Add</a>
-              </div>
+
             </div>
             <div class="widget-content ">
               <table class="table table-bordered table-striped with-check data-table">
@@ -66,7 +64,6 @@
                           <td>{{$post->updated_at}}</td>
                           <td>
                             <a href="{{url('/admin/reach-us-at/edit/'.$post->id)}}" type="button" class="btn btn-primary">Edit</a>
-                            <a href="{{url('/admin/reach-us-at/delete/'.$post->id)}}" type="button" class="btn btn-danger delete">Delete</a>
                           </td>
                       </tr>
                       @endforeach

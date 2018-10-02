@@ -16,7 +16,11 @@ use App\About;
 use App\OurTeam;
 use App\Videos;
 use App\ReachUsAt;
-use App\Location;
+use App\Location;           //CRUD not done yet
+use App\Footer;
+use App\PhotoStream;
+use App\SocialMediaAccounts;
+
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class IndexController extends Controller
 {
@@ -30,7 +34,7 @@ class IndexController extends Controller
         return parent::render($request, $e);
     }
     //Index Page Loads Here...
-    public function index()
+    public function index(FooterRepository $getFooterLink)
     {
         $getViews = OwnersView::orderBy('id')->where('status','<>',0)->get();
         $getContent = IndexPageData::orderBy('id')->where('status','<>',0)->get();
@@ -169,5 +173,13 @@ class IndexController extends Controller
         return view('FrontEnd.product-compare');
     }  
      
+
+    public function footer()
+    {        
+        $getFooterLink = Footer::orderBy('id')->where('status','<>',0)->get();
+        $getMedia = SocialMediaAccounts::orderBy('id')->where('status','<>',0)->get();
+        $getPhotoStream = PhotoStream::orderBy('id')->where('status','<>',0)->get();
+        return view('FrontEnd.video')->with(compact('Footer','getMedia','getPhotoStream'));
+    }
      
 }

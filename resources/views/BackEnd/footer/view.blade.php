@@ -87,7 +87,7 @@
           <div class="widget-title"> <span class="icon"> <i class="icon-tags"></i> </span>
             <h5>Social Media Accounts</h5>
             <div class="pull-right">
-                <a href="{{url('/admin/media/add')}}" type="button" class="btn btn-primary" style="margin-top:3px; margin-right:10px">Add</a>
+                <a href="{{url('/admin/social-media/add')}}" type="button" class="btn btn-primary" style="margin-top:3px; margin-right:10px">Add</a>
             </div>
           </div>
           <div class="widget-content ">
@@ -121,8 +121,8 @@
                         <td>{{$post->created_at}}</td>
                         <td>{{$post->updated_at}}</td>
                         <td>
-                          <a href="{{url('/admin/media/edit/'.$post->id)}}" type="button" class="btn btn-primary">Edit</a>
-                          <a href="{{url('/admin/media/delete/'.$post->id)}}" type="button" class="btn btn-danger delete">Delete</a>
+                          <a href="{{url('/admin/social-media/edit/'.$post->id)}}" type="button" class="btn btn-primary">Edit</a>
+                          <a href="{{url('/admin/social-media/delete/'.$post->id)}}" type="button" class="btn btn-danger delete">Delete</a>
                         </td>
                     </tr>
                     @endforeach

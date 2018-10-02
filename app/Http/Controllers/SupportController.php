@@ -15,38 +15,7 @@ class SupportController extends Controller
         return view('BackEnd.contact.view')->with(compact('data','location'));
     }
 
-    public function support(Request $request)
-    {
-        $location = ReachUsAt::orderBy('id')->get();
-        return view('BackEnd.contact.reach.view')->with(compact('location'));
-    }
-
-    public function delete(Request $request,$id=null)
-    {
-        if(!empty($id))
-        {
-            ReachUsAt::where(['id'=>$id])->delete();
-            return redirect()->back()->with('error','Your location is deleted successfully!!');
-        }
-    }
-
-    public function add(Request $request)
-    {
-        if($request -> isMethod('post'))
-        {
-            $data = $request->all();
-            $post = new ReachUsAt;     
-            $post -> location = $data['location'];
-            $post -> email = $data['email'];
-            $post -> contactNumber = $data['number'];
-            $post->remember_token = str_random(50);
-            $post->save();         
-            return redirect('/admin/reach-us-at')->with('success','Your location is successfully added');
-        }
-        return view('BackEnd.contact.reach.add');
-    }
-
-    public function edit(Request $request,$id=null)
+      public function edit(Request $request,$id=null)
     {
         if($request -> isMethod('post'))
         {

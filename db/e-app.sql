@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2018 at 02:47 PM
--- Server version: 10.1.33-MariaDB
--- PHP Version: 7.2.6
+-- Generation Time: Oct 02, 2018 at 03:48 PM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.1.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -219,12 +219,19 @@ CREATE TABLE `contact` (
   `id` int(10) UNSIGNED NOT NULL,
   `location` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `contactNumber` int(11) NOT NULL,
-  `status` tinyint(4) NOT NULL,
+  `contactNumber` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `location`, `email`, `contactNumber`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'House No 08, Road No 08,  Din Bari, Dhaka, Bangladesh', 'sarahasan@gmail.com', '+660 256 24857', 1, 'ESlYn7MAiFuzKAJ7M6YST5x7KDPFtzTKg6i4FFKcxbmdqCAKs1', '2018-10-02 06:48:36', '2018-10-02 06:48:36');
 
 -- --------------------------------------------------------
 
@@ -238,11 +245,18 @@ CREATE TABLE `feedback` (
   `email` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `subject` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` tinyint(4) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '0',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `name`, `email`, `subject`, `message`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'https://www.mapsdirections.info/en/custom-google-maps/', 'https://www.mapsdirections.info/en/custom-google-maps/', 'https://www.mapsdirections.info/en/custom-google-maps/', 'https://www.mapsdirections.info/en/custom-google-maps/', 0, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -254,11 +268,19 @@ CREATE TABLE `footer` (
   `id` int(10) UNSIGNED NOT NULL,
   `page_title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `url` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` tinyint(4) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `footer`
+--
+
+INSERT INTO `footer` (`id`, `page_title`, `url`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'About Us', '/about', 1, 'WsdnFs1HQ6b8ZaLdGexwG9BdJUQVgqhCtP0099pJbzLaTKjHNm', '2018-10-02 06:55:07', '2018-10-02 06:55:07'),
+(2, 'Blogs', '/blogs', 1, 'isNUx5tZzD3b67JH3gSXt0LthquVzayq2jZAceLvWleYNe9FTD', '2018-10-02 06:55:37', '2018-10-02 06:55:37');
 
 -- --------------------------------------------------------
 
@@ -426,7 +448,7 @@ CREATE TABLE `photostream` (
 --
 
 INSERT INTO `photostream` (`id`, `image`, `link_to`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, '', '#', 1, 'DIGujRvE4X0nvcmb0M0rCQKbC1e9DqJqp9cVDakxhYSbIDOjnZ', '2018-09-29 07:36:23', '2018-09-29 07:45:31'),
+(1, '82145.jpg', '#', 1, 'DIGujRvE4X0nvcmb0M0rCQKbC1e9DqJqp9cVDakxhYSbIDOjnZ', '2018-09-29 07:36:23', '2018-10-02 06:52:05'),
 (2, '9709.jpg', '#', 1, '0WsIECC3uKbvAHf8tQH9i29b5vcQywQIKUlEyTdvTB8WLfGo7n', '2018-09-29 07:38:24', '2018-09-29 07:38:24'),
 (3, '93760.jpg', '#', 1, 'Ju9uqh5ntBlrTjPv0RnEgB3SViClxgRsm2FzmPsN2xCsWMxHb3', '2018-09-29 07:38:39', '2018-09-29 07:38:39'),
 (4, '13863.jpg', '#', 1, 'BeesKQhgWuGED2j1y7rdniZDoTd9A2LKFH4XndNNHEXkSrqhwl', '2018-09-29 07:38:51', '2018-09-29 07:38:51'),
@@ -565,11 +587,21 @@ CREATE TABLE `social_media_accounts` (
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `link` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `icon` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` tinyint(4) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `social_media_accounts`
+--
+
+INSERT INTO `social_media_accounts` (`id`, `name`, `link`, `icon`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'facebook', '#', 'facebook', 1, 'Bs5HUYWUmI9OFX5HvId02NmMVzXjhlfx2K5NaarhANot59Coa3', '2018-10-02 06:54:04', '2018-10-02 06:54:04'),
+(2, 'dribble', '#', 'dribbble', 1, 'tgwQT8S2bzruAGn7q2E77YTj7pFeyaOVWOSt0FQeaQjoFyCW0c', '2018-10-02 06:54:20', '2018-10-02 06:54:20'),
+(3, 'g-plus', '#', 'google-plus', 1, 'PEfbXTQR81rdafy5I4wzCkKW6YVyGmyJBxwJU8dqoYcmNeMSau', '2018-10-02 06:54:33', '2018-10-02 06:54:33'),
+(4, 'twitter', '#', 'twitter', 1, 'J4UbV4y0NlnFUb0kAqFJQBEXn14t7Ox2j97VVOKFd3KY1yy9Vg', '2018-10-02 06:54:49', '2018-10-02 06:54:49');
 
 -- --------------------------------------------------------
 
@@ -819,19 +851,19 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `footer`
 --
 ALTER TABLE `footer`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `indexpage`
@@ -897,7 +929,7 @@ ALTER TABLE `sliders`
 -- AUTO_INCREMENT for table `social_media_accounts`
 --
 ALTER TABLE `social_media_accounts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`

@@ -10,21 +10,22 @@
                                 </a>
                             </div>
                             <div class="widget widget-about-us">
-                                <p class="address">198 North 39th Street, Suite 836 NY 8362-1800</p>
-                                <p class="phone">Phone: (030) 333 456 789 - 686</p>
+                                @foreach ($getLocation as $location)
+                                <p class="address">{{$location->location}}</p>
+                                <p class="phone">Phone: {{$location->contactNumber}}</p>
                                 <p class="email">
                                     Email:
-                                    <a href="#">Infor@theking.com</a>
-                                </p>
+                                    <a href="#">{{$location->email}}</a>
+                                </p>                                    
+                                @endforeach
                             </div>
                             <div class="widget widget-social">
                                 <h6 class="widget-title text-uppercase text-white">Follow us</h6>
                                 <div class="social-icon-2 socile-icon-tooltip">
                                     <ul> 
-                                      <li><a href="#" data-tooltip="facebook" class="facebook"><i class="zmdi zmdi-facebook"></i></a></li>
-                                      <li><a href="#" data-tooltip="twitter" class="twitter"><i class="zmdi zmdi-twitter"></i></a></li>
-                                      <li><a href="#" data-tooltip="dribble" class="dribble"><i class="zmdi zmdi-dribbble"></i> </a></li>
-                                      <li><a href="#" data-tooltip="Google-plus" class="g-plus"><i class="zmdi zmdi-google-plus"></i> </a></li>
+                                      @foreach ($getMedia as $links)
+                                           <li><a href="{{url('/'.$links->link)}}" data-tooltip="{{$links->name}}" class="{{$links->name}}"><i class="zmdi zmdi-{{$links->icon}}"></i></a></li>
+                                      @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -34,13 +35,9 @@
                                 <h6 class="widget-title">Information</h6>
                                 <div class="menu-information-container">
                                     <ul class="nav-menu">
-                                        <li><a href="about-us.html">About Us</a></li>
-                                        <li><a href="#">Press &amp; Media</a></li>
-                                        <li><a href="#">News/Blog</a></li>
-                                        <li><a href="#">Career</a></li>
-                                        <li><a href="#">Awards &amp; Reviews</a></li>
-                                        <li><a href="#">Testimonials</a></li>
-                                        <li><a href="#">Affiliate Program</a></li>
+                                        @foreach ($getFooterLink as $links)
+                                        <li><a href="{{url('/'.$links->url)}}">{{$links->page_title}}</a></li>                                            
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -50,23 +47,18 @@
                                 <h6 class="widget-title">Latest tweet</h6>
                                 <div class="latest-tweets">
                                     <ul>
-                                        <li>
-                                            <p class="tweet-text">TheKing | Multipurpose Business Agency HTML Template
-                                                <a href="#" target="_blank">goo.gl/JrLd4m</a> <a href="#" target="_blank">pic.twitter.com/BUtj8woDGq</a></p>
-                                            <p class="tweet-details hidden-md">
-                                                <a href="#" target="_blank">
-                                                    <time datetime="2016-06-24 23:58:32+0000">June 24, 2016 11:58 pm</time>
-                                                </a>
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p class="tweet-text">Bachas Responsive WordPress Theme for your online store here, purchase now <a href="#" target="_blank">goo.gl/wl9zDA</a> <a href="#" target="_blank">pic.twitter.com/kS7BSkiOUS</a></p>
-                                            <p class="tweet-details hidden-md">
-                                                <a href="#" target="_blank">
-                                                    <time datetime="2016-06-03 12:03:48+0000">June 3, 2016 12:03 pm</time>
-                                                </a>
-                                            </p>
-                                        </li>
+                                        @foreach ($getBlogs as $blogs)
+                                            <li>
+                                                <p class="tweet-text">{{$blogs->title}}
+                                                    <a href="{{url('/blog-detail/'.$blogs->url)}}" target="_blank">www.freak.com/blog/{{$blogs->url}}</a> 
+                                                <p class="tweet-details hidden-md">
+                                                    <a href="#" target="_blank">
+                                                        <time datetime="2016-06-24 23:58:32+0000"> {{$blogs->created_at->format('d M Y')}}</time>
+                                                    </a>
+                                                </p>
+                                            </li>                                            
+                                        @endforeach
+
                                     </ul>
                                 </div>
                             </div>
@@ -76,29 +68,16 @@
                                 <h6 class="widget-title">Photo Stream</h6>
                                 <div class="inst-photo-container">
                                     <ul class="inst-photo">
-                                        <li>
-                                            <a href="#"><img alt="" src="{{url('images/frontend_images/gallery/01.jpg')}}"></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><img alt="" src="{{url('images/frontend_images/gallery/02.jpg')}}"></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><img alt="" src="{{url('images/frontend_images/gallery/03.jpg')}}"></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><img alt="" src="{{url('images/frontend_images/gallery/04.jpg')}}"></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><img alt="" src="{{url('images/frontend_images/gallery/05.jpg')}}"></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><img alt="" src="{{url('images/frontend_images/gallery/06.jpg')}}"></a>
-                                        </li>
+                                        @foreach ($getPhotoStream as $media) 
+                                            <li>
+                                                <a href="{{url('/'.$media->link_to)}}"><img alt="" src="{{asset('images/backend_images/footer/'.$media->image)}}"></a>
+                                            </li>
+                                        @endforeach
                                     </ul>
-                                    <div class="ins-follow-btn">
+                                    {{-- <div class="ins-follow-btn">
                                         <a href="#" target="_blank">
                                         <i class="zmdi zmdi-instagram"></i>Follow on Instagram</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>

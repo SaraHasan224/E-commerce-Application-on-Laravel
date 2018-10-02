@@ -34,7 +34,7 @@
             <h5>Customer Support</h5>
           </div>
           <div class="widget-content ">
-            <table class="table table-bordered table-striped with-check data-table">
+            <table class="table table-bordered table-striped with-check data-table" id="myTable">
               <thead>
                 <tr>
                   <th><input type="checkbox" id="title-table-checkbox" name="title-table-checkbox" /></th>
@@ -77,7 +77,57 @@
       </div>
     </div>
     <hr>
-  
+    <div class="row-fluid">
+          <div class="span12">
+
+            <div class="widget-box">
+              <div class="widget-title"> <span class="icon"> <i class="icon-tags"></i> </span>
+                <h5>Reach Us At</h5>
+
+              </div>
+              <div class="widget-content ">
+                <table class="table table-bordered table-striped with-check data-table">
+                  <thead>
+                    <tr>
+                      <th><input type="checkbox" id="title-table-checkbox" name="title-table-checkbox" /></th>
+                      <th>Location</th>
+                      <th>Email Address</th>
+                      <th>Contact Number</th>
+                      <th>Status</th>
+                      <th>Created At</th>
+                      <th>Updated At</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                        @foreach($location as $post)   
+                        <tr>
+                            <td><input type="checkbox" /></td>                        
+                            <td>{{$post->location}}</td>
+                            <td>{{$post->email}}</td>
+                            <td>{{$post->contactNumber}}</td>
+                            <td>
+                                @if($post->status == 1)                              
+                                  <button type="button" class="btn btn-info">Active</button>
+                                @else
+                                  <button type="button" class="btn btn-warning">Dis active</button>
+                                @endif
+                            </td>
+                            <td>{{$post->created_at}}</td>
+                            <td>{{$post->updated_at}}</td>
+                            <td>
+                              <a href="{{url('/admin/reach-us-at/edit/'.$post->id)}}" type="button" class="btn btn-primary">Edit</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                      
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          
+          </div>
+    </div>
 
   </div>
 </div>

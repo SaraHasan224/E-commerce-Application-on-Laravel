@@ -1,4 +1,3 @@
-
 @extends('FrontEnd.include.header2')
 @section('content')
         <!-- Start page content -->

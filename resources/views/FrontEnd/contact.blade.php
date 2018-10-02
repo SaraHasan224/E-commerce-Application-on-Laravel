@@ -5,7 +5,7 @@
        <section id="page-content" class="page-wrapper">
         <!-- Map Area Start -->
         <div class="map-area">
-            <div id="googleMap" style="width:100%;height:600px;"></div>
+            <div style="width: 100%"><iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=NED%20University%2CKarachi%2CSindh%2CPakistan+(googleMap)&ie=UTF8&t=&z=14&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.mapsdirections.info/en/custom-google-maps/">Add Google Map to website</a> by <a href="https://www.mapsdirections.info/en/">Measure area on map</a></iframe></div><br />
         </div>
         <!-- Map Area End -->
         <!-- Address Information Area Start -->
